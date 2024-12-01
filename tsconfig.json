@@ -1,7 +1,28 @@
 {
-	"files": [],
-	"references": [
-		{ "path": "./tsconfig.app.json" },
-		{ "path": "./tsconfig.node.json" }
-	]
+  "compilerOptions": {
+    "target": "ES6", // Ensures modern JavaScript features
+    "module": "ESNext", // Use ESNext modules for tree-shaking
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], // Provides DOM and ESNext type definitions
+    "declaration": true, // Generates `.d.ts` files for type declarations
+    "declarationMap": true, // Includes source maps for declarations
+    "emitDeclarationOnly": true, // Prevents JavaScript files from being emitted
+    "jsx": "react-jsx", // Enables the modern JSX runtime
+    "moduleResolution": "Node", // Standard module resolution
+    "esModuleInterop": true, // Allows importing CommonJS modules
+    "allowSyntheticDefaultImports": true, // Allows default imports from modules without default exports
+    "strict": true, // Enables all strict type-checking options
+    "noImplicitAny": true, // Disallows the use of the `any` type unless explicitly defined
+    "strictNullChecks": true, // Requires handling `null` and `undefined`
+    "skipLibCheck": true, // Skips type-checking of `.d.ts` files for faster builds
+    "forceConsistentCasingInFileNames": true, // Enforces consistent file name casing
+    "outDir": "./dist", // Outputs compiled files into `dist`
+    "rootDir": "./", // Treats `src` as the root directory
+    "baseUrl": "./",
+    "allowImportingTsExtensions": true,
+    "paths": {
+      "@/*": ["./lib/*"]
+    }
+  },
+  "include": ["src", "lib"], // Includes all files in the `src` directory
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"] // Excludes tests and build artifacts
 }
