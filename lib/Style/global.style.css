@@ -4,6 +4,45 @@
 	box-sizing: border-box;
 }
 
+:root {
+	--primary-color: #173a2a;
+	--secondary-color: #6c757d;
+	--accent-green-color: #14694a;
+	/* --background-dark-grey: #191D2B;
+	--border-color: #2e344e;
+	--background-light-color-2: rgba(3, 127, 255, 0.3);*/
+	--white-color: #ececec;
+	--background-dark-color: #291816;
+	--background-light-color: #dce2f0;
+	--font-light-color: #ddd; 
+	--font-dark-color: #313131;
+	/*--sidebar-dark-color: #191D2B; */
+}
+
+body {
+	padding: 5px;
+}
+
+@media screen and (min-width: 600px) {
+	body {
+		padding: 15px;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: var(--background-dark-color);
+		color: var(--font-light-color);
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	body {
+		background-color: var(--background-light-color);
+		color: var(--font-dark-color);
+	}
+}
+
 @font-face {
 	font-family: PatuaOne;
 	src: url("./fonts/PatuaOne-Regular.ttf");

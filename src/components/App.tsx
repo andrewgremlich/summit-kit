@@ -1,11 +1,11 @@
 import { Reading } from "@/Areas";
 import { TextInput } from "@/Form";
-import { H1, P } from "@/Text";
+import { H1, H2, P } from "@/Text";
 
 export const App = () => {
 	return (
 		<Reading>
-			<H1>Summit Kit | React</H1>
+			<H1>Summit Kit | React Demo</H1>
 
 			<P>On this page is the React Component Library for the Summit Kit.</P>
 
@@ -15,9 +15,11 @@ export const App = () => {
 				est minima tenetur earum inventore! Pariatur ab corporis saepe?
 			</P>
 
-			<TextInput type="text" label="Text Input" />
-			<TextInput type="password" label="Password Input" />
-			<TextInput type="email" label="Email Input" />
+			<H2>Form Elements</H2>
+
+			<TextInput type="text" label="Text Input" id="text-input" />
+			<TextInput type="password" label="Password Input" id="password-input" />
+			<TextInput type="email" label="Email Input" id="email-input" />
 		</Reading>
 	);
 };
