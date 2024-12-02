@@ -1,4 +1,7 @@
-export type TextProps = {
-	children: React.ReactNode;
-	additionalClasses?: string[];
+export type ClassesProps = {
+	classes?: string[];
 };
+
+export type StandardProps = {
+	children: React.ReactNode;
+} & ClassesProps;

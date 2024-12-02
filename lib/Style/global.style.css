@@ -1,13 +1,33 @@
-@font-face {
-  font-family: PatuaOne;
-  src: url('./fonts/PatuaOne-Regular.ttf');
-  font-weight: normal;
-  font-style: normal;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 @font-face {
-  font-family: Rubik;
-  src: url('./fonts/Rubik-VariableFont_wght.ttf');
-  font-weight: normal;
-  font-style: normal;
+	font-family: PatuaOne;
+	src: url("./fonts/PatuaOne-Regular.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Rubik;
+	src: url("./fonts/Rubik-VariableFont_wght.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Molengo;
+	src: url("./fonts/Molengo-Regular.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Rakkas;
+	src: url("./fonts/Rakkas-Regular.ttf");
+	font-weight: normal;
+	font-style: normal;
 }

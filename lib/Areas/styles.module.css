@@ -1,0 +1,17 @@
+.reading {
+	padding: 15px;
+}
+
+@media screen and (min-width: 600px) {
+	.reading {
+		padding: 5px;
+		max-width: 600px;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.reading {
+		padding: 5px;
+		max-width: 900px;
+	}
+}

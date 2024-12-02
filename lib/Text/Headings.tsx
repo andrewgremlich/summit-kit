@@ -1,15 +1,13 @@
-import { TextProps } from "@/Types/general";
+import type { StandardProps } from "@/Types/general";
 
 import classes from "./styles.module.css";
 
-export const H1 = (props: TextProps) => {
-	console.log(classes);
-
+export const H1 = (props: StandardProps) => {
 	return (
 		<h1
 			className={`${classes.h1}${
-				props.additionalClasses && props.additionalClasses.length > 0
-					? props.additionalClasses?.join(" ")
+				props.classes && props.classes.length > 0
+					? ` ${props.classes.join(" ")}`
 					: ""
 			}`}
 		>
@@ -18,12 +16,12 @@ export const H1 = (props: TextProps) => {
 	);
 };
 
-export const H2 = (props: TextProps) => {
+export const H2 = (props: StandardProps) => {
 	return (
 		<h2
 			className={`${classes.h2}${
-				props.additionalClasses && props.additionalClasses.length > 0
-					? props.additionalClasses?.join(" ")
+				props.classes && props.classes.length > 0
+					? ` ${props.classes.join(" ")}`
 					: ""
 			}`}
 		>
@@ -32,12 +30,12 @@ export const H2 = (props: TextProps) => {
 	);
 };
 
-export const H3 = (props: TextProps) => {
+export const H3 = (props: StandardProps) => {
 	return (
 		<h3
 			className={`${classes.h3}${
-				props.additionalClasses && props.additionalClasses.length > 0
-					? props.additionalClasses?.join(" ")
+				props.classes && props.classes.length > 0
+					? ` ${props.classes.join(" ")}`
 					: ""
 			}`}
 		>
@@ -46,12 +44,12 @@ export const H3 = (props: TextProps) => {
 	);
 };
 
-export const H4 = (props: TextProps) => {
+export const H4 = (props: StandardProps) => {
 	return (
 		<h4
 			className={`${classes.h4}${
-				props.additionalClasses && props.additionalClasses.length > 0
-					? props.additionalClasses?.join(" ")
+				props.classes && props.classes.length > 0
+					? ` ${props.classes.join(" ")}`
 					: ""
 			}`}
 		>
@@ -60,12 +58,12 @@ export const H4 = (props: TextProps) => {
 	);
 };
 
-export const H5 = (props: TextProps) => {
+export const H5 = (props: StandardProps) => {
 	return (
 		<h5
 			className={`${classes.h5}${
-				props.additionalClasses && props.additionalClasses.length > 0
-					? props.additionalClasses?.join(" ")
+				props.classes && props.classes.length > 0
+					? ` ${props.classes.join(" ")}`
 					: ""
 			}`}
 		>
@@ -74,12 +72,12 @@ export const H5 = (props: TextProps) => {
 	);
 };
 
-export const H6 = (props: TextProps) => {
+export const H6 = (props: StandardProps) => {
 	return (
 		<h6
 			className={`${classes.h6}${
-				props.additionalClasses && props.additionalClasses.length > 0
-					? props.additionalClasses?.join(" ")
+				props.classes && props.classes.length > 0
+					? ` ${props.classes.join(" ")}`
 					: ""
 			}`}
 		>

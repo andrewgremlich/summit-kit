@@ -4,57 +4,72 @@
 .h4,
 .h5,
 .h6 {
-  font-family: PatuaOne;
+	font-family: Rakkas;
+	color: #333;
+	font-smooting: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .h1,
 .h2,
 .h3 {
-  line-height: 1.2;
-  letter-spacing: 0.2rem;
+	line-height: 1.2;
+	letter-spacing: 0.2rem;
 }
 
 .h4,
 .h5,
 .h6 {
-  line-height: 1.5;
-  letter-spacing: 0.1rem;
+	line-height: 1.5;
+	letter-spacing: 0.1rem;
 }
 
 .h1 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+	font-size: 2.5rem;
+	margin-bottom: 2rem;
 }
 
 .h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
 }
 
 .h3 {
-  font-size: 1.75rem;
-  margin-bottom: 1.25rem;
+	font-size: 1.75rem;
+	margin-bottom: 1.25rem;
 }
 
 .h4 {
-  font-size: 1.5rem;
-  margin-bottom: 1.25rem;
+	font-size: 1.5rem;
+	margin-bottom: 1.25rem;
 }
 
 .h5 {
-  font-size: 1.25rem;
-  margin-bottom: 1.25rem;
+	font-size: 1.25rem;
+	margin-bottom: 1.25rem;
 }
 
 .h6 {
-  font-size: 1rem;
-  margin-bottom: 1.25rem;
+	font-size: 1rem;
+	margin-bottom: 1.25rem;
+}
+
+.p,
+.span {
+	color: #333;
+	font-family: Molengo;
+	font-size: 1rem;
+	line-height: 1.5;
+	letter-spacing: 0.05rem;
+	font-smooting: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .p {
-  font-family: Rubik;
-  font-size: 1rem;
-  line-height: 1.5;
-  letter-spacing: 0.05rem;
-  margin-bottom: 1.25rem;
+	margin-bottom: 1.25rem;
+}
+
+.span {
 }
