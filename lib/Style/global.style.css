@@ -5,18 +5,31 @@
 }
 
 :root {
-	--primary-color: #173a2a;
+	--primary-color: #291816;
 	--secondary-color: #6c757d;
 	--accent-green-color: #14694a;
-	/* --background-dark-grey: #191D2B;
-	--border-color: #2e344e;
-	--background-light-color-2: rgba(3, 127, 255, 0.3);*/
+	--accent-red-color: #a83232;
+	--accent-red-color-2: #cf2a2a;
+	--accent-blue-color: #9eb3ff;
+	--accent-blue-color-2: #709bfd;
 	--white-color: #ececec;
-	--background-dark-color: #291816;
+	--background-dark-color: #173a2a;
+	--background-dark-color-2: #2a3f32;
 	--background-light-color: #dce2f0;
-	--font-light-color: #ddd; 
+	--background-light-color-2: #f1f1f1;
+	--font-light-color: #ddd;
 	--font-dark-color: #313131;
-	/*--sidebar-dark-color: #191D2B; */
+	--border-radius: 0.5rem;
+}
+
+html,
+body {
+	font-family: "Rubik", sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+	background-color: var(--background-light-color);
+	color: var(--font-dark-color);
+	height: 100%;
 }
 
 body {
@@ -29,16 +42,69 @@ body {
 	}
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Rakkas, serif;
+}
+
+h1,
+h2,
+h3 {
+	line-height: 1.2;
+	letter-spacing: 0.2rem;
+}
+
+h4,
+h5,
+h6 {
+	line-height: 1.5;
+	letter-spacing: 0.1rem;
+}
+
+p,
+label,
+span,
+a {
+	font-family: Molengo, Arial, sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+	letter-spacing: 0.05rem;
+}
+
+button {
+	margin-right: 1rem;
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: var(--border-radius, 0.5rem);
+	cursor: pointer;
+	font-size: 1rem;
+	line-height: 1.2;
+	letter-spacing: 0.05rem;
+	color: var(--white-color, #ececec);
+}
+
 @media (prefers-color-scheme: dark) {
 	body {
-		background-color: var(--background-dark-color);
+		background: linear-gradient(
+			to bottom,
+			var(--background-dark-color),
+			var(--background-dark-color-2)
+		);
 		color: var(--font-light-color);
 	}
 }
 
 @media (prefers-color-scheme: light) {
 	body {
-		background-color: var(--background-light-color);
+		background-color: linear-gradient(
+			to bottom,
+			var(--background-light-color),
+			var(--background-light-color-2)
+		);
 		color: var(--font-dark-color);
 	}
 }

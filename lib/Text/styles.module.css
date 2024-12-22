@@ -1,29 +1,4 @@
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-	font-family: Rakkas;
-	font-smooting: antialiased;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.h1,
-.h2,
-.h3 {
-	line-height: 1.2;
-	letter-spacing: 0.2rem;
-}
-
-.h4,
-.h5,
-.h6 {
-	line-height: 1.5;
-	letter-spacing: 0.1rem;
-}
-
+/* stylelint-disable */
 .h1 {
 	font-size: 2.5rem;
 	margin-bottom: 2rem;
@@ -55,19 +30,15 @@
 }
 
 .p,
-.span {
-	font-family: Molengo;
-	font-size: 1rem;
-	line-height: 1.5;
-	letter-spacing: 0.05rem;
-	font-smooting: antialiased;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.p {
+.a {
 	margin-bottom: 1.25rem;
 }
 
-.span {
+.a {
+	color: var(--accent-blue-color);
+	text-decoration: none;
+
+	&:hover {
+		color: var(--accent-blue-color-2);
+	}
 }
