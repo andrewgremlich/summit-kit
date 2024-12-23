@@ -28,6 +28,8 @@ export const App = () => {
 					required={true}
 				/>
 				<TextInput type="password" label="Password Input" id="password-input" />
+				<PrimaryButton>Submit</PrimaryButton>
+				<SecondaryButton>Cancel</SecondaryButton>
 			</Form>
 		</Reading>
 	);

@@ -10,45 +10,95 @@
 }
 
 .text-input {
-	border: 3px solid var(--accent-red-color, #14694a);
 	margin: 2px 0px;
 	padding: 0.5rem;
+	border-width: 3px;
+	border-style: solid;
 	border-radius: var(--border-radius, 0.5rem);
-	background-color: var(--white-color, #ececec);
 	font-size: 1rem;
 	line-height: 1.2;
 	letter-spacing: 0.05rem;
 	width: 100%;
+	background-color: var(--white, #ececec);
 
 	&:focus {
+		border-width: 5px;
 		outline: none;
 		margin: 0px;
-		border: 5px solid var(--accent-red-color-2);
 	}
 }
 
-.submit {
-	background-color: var(--accent-red-color, #691414);
-	border-radius: var(--border-radius, 0.5rem);
+@media (prefers-color-scheme: dark) {
+	.text-input {
+		border-color: var(--red-600);
 
-	&:hover {
-		background-color: var(--accent-red-color-2);
-	}
-
-	&:focus {
-		outline: none;
-	}
-
-	&:active {
-		transform: scale(0.95);
-	}
-
-	&:disabled {
-		background-color: var(--accent-red-color-3);
-		cursor: not-allowed;
+		&:focus {
+			border-color: var(--red-700);
+		}
 	}
 }
 
-.secondary {
-	background-color: var(--accent-red-color-2);
+@media (prefers-color-scheme: light) {
+	.text-input {
+		border-color: var(--red-800);
+
+		&:focus {
+			border-color: var(--red-700);
+		}
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.submit {
+		background-color: var(--red-800);
+		color: var(--white);
+
+		&:hover {
+			background-color: var(--red-700);
+		}
+
+		&:disabled {
+			background-color: var(--red-600);
+		}
+	}
+	.secondary {
+		background-color: var(--green-900);
+		color: var(--grey-50);
+
+		&:hover {
+			background-color: var(--green-850);
+		}
+
+		&:disabled {
+			background-color: var(--green-600);
+		}
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	.submit {
+		background-color: var(--red-200);
+		color: var(--black);
+
+		&:hover {
+			background-color: var(--red-300);
+		}
+
+		&:disabled {
+			background-color: var(--red-100);
+		}
+	}
+
+	.secondary {
+		background-color: var(--green-100);
+		color: var(--grey-800);
+
+		&:hover {
+			background-color: var(--green-200);
+		}
+
+		&:disabled {
+			background-color: var(--green-50);
+		}
+	}
 }
