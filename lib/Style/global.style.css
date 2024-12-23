@@ -22,17 +22,6 @@
   --red-800: #751a1a;
   --red-900: #660000;
 
-  --yellow-50: #f0f0e5;
-  --yellow-100: #e0e0cc;
-  --yellow-200: #d1d1b3;
-  --yellow-300: #c2c299;
-  --yellow-400: #b3b380;
-  --yellow-500: #a3a366;
-  --yellow-600: #94944d;
-  --yellow-700: #858533;
-  --yellow-800: #75751a;
-  --yellow-900: #666600;
-
   --blue-50: #e5e9f0;
   --blue-100: #ccd4e0;
   --blue-200: #b3bdcf;
@@ -44,17 +33,17 @@
   --blue-800: #21366c;
   --blue-900: #0a205c;
 
-  --green-50: #c7cecb;
-  --green-100: #acb7b3;
-  --green-200: #b3d1be;
-  --green-300: #92a09a;
-  --green-400: #788983;
-  --green-500: #5f736c;
-  --green-600: #475e56;
-  --green-700: #304941;
-  --green-800: #19362d;
-  --green-850: #0d1d17;
-  --green-900: #02231a;
+  --green-50: #e4eae8;
+  --green-100: #e4eae8;
+  --green-200: #cad5d1;
+  --green-300: #b1c1ba;
+  --green-400: #98ada4;
+  --green-500: #7f9a8f;
+  --green-600: #67867a;
+  --green-700: #4f7465;
+  --green-800: #386152;
+  --green-850: #1f4f3f;
+  --green-900: #003e2d;
 
   --purple-50: #e9e5f0;
   --purple-100: #d4cce0;
@@ -167,7 +156,7 @@ button {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background: linear-gradient(to bottom, var(--green-800), var(--green-700));
+    background: linear-gradient(to bottom, var(--green-900), var(--green-850));
     color: var(--grey-50);
   }
 }

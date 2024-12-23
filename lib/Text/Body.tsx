@@ -7,7 +7,7 @@ export const P = (props: StandardProps) => {
 		<p
 			className={`${classes.p}${
 				props.classes && props.classes.length > 0
-					? props.classes?.join(" ")
+					? ` ${props.classes.join(" ")}`
 					: ""
 			}`}
 		>
@@ -21,7 +21,7 @@ export const Span = (props: StandardProps) => {
 		<span
 			className={`${
 				props.classes && props.classes.length > 0
-					? props.classes?.join(" ")
+					? ` ${props.classes.join(" ")}`
 					: ""
 			}`}
 		>
@@ -35,7 +35,7 @@ export const Li = (props: StandardProps) => {
 		<li
 			className={`${
 				props.classes && props.classes.length > 0
-					? props.classes?.join(" ")
+					? ` ${props.classes.join(" ")}`
 					: ""
 			}`}
 		>

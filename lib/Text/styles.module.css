@@ -37,10 +37,11 @@
 	text-underline-offset: 0.2rem;
 	text-decoration-thickness: 0.1rem;
 	text-decoration-style: dashed;
+	display: flex;
+	align-items: center;
 
 	& > * {
 		vertical-align: middle;
-		display: inline-block;
 	}
 }
 
