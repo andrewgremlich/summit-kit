@@ -1,3 +1,5 @@
+import "./Style/global.style.css";
+
 export * from "./Text";
 export * from "./Areas";
 export * from "./Form";
