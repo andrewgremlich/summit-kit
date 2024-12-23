@@ -7,7 +7,6 @@ export * from "./Types";
 
 // TODO: how to export general style? or scratch that?
 
-// export * from "./Buttons";
 // export * from "./Hooks";
 // export * from "./Layout";
 // export * from "./Icons";

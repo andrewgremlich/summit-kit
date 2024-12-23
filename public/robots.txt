@@ -1,0 +1,14 @@
+# robots.txt for https://summit-kit.gremlich.dev/
+
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /temp/
+
+# Allow specific crawlers to access all areas
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

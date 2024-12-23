@@ -1,107 +1,105 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+:root {
+  --white: #ffffff;
+  --grey-50: #e5e5e5;
+  --grey-100: #cccccc;
+  --grey-200: #b3b3b3;
+  --grey-300: #999999;
+  --grey-400: #808080;
+  --grey-500: #666666;
+  --grey-600: #4d4d4d;
+  --grey-700: #333333;
+  --grey-800: #1a1a1a;
+  --black: #000000;
+
+  --red-50: #f0e5e5;
+  --red-100: #e0cccc;
+  --red-200: #d1b3b3;
+  --red-300: #c29999;
+  --red-400: #b38080;
+  --red-500: #a36666;
+  --red-600: #944d4d;
+  --red-700: #853333;
+  --red-800: #751a1a;
+  --red-900: #660000;
+
+  --yellow-50: #f0f0e5;
+  --yellow-100: #e0e0cc;
+  --yellow-200: #d1d1b3;
+  --yellow-300: #c2c299;
+  --yellow-400: #b3b380;
+  --yellow-500: #a3a366;
+  --yellow-600: #94944d;
+  --yellow-700: #858533;
+  --yellow-800: #75751a;
+  --yellow-900: #666600;
+
+  --blue-50: #e5e9f0;
+  --blue-100: #ccd4e0;
+  --blue-200: #b3bdcf;
+  --blue-300: #9ba7bf;
+  --blue-400: #8290ae;
+  --blue-500: #6a7a9e;
+  --blue-600: #51638d;
+  --blue-700: #394d7d;
+  --blue-800: #21366c;
+  --blue-900: #0a205c;
+
+  --green-50: #c7cecb;
+  --green-100: #acb7b3;
+  --green-200: #b3d1be;
+  --green-300: #92a09a;
+  --green-400: #788983;
+  --green-500: #5f736c;
+  --green-600: #475e56;
+  --green-700: #304941;
+  --green-800: #19362d;
+  --green-850: #0d1d17;
+  --green-900: #02231a;
+
+  --purple-50: #e9e5f0;
+  --purple-100: #d4cce0;
+  --purple-200: #beb3d1;
+  --purple-300: #a89bc2;
+  --purple-400: #8f82b3;
+  --purple-500: #776aa3;
+  --purple-600: #5e5194;
+  --purple-700: #463985;
+  --purple-800: #2d2136;
+  --purple-900: #150a1a;
+
+  --primary-color-dark: #173a2a;
+  --secondary-color-dark: #3b1c17;
+  --tertiary-color-dark: #507a67;
+
+  --primary-color-light: #a8bab2;
+  --secondary-color-light: #e5b0a8;
+  --tertiary-color-light: #e5b0a8;
+  --border-radius: 0.5rem;
 }
 
-:root {
-	--white: #ffffff;
-	--grey-50: #e5e5e5;
-	--grey-100: #cccccc;
-	--grey-200: #b3b3b3;
-	--grey-300: #999999;
-	--grey-400: #808080;
-	--grey-500: #666666;
-	--grey-600: #4d4d4d;
-	--grey-700: #333333;
-	--grey-800: #1a1a1a;
-	--black: #000000;
-
-	--red-50: #f0e5e5;
-	--red-100: #e0cccc;
-	--red-200: #d1b3b3;
-	--red-300: #c29999;
-	--red-400: #b38080;
-	--red-500: #a36666;
-	--red-600: #944d4d;
-	--red-700: #853333;
-	--red-800: #751a1a;
-	--red-900: #660000;
-
-	--yellow-50: #f0f0e5;
-	--yellow-100: #e0e0cc;
-	--yellow-200: #d1d1b3;
-	--yellow-300: #c2c299;
-	--yellow-400: #b3b380;
-	--yellow-500: #a3a366;
-	--yellow-600: #94944d;
-	--yellow-700: #858533;
-	--yellow-800: #75751a;
-	--yellow-900: #666600;
-
-	--blue-50: #e5e9f0;
-	--blue-100: #ccd4e0;
-	--blue-200: #b3bdcf;
-	--blue-300: #9ba7bf;
-	--blue-400: #8290ae;
-	--blue-500: #6a7a9e;
-	--blue-600: #51638d;
-	--blue-700: #394d7d;
-	--blue-800: #21366c;
-	--blue-900: #0a205c;
-
-	--green-50: #e5f0e9;
-	--green-100: #cce0d4;
-	--green-200: #b3d1be;
-	--green-300: #9bc2a8;
-	--green-400: #82b38f;
-	--green-500: #6aa377;
-	--green-600: #51945e;
-	--green-700: #398546;
-	--green-750: #2d6e3a;
-	--green-775: #2a6a37;
-	--green-800: #21362d;
-	--green-850: #1a2d24;
-	--green-900: #0a1a15;
-
-	--purple-50: #e9e5f0;
-	--purple-100: #d4cce0;
-	--purple-200: #beb3d1;
-	--purple-300: #a89bc2;
-	--purple-400: #8f82b3;
-	--purple-500: #776aa3;
-	--purple-600: #5e5194;
-	--purple-700: #463985;
-	--purple-800: #2d2136;
-	--purple-900: #150a1a;
-
-	--primary-color-dark: #173a2a;
-	--secondary-color-dark: #3b1c17;
-	--tertiary-color-dark: #507a67;
-
-	--primary-color-light: #a8bab2;
-	--secondary-color-light: #e5b0a8;
-	--tertiary-color-light: #e5b0a8;
-	--border-radius: 0.5rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
-	font-family: "Rubik", sans-serif;
-	font-size: 16px;
-	line-height: 1.6;
-	color: var(--grey-50);
-	height: 100%;
+  min-height: 100%;
 }
 
 body {
-	padding: 5px;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--grey-50);
+  padding: 5px;
 }
 
 @media screen and (min-width: 600px) {
-	body {
-		padding: 15px;
-	}
+  body {
+    padding: 15px;
+  }
 }
 
 h1,
@@ -110,94 +108,101 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: Rakkas, serif;
+  font-family: Rakkas, serif;
+  display: flex;
+  align-items: center;
+
+  & > * {
+    display: inline-block;
+  }
 }
 
 h1,
 h2,
 h3 {
-	line-height: 1.2;
-	letter-spacing: 0.2rem;
+  line-height: 1.2;
+  letter-spacing: 0.2rem;
 }
 
 h4,
 h5,
 h6 {
-	line-height: 1.5;
-	letter-spacing: 0.1rem;
+  line-height: 1.5;
+  letter-spacing: 0.1rem;
 }
 
 p,
+li,
 label,
 span,
 a {
-	font-family: Molengo, Arial, sans-serif;
-	font-size: 1rem;
-	line-height: 1.5;
-	letter-spacing: 0.05rem;
+  font-family: Molengo, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.05rem;
 }
 
 button {
-	margin-right: 1rem;
-	border: none;
-	padding: 0.5rem 1rem;
-	border-radius: var(--border-radius, 0.5rem);
-	cursor: pointer;
-	font-size: 1rem;
-	line-height: 1.2;
-	letter-spacing: 0.05rem;
+  margin-right: 1rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius, 0.5rem);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: 0.05rem;
 
-	&:focus {
-		outline: none;
-	}
+  &:focus {
+    outline: none;
+  }
 
-	&:active {
-		transform: scale(0.95);
-	}
+  &:active {
+    transform: scale(0.95);
+  }
 
-	&:disabled {
-		cursor: not-allowed;
-	}
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-	body {
-		background: linear-gradient(to bottom, var(--green-850), var(--green-800));
-		color: var(--grey-50);
-	}
+  body {
+    background: linear-gradient(to bottom, var(--green-800), var(--green-700));
+    color: var(--grey-50);
+  }
 }
 
 @media (prefers-color-scheme: light) {
-	body {
-		background: linear-gradient(to bottom, var(--green-50), var(--green-100));
-		color: var(--grey-800);
-	}
+  body {
+    background: linear-gradient(to bottom, var(--green-50), var(--green-100));
+    color: var(--grey-800);
+  }
 }
 
 @font-face {
-	font-family: PatuaOne;
-	src: url("./fonts/PatuaOne-Regular.ttf");
-	font-weight: normal;
-	font-style: normal;
+  font-family: PatuaOne;
+  src: url("./fonts/PatuaOne-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: Rubik;
-	src: url("./fonts/Rubik-VariableFont_wght.ttf");
-	font-weight: normal;
-	font-style: normal;
+  font-family: Rubik;
+  src: url("./fonts/Rubik-VariableFont_wght.ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: Molengo;
-	src: url("./fonts/Molengo-Regular.ttf");
-	font-weight: normal;
-	font-style: normal;
+  font-family: Molengo;
+  src: url("./fonts/Molengo-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: Rakkas;
-	src: url("./fonts/Rakkas-Regular.ttf");
-	font-weight: normal;
-	font-style: normal;
+  font-family: Rakkas;
+  src: url("./fonts/Rakkas-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
 }

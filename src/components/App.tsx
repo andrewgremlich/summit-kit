@@ -19,7 +19,11 @@ export const App = () => {
 
 			<H2>Form Elements</H2>
 
-			<Form>
+			<Form
+				onSubmit={() => {
+					console.log("Form submitted");
+				}}
+			>
 				<TextInput type="text" label="Text Input" id="text-input" />
 				<TextInput
 					type="email"

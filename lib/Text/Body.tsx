@@ -19,7 +19,7 @@ export const P = (props: StandardProps) => {
 export const Span = (props: StandardProps) => {
 	return (
 		<span
-			className={`${classes.span}${
+			className={`${
 				props.classes && props.classes.length > 0
 					? props.classes?.join(" ")
 					: ""
@@ -27,5 +27,19 @@ export const Span = (props: StandardProps) => {
 		>
 			{props.children}
 		</span>
+	);
+};
+
+export const Li = (props: StandardProps) => {
+	return (
+		<li
+			className={`${
+				props.classes && props.classes.length > 0
+					? props.classes?.join(" ")
+					: ""
+			}`}
+		>
+			{props.children}
+		</li>
 	);
 };

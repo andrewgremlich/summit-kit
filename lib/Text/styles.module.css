@@ -37,6 +37,11 @@
 	text-underline-offset: 0.2rem;
 	text-decoration-thickness: 0.1rem;
 	text-decoration-style: dashed;
+
+	& > * {
+		vertical-align: middle;
+		display: inline-block;
+	}
 }
 
 @media (prefers-color-scheme: dark) {
@@ -45,7 +50,7 @@
 		text-decoration-color: var(--green-400);
 
 		&:hover {
-			color: var(--blue-200);
+			color: var(--red-200);
 			text-decoration-color: var(--green-500);
 		}
 	}
@@ -57,7 +62,7 @@
 		text-decoration-color: var(--green-600);
 
 		&:hover {
-			color: var(--blue-600);
+			color: var(--red-600);
 			text-decoration-color: var(--green-800);
 		}
 	}

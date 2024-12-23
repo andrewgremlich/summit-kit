@@ -1,3 +1,5 @@
+"use client";
+
 import type { StandardProps } from "@/Types/general";
 
 import classes from "./styles.module.css";
