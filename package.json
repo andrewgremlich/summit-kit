@@ -1,7 +1,6 @@
 {
 	"name": "summit-kit",
-	"private": true,
-	"version": "0.0.1",
+	"version": "0.1.1",
 	"type": "module",
 	"module": "dist/esm/summit-kit.esm.js",
 	"main": "dist/cjs/summit-kit.cjs",
