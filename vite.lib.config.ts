@@ -14,13 +14,8 @@ export default defineConfig({
 			name: pkg.name,
 		},
 		rollupOptions: {
-			external: ["react", "react-dom"],
+			external: ["react", "react-dom", /^react\//],
 			output: [
-				{
-					globals: {
-						react: "React",
-					},
-				},
 				{
 					format: "esm",
 					dir: "dist/esm",
