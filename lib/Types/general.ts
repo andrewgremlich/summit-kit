@@ -4,4 +4,5 @@ export type ClassesProps = {
 
 export type StandardProps = {
 	children: React.ReactNode;
+	style?: React.CSSProperties;
 } & ClassesProps;

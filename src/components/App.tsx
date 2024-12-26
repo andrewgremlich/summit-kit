@@ -1,4 +1,4 @@
-import { Reading, Section } from "@/Areas";
+import { Flex, Reading, Section } from "@/Areas";
 import { Form, PrimaryButton, SecondaryButton, TextInput } from "@/Form";
 import { Icon } from "@/Icon";
 import { H1, H2, Link, P } from "@/Text";
@@ -45,9 +45,23 @@ export const App = () => {
 				</Form>
 			</Section>
 
-			<H2>Icons</H2>
+			<Section>
+				<H2>Icons</H2>
 
-			<Icon name="FiActivity" size={24} color="white" />
+				<Icon name="FiActivity" size={24} color="white" />
+			</Section>
+
+			<Section>
+				<H2>Areas</H2>
+
+				<P>The following is using the Flex component:</P>
+
+				<Flex direction="row" justify="space-between" align="flex-start">
+					<Icon name="FiActivity" size={24} color="white" />
+					<Icon name="FiActivity" size={24} color="white" />
+					<Icon name="FiActivity" size={24} color="white" />
+				</Flex>
+			</Section>
 		</Reading>
 	);
 };

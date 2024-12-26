@@ -69,6 +69,8 @@ There is a semantic `Section` tag with a margin bottom of 40px. This is meant to
 </Reading>
 ```
 
+There is a `Flex` component that accepts `direction`, `justify`, and `align` parameters.
+
 ## Icon
 
 This component library also uses Feather Icons from `react-icons` NPM package. That `Icon` component accepts a `name`, `size`, and `color` parameter. The `name` will correspond to the `react-icons/fi` section.
