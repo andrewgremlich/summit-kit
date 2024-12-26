@@ -4,8 +4,7 @@ export * from "./Text";
 export * from "./Areas";
 export * from "./Form";
 export * from "./Types";
-
-// TODO: how to export general style? or scratch that?
+export * from "./Icon";
 
 // export * from "./Hooks";
 // export * from "./Layout";

@@ -37,3 +37,7 @@ There is a `TextInput` component that can become a type text, password, or email
 There is a `Reading` tag. This is intended to model `max-w-prose` in TailwindCSS. The `Reading` tag has a max with of 600px at 600px viewport width and a max-width of 850px at 900px viewport width. There is also a varying padding depending on the viewport width.
 
 There is a semantic `Section` tag with a margin bottom of 40px. This is meant to collapse with any other margin that is on an Text commponent.
+
+## Icon
+
+This component library also uses Feather Icons from `react-icons` NPM package. That `Icon` component accepts a `name`, `size`, and `color` parameter. The `name` will correspond to the `react-icons/fi` section.
