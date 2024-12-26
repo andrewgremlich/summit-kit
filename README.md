@@ -32,12 +32,47 @@ There are `PrimaryButton` and `SecondaryButton`. The `PrimaryButton` has a type 
 
 There is a `TextInput` component that can become a type text, password, or email.
 
+```tsx
+<Form
+  onSubmit={() => {
+    console.log("Form submitted");
+  }}
+>
+  <TextInput type="text" label="Text Input" id="text-input" />
+  <TextInput
+    type="email"
+    label="Email Input"
+    id="email-input"
+    required={true}
+  />
+  <TextInput
+    type="password"
+    label="Password Input"
+    id="password-input"
+  />
+  <PrimaryButton>Submit</PrimaryButton>
+  <SecondaryButton>Cancel</SecondaryButton>
+</Form>
+```
+
 ## Areas
 
 There is a `Reading` tag. This is intended to model `max-w-prose` in TailwindCSS. The `Reading` tag has a max with of 600px at 600px viewport width and a max-width of 850px at 900px viewport width. There is also a varying padding depending on the viewport width.
 
 There is a semantic `Section` tag with a margin bottom of 40px. This is meant to collapse with any other margin that is on an Text commponent.
 
+```tsx
+<Reading>
+  <Section>
+    {...}
+  </Section>
+</Reading>
+```
+
 ## Icon
 
 This component library also uses Feather Icons from `react-icons` NPM package. That `Icon` component accepts a `name`, `size`, and `color` parameter. The `name` will correspond to the `react-icons/fi` section.
+
+```tsx
+<Icon name="FiActivity" size={24} color="white" />
+```
