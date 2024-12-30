@@ -1,7 +1,7 @@
 import { Flex, Reading, Section } from "@/Areas";
 import { Form, PrimaryButton, SecondaryButton, TextInput } from "@/Form";
 import { Icon } from "@/Icon";
-import { H1, H2, Link, P } from "@/Text";
+import { Code, H1, H2, Link, P } from "@/Text";
 
 export const App = () => {
 	return (
@@ -10,6 +10,8 @@ export const App = () => {
 				<H1>Summit Kit | React Demo</H1>
 
 				<P>On this page is the React Component Library for the Summit Kit.</P>
+
+				<H2>Text</H2>
 
 				<P>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
@@ -61,6 +63,28 @@ export const App = () => {
 					<Icon name="FiActivity" size={24} color="white" />
 					<Icon name="FiActivity" size={24} color="white" />
 				</Flex>
+			</Section>
+
+			<Section>
+				<H2>Code</H2>
+
+				<Code text={`import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import { Physics } from "@react-three/cannon";
+
+export default function App() {
+  return (
+    <Canvas>
+      <OrbitControls />
+      <Physics>
+        <mesh>
+          <boxGeometry args={[1, 1, 1]} />
+          <meshStandardMaterial color="hotpink" />
+        </mesh>
+      </Physics>
+    </Canvas>
+  );
+}`} />	
 			</Section>
 		</Reading>
 	);

@@ -24,6 +24,8 @@ For body text, there are `P`, `Span`, and `Li` tags. These accept the same param
 
 There is a `Link` tag, and that accepts `href`, `target`, and `rel` parameters. There are default parameter values for `target` and `rel`; `target` has the default value `_parent` and `rel` has the default value of `noopener noreferrer`. In addition to the previous parameters, the `Link` tag also accepts the parameters similar to the header tags.
 
+There is a `Code` tag, and it imports `react-syntax-highlighter` and the `nord` style from `hljs`. That accepts a `text`, and `startingLineNumber` parameter.
+
 ## Form
 
 There is a `Form` element that accepts `onSubmit`, `method`, and `action` parameters. The parameters `method` and `action` are meant to be used together on native HTML form actions. The parameter `onSubmit` is intended for JavaScript handling of form submissions.
