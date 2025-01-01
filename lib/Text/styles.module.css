@@ -35,6 +35,7 @@
 
 .a {
   text-underline-offset: 0.2rem;
+  text-decoration: underline;
   text-decoration-thickness: 0.1rem;
   text-decoration-style: dashed;
 
