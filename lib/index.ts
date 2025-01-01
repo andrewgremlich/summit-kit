@@ -5,6 +5,7 @@ export * from "./Areas";
 export * from "./Form";
 export * from "./Types";
 export * from "./Icon";
+export * from "./Image";
 
 // export * from "./Hooks";
 // export * from "./Layout";

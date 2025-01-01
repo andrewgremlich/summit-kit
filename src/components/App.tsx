@@ -2,6 +2,7 @@ import { Flex, Reading, Section } from "@/Areas";
 import { Form, PrimaryButton, SecondaryButton, TextInput } from "@/Form";
 import { Icon } from "@/Icon";
 import { Code, H1, H2, Link, P } from "@/Text";
+import { Figure, Image } from "@/Image";
 
 export const App = () => {
 	return (
@@ -60,15 +61,16 @@ export const App = () => {
 
 				<Flex direction="row" justify="space-between" align="flex-start">
 					<Icon name="FiActivity" size={24} color="white" />
-					<Icon name="FiActivity" size={24} color="white" />
-					<Icon name="FiActivity" size={24} color="white" />
+					<Icon name="FiAirplay" size={24} color="white" />
+					<Icon name="FiCheck" size={24} color="white" />
 				</Flex>
 			</Section>
 
 			<Section>
 				<H2>Code</H2>
 
-				<Code text={`import { Canvas } from "@react-three/fiber";
+				<Code
+					text={`import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Physics } from "@react-three/cannon";
 
@@ -84,7 +86,26 @@ export default function App() {
       </Physics>
     </Canvas>
   );
-}`} />	
+}`}
+				/>
+			</Section>
+
+			<Section>
+				<H2>Image</H2>
+
+				<Image
+					src="https://placehold.co/600x400"
+					alt="Placeholder"
+					width={600}
+					height={400}
+				/>
+
+				<Figure
+					src="https://placehold.co/600x400"
+					alt="A figure page element"
+					width={600}
+					height={400}
+				/>
 			</Section>
 		</Reading>
 	);
