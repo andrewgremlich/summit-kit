@@ -96,15 +96,13 @@ export default function App() {
 				<Image
 					src="https://placehold.co/600x400"
 					alt="Placeholder"
-					width={600}
-					height={400}
+					width="100%"
 				/>
 
 				<Figure
 					src="https://placehold.co/600x400"
 					alt="A figure page element"
 					width={600}
-					height={400}
 				/>
 			</Section>
 		</Reading>
