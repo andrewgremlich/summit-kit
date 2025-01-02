@@ -1,95 +1,95 @@
 @import url("https://fonts.googleapis.com/css2?family=Molengo&family=Slabo+27px&display=swap");
 
 :root {
-	--white: #ffffff;
-	--grey-50: #e5e5e5;
-	--grey-100: #cccccc;
-	--grey-200: #b3b3b3;
-	--grey-300: #999999;
-	--grey-400: #808080;
-	--grey-500: #666666;
-	--grey-600: #4d4d4d;
-	--grey-700: #333333;
-	--grey-800: #1a1a1a;
-	--black: #000000;
+  --white: #ffffff;
+  --grey-50: #e5e5e5;
+  --grey-100: #cccccc;
+  --grey-200: #b3b3b3;
+  --grey-300: #999999;
+  --grey-400: #808080;
+  --grey-500: #666666;
+  --grey-600: #4d4d4d;
+  --grey-700: #333333;
+  --grey-800: #1a1a1a;
+  --black: #000000;
 
-	--red-50: #f0e5e5;
-	--red-100: #e0cccc;
-	--red-200: #d1b3b3;
-	--red-300: #c29999;
-	--red-400: #b38080;
-	--red-500: #a36666;
-	--red-600: #944d4d;
-	--red-700: #853333;
-	--red-800: #751a1a;
-	--red-900: #660000;
+  --red-50: #f0e5e5;
+  --red-100: #e0cccc;
+  --red-200: #d1b3b3;
+  --red-300: #c29999;
+  --red-400: #b38080;
+  --red-500: #a36666;
+  --red-600: #944d4d;
+  --red-700: #853333;
+  --red-800: #751a1a;
+  --red-900: #660000;
 
-	--blue-50: #e5e9f0;
-	--blue-100: #ccd4e0;
-	--blue-200: #b3bdcf;
-	--blue-300: #9ba7bf;
-	--blue-400: #8290ae;
-	--blue-500: #6a7a9e;
-	--blue-600: #51638d;
-	--blue-700: #394d7d;
-	--blue-800: #21366c;
-	--blue-900: #0a205c;
+  --blue-50: #e5e9f0;
+  --blue-100: #ccd4e0;
+  --blue-200: #b3bdcf;
+  --blue-300: #9ba7bf;
+  --blue-400: #8290ae;
+  --blue-500: #6a7a9e;
+  --blue-600: #51638d;
+  --blue-700: #394d7d;
+  --blue-800: #21366c;
+  --blue-900: #0a205c;
 
-	--green-50: #e4eae8;
-	--green-100: #e4eae8;
-	--green-200: #cad5d1;
-	--green-300: #b1c1ba;
-	--green-400: #98ada4;
-	--green-500: #7f9a8f;
-	--green-600: #67867a;
-	--green-700: #4f7465;
-	--green-800: #386152;
-	--green-850: #1f4f3f;
-	--green-900: #003e2d;
+  --green-50: #e4eae8;
+  --green-100: #e4eae8;
+  --green-200: #cad5d1;
+  --green-300: #b1c1ba;
+  --green-400: #98ada4;
+  --green-500: #7f9a8f;
+  --green-600: #67867a;
+  --green-700: #4f7465;
+  --green-800: #386152;
+  --green-850: #1f4f3f;
+  --green-900: #003e2d;
 
-	--purple-50: #e9e5f0;
-	--purple-100: #d4cce0;
-	--purple-200: #beb3d1;
-	--purple-300: #a89bc2;
-	--purple-400: #8f82b3;
-	--purple-500: #776aa3;
-	--purple-600: #5e5194;
-	--purple-700: #463985;
-	--purple-800: #2d2136;
-	--purple-900: #150a1a;
+  --purple-50: #e9e5f0;
+  --purple-100: #d4cce0;
+  --purple-200: #beb3d1;
+  --purple-300: #a89bc2;
+  --purple-400: #8f82b3;
+  --purple-500: #776aa3;
+  --purple-600: #5e5194;
+  --purple-700: #463985;
+  --purple-800: #2d2136;
+  --purple-900: #150a1a;
 
-	--primary-color-dark: #173a2a;
-	--secondary-color-dark: #3b1c17;
-	--tertiary-color-dark: #507a67;
+  --primary-color-dark: #173a2a;
+  --secondary-color-dark: #3b1c17;
+  --tertiary-color-dark: #507a67;
 
-	--primary-color-light: #a8bab2;
-	--secondary-color-light: #e5b0a8;
-	--tertiary-color-light: #e5b0a8;
-	--border-radius: 0.5rem;
+  --primary-color-light: #a8bab2;
+  --secondary-color-light: #e5b0a8;
+  --tertiary-color-light: #e5b0a8;
+  --border-radius: 0.5rem;
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
-	min-height: 100%;
+  min-height: 100%;
 }
 
 body {
-	font-size: 16px;
-	line-height: 1.6;
-	color: var(--grey-50);
-	padding: 5px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--grey-50);
+  padding: 5px;
 }
 
 @media screen and (min-width: 600px) {
-	body {
-		padding: 15px;
-	}
+  body {
+    padding: 15px;
+  }
 }
 
 h1,
@@ -98,78 +98,77 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Slabo 27px", serif;
-	font-weight: 400;
-	font-style: normal;
-	display: flex;
-	align-items: center;
+  font-family: "Slabo 27px", serif;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  align-items: center;
 
-	& > * {
-		display: inline-block;
-	}
+  & > * {
+    display: inline-block;
+  }
 }
 
 h1,
 h2,
 h3 {
-	line-height: 1.2;
-	letter-spacing: 0.2rem;
+  line-height: 1.2;
+  letter-spacing: 0.2rem;
 }
 
 h4,
 h5,
 h6 {
-	line-height: 1.5;
-	letter-spacing: 0.1rem;
+  line-height: 1.5;
+  letter-spacing: 0.1rem;
 }
 
 p,
 li,
 label,
 span,
-figcaption,
-a {
-	font-family: "Molengo", Arial, sans-serif;
-	font-weight: 400;
-	font-style: normal;
-	font-size: 1rem;
-	line-height: 1.5;
-	letter-spacing: 0.05rem;
+figcaption {
+  font-family: "Molengo", Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.05rem;
 }
 
 button {
-	margin-right: 1rem;
-	border: none;
-	padding: 0.5rem 1rem;
-	border-radius: var(--border-radius, 0.5rem);
-	cursor: pointer;
-	font-size: 1rem;
-	line-height: 1.2;
-	letter-spacing: 0.05rem;
+  margin-right: 1rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius, 0.5rem);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: 0.05rem;
 
-	&:focus {
-		outline: none;
-	}
+  &:focus {
+    outline: none;
+  }
 
-	&:active {
-		transform: scale(0.95);
-	}
+  &:active {
+    transform: scale(0.95);
+  }
 
-	&:disabled {
-		cursor: not-allowed;
-	}
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-	body {
-		background: linear-gradient(to bottom, var(--green-900), var(--green-850));
-		color: var(--grey-50);
-	}
+  body {
+    background: linear-gradient(to bottom, var(--green-900), var(--green-850));
+    color: var(--grey-50);
+  }
 }
 
 @media (prefers-color-scheme: light) {
-	body {
-		background: linear-gradient(to bottom, var(--green-50), var(--green-100));
-		color: var(--grey-800);
-	}
+  body {
+    background: linear-gradient(to bottom, var(--green-50), var(--green-100));
+    color: var(--grey-800);
+  }
 }
