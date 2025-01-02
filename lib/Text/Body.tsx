@@ -30,6 +30,34 @@ export const Span = (props: StandardProps) => {
 	);
 };
 
+export const Ol = (props: StandardProps) => {
+	return (
+		<ol
+			className={`${classes.ol}${
+				props.classes && props.classes.length > 0
+					? ` ${props.classes.join(" ")}`
+					: ""
+			}`}
+		>
+			{props.children}
+		</ol>
+	);
+};
+
+export const Ul = (props: StandardProps) => {
+	return (
+		<ul
+			className={`${classes.ul}${
+				props.classes && props.classes.length > 0
+					? ` ${props.classes.join(" ")}`
+					: ""
+			}`}
+		>
+			{props.children}
+		</ul>
+	);
+};
+
 export const Li = (props: StandardProps) => {
 	return (
 		<li

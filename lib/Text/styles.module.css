@@ -25,7 +25,7 @@
 
 .h6 {
   font-size: 1rem;
-  margin-bottom: 1.25rem;
+  mrgin-bottom: 1.25rem;
 }
 
 .p,
@@ -71,4 +71,9 @@
 .pre {
   border-radius: var(--border-radius, 0.5rem);
   font-size: 0.9rem;
+}
+
+.ol, .ul {
+  margin-left: 20px;
+  padding-left: 20px;
 }

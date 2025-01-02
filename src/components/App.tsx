@@ -1,7 +1,7 @@
 import { Flex, Reading, Section } from "@/Areas";
 import { Form, PrimaryButton, SecondaryButton, TextInput } from "@/Form";
 import { Icon } from "@/Icon";
-import { Code, H1, H2, Link, P } from "@/Text";
+import { Code, H1, H2, Li, Link, P, Ul, Ol } from "@/Text";
 import { Figure, Image } from "@/Image";
 
 export const App = () => {
@@ -21,6 +21,14 @@ export const App = () => {
 					quam sint sed est minima tenetur earum inventore! Pariatur ab corporis
 					saepe?
 				</P>
+
+				<Ul>
+					<Li>One list item</Li>
+				</Ul>
+
+				<Ol>
+					<Li>One list item</Li>
+				</Ol>
 			</Section>
 
 			<Section>
