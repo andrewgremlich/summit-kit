@@ -27,17 +27,26 @@ export const Flex = (props: StandardProps & FlexProps) => {
 		direction = "row",
 		justify = "flex-start",
 		align = "flex-start",
+		wrap = "nowrap",
+		classes: _classes,
+		...rest
 	} = props;
 
 	return (
 		<div
-			className={classes.flex}
+			className={`${classes.flex}${
+				_classes && _classes.length > 0
+					? ` ${_classes.join(" ")}`
+					: ""
+			}`}
 			style={{
 				justifyContent: justify,
 				alignItems: align,
 				flexDirection: direction,
+				flexWrap: wrap,
 				...(props.style ? props.style : {}),
 			}}
+			{...rest}
 		>
 			{props.children}
 		</div>

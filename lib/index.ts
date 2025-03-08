@@ -1,3 +1,4 @@
+import "./Style/colors.style.css";
 import "./Style/global.style.css";
 
 export * from "./Text";
