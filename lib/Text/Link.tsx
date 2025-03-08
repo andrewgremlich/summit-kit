@@ -15,7 +15,7 @@ export const Link = (props: StandardProps & LinkProps) => {
 		<a
 			className={`${classes.a}${
 				props.classes && props.classes.length > 0
-					? props.classes?.join(" ")
+					? ` ${props.classes.join(" ")}`
 					: ""
 			}`}
 			href={props.href}
