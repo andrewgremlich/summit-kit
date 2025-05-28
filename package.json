@@ -2,25 +2,10 @@
 	"name": "summit-kit",
 	"version": "2.0.5",
 	"type": "module",
-	"module": "./dist/index.js",
 	"exports": {
-		"./package.json": "./package.json",
-		"./react": {
-			"development": "./src/react/index.ts",
-			"types": "./dist/react/index.d.ts",
-			"import": "./dist/react-server.js",
-			"default": "./dist/react-server.js"
-		},
-		"./react/client": {
-			"development": "./src/react/client.ts",
-			"types": "./dist/react/client.d.ts",
-			"import": "./dist/react-client.js",
-			"default": "./dist/react-client.js"
-		},
-		"./react/styles": {
-			"import": "./dist/summit-kit.css",
-			"default": "./dist/summit-kit.css"
-		},
+		"./react": "./dist/react-server.js",
+		"./react/client": "./dist/react-client.js",
+		"./react/styles": "./dist/summit-kit.css",
 		"./readme": "./docs/README.md"
 	},
 	"files": [
@@ -33,7 +18,8 @@
 	},
 	"scripts": {
 		"docs:react": "typedoc src/react/index.ts src/react/client.ts --plugin typedoc-plugin-markdown --out ./docs",
-		"build": "tsc --noEmit && vite build"
+		"build": "tsc --noEmit && vite build",
+		"check": "npx @biomejs/biome check --write ./src"
 	},
 	"dependencies": {
 		"howler": "^2.2.4",
@@ -43,6 +29,7 @@
 		"uuid": "^11.1.0"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
 		"@types/howler": "^2.2.12",
 		"@types/node": "^22.15.23",
 		"@types/react": "^19.1.6",
