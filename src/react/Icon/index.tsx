@@ -1,8 +1,8 @@
 import type { IconType } from "react-icons";
 import * as Icons from "react-icons/fi";
 
-import { P } from "../Text";
-import type { ClassesProps } from "../Types";
+import { P } from "../Text/index.tsx";
+import type { ClassesProps } from "../Types/general.ts";
 
 type IconProps = {
 	name: string;
@@ -25,7 +25,7 @@ export const Icon = ({
 	color = "currentColor",
 	...props
 }: IconProps) => {
-	const IconComponent: IconType = (Icons as { [key: string]: IconType })[name];
+	const IconComponent = Icons[name as keyof typeof Icons] as IconType | undefined;
 
 	if (!IconComponent) {
 		return <P>Icon not found</P>;

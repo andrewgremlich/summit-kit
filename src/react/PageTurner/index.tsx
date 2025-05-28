@@ -1,5 +1,5 @@
-import { useKeyPress } from "../Hooks";
-import { Icon } from "../Icon";
+import { useKeyPress } from "../Hooks/useKeyPress.tsx";
+import { Icon } from "../Icon/index.tsx";
 
 import classes from "./PageTurner.module.css";
 

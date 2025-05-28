@@ -1,4 +1,4 @@
-import type { StandardProps } from "../Types/general";
+import type { StandardProps } from "../Types/general.tsx";
 
 import classes from "./styles.module.css";
 

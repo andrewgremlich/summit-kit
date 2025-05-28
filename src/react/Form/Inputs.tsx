@@ -1,4 +1,4 @@
-import type { ClassesProps } from "../Types";
+import type { ClassesProps } from "../Types/general.ts";
 
 import classes from "./styles.module.css";
 

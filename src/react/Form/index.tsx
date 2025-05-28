@@ -1,3 +1,3 @@
-export * from "./Inputs";
-export * from "./Buttons";
-export * from "./Form";
+export * from "./Inputs.tsx";
+export * from "./Buttons.tsx";
+export * from "./Form.tsx";

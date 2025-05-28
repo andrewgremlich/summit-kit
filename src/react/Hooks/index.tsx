@@ -1,3 +1,3 @@
-export * from "./useKeyPress";
-export * from "./useAudio";
-export * from "./toggleFullScreen";
+export * from "./useKeyPress.tsx";
+export * from "./useAudio.tsx";
+export * from "./toggleFullScreen.tsx";

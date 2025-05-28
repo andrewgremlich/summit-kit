@@ -1,6 +1,6 @@
 import type { FormEventHandler } from "react";
 
-import type { StandardProps } from "../Types";
+import type { StandardProps } from "../Types/general.ts";
 
 type FormProps = {
 	onSubmit?: FormEventHandler;
