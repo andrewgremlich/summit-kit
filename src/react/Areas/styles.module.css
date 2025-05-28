@@ -1,0 +1,24 @@
+.flex {
+	display: flex;
+}
+
+.section {
+	margin-bottom: 40px;
+}
+
+.reading {
+	padding: 15px;
+}
+
+@media screen and (min-width: 600px) {
+	.reading {
+		padding: 5px;
+		max-width: 600px;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.reading {
+		max-width: 850px;
+	}
+}

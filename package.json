@@ -1,0 +1,57 @@
+{
+	"name": "summit-kit",
+	"version": "2.0.4",
+	"type": "module",
+	"module": "./dist/index.js",
+	"exports": {
+		"./package.json": "./package.json",
+		"./react": {
+			"development": "./src/react/index.ts",
+			"types": "./dist/react/index.d.ts",
+			"import": "./dist/react-server.js",
+			"default": "./dist/react-server.js"
+		},
+		"./react/client": {
+			"development": "./src/react/client.ts",
+			"types": "./dist/react/client.d.ts",
+			"import": "./dist/react-client.js",
+			"default": "./dist/react-client.js"
+		},
+		"./react/styles": {
+			"import": "./dist/summit-kit.css",
+			"default": "./dist/summit-kit.css"
+		},
+		"./readme": "./docs/README.md"
+	},
+	"files": [
+		"dist",
+		"!**/*.tsbuildinfo"
+	],
+	"peerDependencies": {
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0"
+	},
+	"scripts": {
+		"docs:react": "typedoc src/react/index.ts src/react/client.ts --plugin typedoc-plugin-markdown --out ./docs",
+		"build": "tsc --noEmit && vite build"
+	},
+	"dependencies": {
+		"howler": "^2.2.4",
+		"prism-react-renderer": "^2.4.1",
+		"react-icons": "^5.5.0",
+		"screenfull": "^6.0.2",
+		"uuid": "^11.1.0"
+	},
+	"devDependencies": {
+		"@types/howler": "^2.2.12",
+		"@types/node": "^22.15.23",
+		"@types/react": "^19.1.6",
+		"@types/react-dom": "^19.1.5",
+		"@vitejs/plugin-react-swc": "^3.10.0",
+		"typescript": "^5.8.3",
+		"vite": "^6.3.5",
+		"vite-plugin-dts": "^4.5.3",
+		"vite-tsconfig-paths": "^5.1.4",
+		"vitest": "^3.1.4"
+	}
+}
