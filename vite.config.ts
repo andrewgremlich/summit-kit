@@ -1,12 +1,9 @@
-import * as path from "node:path";
 import react from "@vitejs/plugin-react-swc";
-/// <reference types='vitest' />
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig(() => ({
-	root: __dirname,
 	plugins: [
 		tsconfigPaths(),
 		react(),
@@ -14,11 +11,6 @@ export default defineConfig(() => ({
 			entryRoot: "src",
 		}),
 	],
-	// Uncomment this if you are using workers.
-	// worker: {
-	//  plugins: [ nxViteTsPaths() ],
-	// },
-	// Configuration for building your library.
 	// See: https://vitejs.dev/guide/build.html#library-mode
 	// css: {
 	// 	transformer: "lightningcss" as const,
