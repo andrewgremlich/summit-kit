@@ -2,11 +2,17 @@
 	"name": "summit-kit",
 	"version": "2.0.6",
 	"type": "module",
+	"types": "./dist/index.d.ts",
 	"exports": {
-		"./react": "./dist/react-server.js",
-		"./react/client": "./dist/react-client.js",
-		"./react/styles": "./dist/summit-kit.css",
-		"./readme": "./docs/README.md"
+		"./react": {
+			"types": "./dist/react/index.d.ts",
+			"import": "./dist/react-server.js"
+		},
+		"./react/client": {
+			"types": "./dist/react/client.d.ts",
+			"import": "./dist/react-client.js"
+		},
+		"./react/styles": "./dist/summit-kit.css"
 	},
 	"files": [
 		"dist",
