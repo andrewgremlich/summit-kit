@@ -33,7 +33,6 @@
 	},
 	"scripts": {
 		"prepare": "npm run build && npx simple-git-hooks",
-		"postinstall": "npm run build",
 		"docs:react": "typedoc src/react/**/*.{ts,tsx,css} --plugin typedoc-plugin-markdown --theme markdown --out docs",
 		"clean": "rimraf dist temp-docs",
 		"build": "vite build && npm run docs:react"

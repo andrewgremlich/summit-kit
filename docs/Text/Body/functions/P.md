@@ -8,7 +8,7 @@
 
 > **P**(`props`): `Element`
 
-Defined in: [Text/Body.tsx:35](https://github.com/andrewgremlich/summit-kit/blob/ba5ddb1e413ce2b75bfd7d19b9d7c86d2f2969f9/src/react/Text/Body.tsx#L35)
+Defined in: [Text/Body.tsx:35](https://github.com/andrewgremlich/summit-kit/blob/544a7c8881fedc9d0ebef93a3122f1b8ef030fe1/src/react/Text/Body.tsx#L35)
 
 Functional component that renders a styled `<p>` (paragraph) element.
 

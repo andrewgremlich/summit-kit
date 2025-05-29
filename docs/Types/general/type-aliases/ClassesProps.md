@@ -8,7 +8,7 @@
 
 > **ClassesProps** = `object`
 
-Defined in: [Types/general.ts:1](https://github.com/andrewgremlich/summit-kit/blob/ba5ddb1e413ce2b75bfd7d19b9d7c86d2f2969f9/src/react/Types/general.ts#L1)
+Defined in: [Types/general.ts:1](https://github.com/andrewgremlich/summit-kit/blob/544a7c8881fedc9d0ebef93a3122f1b8ef030fe1/src/react/Types/general.ts#L1)
 
 ## Properties
 
@@ -16,4 +16,4 @@ Defined in: [Types/general.ts:1](https://github.com/andrewgremlich/summit-kit/bl
 
 > `optional` **classes**: `string`[]
 
-Defined in: [Types/general.ts:2](https://github.com/andrewgremlich/summit-kit/blob/ba5ddb1e413ce2b75bfd7d19b9d7c86d2f2969f9/src/react/Types/general.ts#L2)
+Defined in: [Types/general.ts:2](https://github.com/andrewgremlich/summit-kit/blob/544a7c8881fedc9d0ebef93a3122f1b8ef030fe1/src/react/Types/general.ts#L2)
