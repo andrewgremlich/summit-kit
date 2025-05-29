@@ -4,36 +4,30 @@
 	"version": "2.0.11",
 	"type": "module",
 	"exports": {
-		"./react": {
-			"types": "./dist/react/index.d.ts",
+		"./server": {
+			"types": "./dist/react/server/index.d.ts",
 			"import": "./dist/react-server.js"
 		},
-		"./react/client": {
-			"types": "./dist/react/client.d.ts",
+		"./client": {
+			"types": "./dist/react/client/index.d.ts",
 			"import": "./dist/react-client.js"
 		},
-		"./react/styles": "./dist/summit-kit.css"
+		"./styles": "./dist/summit-kit.css"
 	},
-	"files": [
-		"dist",
-		"!**/*.tsbuildinfo"
-	],
+	"files": ["dist", "!**/*.tsbuildinfo"],
 	"peerDependencies": {
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0"
 	},
 	"simple-git-hooks": {
-		"pre-commit": "npx lint-staged && npm run build && git add docs && npx simple-git-hooks"
+		"pre-commit": "tsc --noEmit && npx lint-staged && npm run build && git add docs && npx simple-git-hooks"
 	},
 	"lint-staged": {
-		"src/**/*.{ts,tsx,css,md}": [
-			"tsc --noEmit",
-			"npx @biomejs/biome check --write ./src"
-		]
+		"src/**/*.{ts,tsx,css,md}": ["npx @biomejs/biome check --write ./src"]
 	},
 	"scripts": {
 		"prepare": "npm run build && npx simple-git-hooks",
-		"docs:react": "typedoc src/react/**/*.{ts,tsx,css} --plugin typedoc-plugin-markdown --theme markdown --out docs",
+		"docs:react": "typedoc src/react/server/index.ts src/react/client/index.ts --plugin typedoc-plugin-markdown --theme markdown --out docs",
 		"clean": "rimraf dist temp-docs",
 		"build": "vite build && npm run docs:react"
 	},
@@ -64,14 +58,7 @@
 		"vite-tsconfig-paths": "^5.1.4",
 		"vitest": "^3.1.4"
 	},
-	"keywords": [
-		"react",
-		"kit",
-		"components",
-		"ui",
-		"library",
-		"summit"
-	],
+	"keywords": ["react", "kit", "components", "ui", "library", "summit"],
 	"homepage": "https://github.com/andrewgremlich/summit-kit/blob/main/docs/modules.md",
 	"repository": {
 		"type": "git",

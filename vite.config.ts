@@ -37,8 +37,8 @@ export default defineConfig(() => ({
 		},
 		lib: {
 			entry: {
-				"react-server": "src/react/index.ts",
-				"react-client": "src/react/client.ts",
+				"react-server": "src/react/server/index.ts",
+				"react-client": "src/react/client/index.ts",
 			},
 			name: "summit-kit",
 			// Change this to the formats you want to support.
