@@ -8,7 +8,7 @@
 
 > **Reading**(`props`): `Element`
 
-Defined in: [Areas/index.tsx:11](https://github.com/andrewgremlich/summit-kit/blob/879fe038da4060c7d5beebe217d6169be640991f/src/react/Areas/index.tsx#L11)
+Defined in: [Areas/index.tsx:11](https://github.com/andrewgremlich/summit-kit/blob/374135e86453db85d211b68449c3d255b57be43d/src/react/Areas/index.tsx#L11)
 
 Renders an article element with the "reading" class.
 

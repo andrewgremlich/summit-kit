@@ -8,7 +8,7 @@
 
 > **Code**(`__namedParameters`): `Element`
 
-Defined in: [Text/Code.tsx:18](https://github.com/andrewgremlich/summit-kit/blob/879fe038da4060c7d5beebe217d6169be640991f/src/react/Text/Code.tsx#L18)
+Defined in: [Text/Code.tsx:18](https://github.com/andrewgremlich/summit-kit/blob/374135e86453db85d211b68449c3d255b57be43d/src/react/Text/Code.tsx#L18)
 
 Renders a syntax-highlighted code block using the specified language and theme.
 

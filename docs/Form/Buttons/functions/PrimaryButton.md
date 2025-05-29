@@ -8,7 +8,7 @@
 
 > **PrimaryButton**(`props`): `Element`
 
-Defined in: [Form/Buttons.tsx:18](https://github.com/andrewgremlich/summit-kit/blob/879fe038da4060c7d5beebe217d6169be640991f/src/react/Form/Buttons.tsx#L18)
+Defined in: [Form/Buttons.tsx:18](https://github.com/andrewgremlich/summit-kit/blob/374135e86453db85d211b68449c3d255b57be43d/src/react/Form/Buttons.tsx#L18)
 
 Renders a primary styled button for form submissions.
 
