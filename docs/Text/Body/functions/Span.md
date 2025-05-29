@@ -8,7 +8,7 @@
 
 > **Span**(`props`): `Element`
 
-Defined in: [Text/Body.tsx:57](https://github.com/andrewgremlich/summit-kit/blob/374135e86453db85d211b68449c3d255b57be43d/src/react/Text/Body.tsx#L57)
+Defined in: [Text/Body.tsx:57](https://github.com/andrewgremlich/summit-kit/blob/ba5ddb1e413ce2b75bfd7d19b9d7c86d2f2969f9/src/react/Text/Body.tsx#L57)
 
 Functional component that renders a styled <span> element.
 
