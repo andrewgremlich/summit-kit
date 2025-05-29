@@ -53,9 +53,7 @@ export const PageTurner = ({
 
 	return (
 		<>
-			<div className={classes["page-slider"]}>
-				{children || "Slider"}
-			</div>
+			<div className={classes["page-slider"]}>{children || "Slider"}</div>
 			{onNext && (
 				<button
 					className={classes["right-arrow"]}

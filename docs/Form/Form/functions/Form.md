@@ -8,7 +8,7 @@
 
 > **Form**(`props`): `Element`
 
-Defined in: [Form/Form.tsx:23](https://github.com/andrewgremlich/summit-kit/blob/ac4db5932601c6d49fd51bdc996d6ecf52b89f8d/src/react/Form/Form.tsx#L23)
+Defined in: [Form/Form.tsx:23](https://github.com/andrewgremlich/summit-kit/blob/a8172597c1701ef8162fa2bc41dcfb2c8237719b/src/react/Form/Form.tsx#L23)
 
 Renders a customizable HTML `<form>` element with optional class names, submit handler, method, and action.
 

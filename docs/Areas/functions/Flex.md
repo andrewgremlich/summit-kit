@@ -8,7 +8,7 @@
 
 > **Flex**(`props`): `Element`
 
-Defined in: [Areas/index.tsx:50](https://github.com/andrewgremlich/summit-kit/blob/ac4db5932601c6d49fd51bdc996d6ecf52b89f8d/src/react/Areas/index.tsx#L50)
+Defined in: [Areas/index.tsx:50](https://github.com/andrewgremlich/summit-kit/blob/a8172597c1701ef8162fa2bc41dcfb2c8237719b/src/react/Areas/index.tsx#L50)
 
 A flexible container component that renders a `<div>` with configurable flexbox properties.
 

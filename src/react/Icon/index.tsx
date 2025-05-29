@@ -25,7 +25,9 @@ export const Icon = ({
 	color = "currentColor",
 	...props
 }: IconProps) => {
-	const IconComponent = Icons[name as keyof typeof Icons] as IconType | undefined;
+	const IconComponent = Icons[name as keyof typeof Icons] as
+		| IconType
+		| undefined;
 
 	if (!IconComponent) {
 		return <P>Icon not found</P>;

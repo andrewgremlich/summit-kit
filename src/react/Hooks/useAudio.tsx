@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState, useCallback } from "react";
 import { Howl } from "howler";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 interface UseAudioOptions {
 	src: string;
