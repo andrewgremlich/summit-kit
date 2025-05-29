@@ -22,7 +22,11 @@
 		"react-dom": "^19.1.0"
 	},
 	"scripts": {
-		"docs:react": "typedoc src/react/index.ts src/react/client.ts --plugin typedoc-plugin-markdown --out ./docs",
+		"docs": "npm run docs:react && npm run docs:concat && npm run showdown && npm run clean",
+		"docs:react": "typedoc --plugin typedoc-plugin-markdown --theme markdown --out temp-docs",
+		"docs:concat": "concat-md --toc --decrease-title-levels --dir-name-as-title temp-docs > README.md",
+		"showdown": "showdown makehtml -i README.md -o README.html",
+		"clean": "rimraf dist temp-docs",
 		"build": "tsc --noEmit && vite build",
 		"check": "npx @biomejs/biome check --write ./src"
 	},
@@ -40,6 +44,9 @@
 		"@types/react": "^19.1.6",
 		"@types/react-dom": "^19.1.5",
 		"@vitejs/plugin-react-swc": "^3.10.0",
+		"concat-md": "^0.5.1",
+		"rimraf": "^6.0.1",
+		"showdown": "^2.1.0",
 		"typedoc": "^0.28.5",
 		"typedoc-plugin-markdown": "^4.6.3",
 		"typescript": "^5.8.3",
