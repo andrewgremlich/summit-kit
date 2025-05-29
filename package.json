@@ -1,5 +1,6 @@
 {
 	"name": "summit-kit",
+	"description": "A React component library for building modern web applications with Summit UI.",
 	"version": "2.0.11",
 	"type": "module",
 	"exports": {
