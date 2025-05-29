@@ -8,7 +8,7 @@
 
 > **useKeyPress**(`shortcuts`): `void`
 
-Defined in: [client/Hooks/useKeyPress.tsx:23](https://github.com/andrewgremlich/summit-kit/blob/aa2be78d740324e5b3ff93911408340830848b2a/src/react/client/Hooks/useKeyPress.tsx#L23)
+Defined in: [client/Hooks/useKeyPress.tsx:23](https://github.com/andrewgremlich/summit-kit/blob/1ec5a7906d21614d7daffeb0dce4c10e19b10d65/src/react/client/Hooks/useKeyPress.tsx#L23)
 
 Custom React hook that listens for specified keyboard shortcuts and triggers associated actions.
 

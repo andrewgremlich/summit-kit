@@ -1,7 +1,7 @@
 {
 	"name": "summit-kit",
 	"description": "A React component library for building modern web applications with with an earthy and outdoorsy flair.",
-	"version": "2.0.11",
+	"version": "3.0.0",
 	"type": "module",
 	"exports": {
 		"./server": {
@@ -14,16 +14,21 @@
 		},
 		"./styles": "./dist/summit-kit.css"
 	},
-	"files": ["dist", "!**/*.tsbuildinfo"],
+	"files": [
+		"dist",
+		"!**/*.tsbuildinfo"
+	],
 	"peerDependencies": {
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0"
 	},
 	"simple-git-hooks": {
-		"pre-commit": "tsc --noEmit && npx lint-staged && npm run build && git add docs && npx simple-git-hooks"
+		"pre-commit": "npx tsc --noEmit && npx lint-staged && npm run build && git add docs && npx simple-git-hooks"
 	},
 	"lint-staged": {
-		"src/**/*.{ts,tsx,css,md}": ["npx @biomejs/biome check --write ./src"]
+		"src/**/*.{ts,tsx,css,md}": [
+			"npx @biomejs/biome check --write ./src"
+		]
 	},
 	"scripts": {
 		"prepare": "npm run build && npx simple-git-hooks",
@@ -58,7 +63,14 @@
 		"vite-tsconfig-paths": "^5.1.4",
 		"vitest": "^3.1.4"
 	},
-	"keywords": ["react", "kit", "components", "ui", "library", "summit"],
+	"keywords": [
+		"react",
+		"kit",
+		"components",
+		"ui",
+		"library",
+		"summit"
+	],
 	"homepage": "https://github.com/andrewgremlich/summit-kit/blob/main/docs/modules.md",
 	"repository": {
 		"type": "git",

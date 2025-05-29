@@ -8,7 +8,7 @@
 
 > **Link**(`props`): `Element`
 
-Defined in: [server/Text/Link.tsx:23](https://github.com/andrewgremlich/summit-kit/blob/aa2be78d740324e5b3ff93911408340830848b2a/src/react/server/Text/Link.tsx#L23)
+Defined in: [server/Text/Link.tsx:23](https://github.com/andrewgremlich/summit-kit/blob/1ec5a7906d21614d7daffeb0dce4c10e19b10d65/src/react/server/Text/Link.tsx#L23)
 
 Renders a styled anchor (`<a>`) element with customizable classes, href, target, and rel attributes.
 

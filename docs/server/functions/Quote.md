@@ -8,7 +8,7 @@
 
 > **Quote**(`props`): `Element`
 
-Defined in: [server/Text/Body.tsx:13](https://github.com/andrewgremlich/summit-kit/blob/aa2be78d740324e5b3ff93911408340830848b2a/src/react/server/Text/Body.tsx#L13)
+Defined in: [server/Text/Body.tsx:13](https://github.com/andrewgremlich/summit-kit/blob/1ec5a7906d21614d7daffeb0dce4c10e19b10d65/src/react/server/Text/Body.tsx#L13)
 
 Functional component that renders a styled <blockquote> element.
 
