@@ -4,6 +4,10 @@
 	"version": "3.0.0",
 	"type": "module",
 	"exports": {
+		".": {
+			"types": "./dist/react/server/index.d.ts",
+			"import": "./dist/react-server.js"
+		},
 		"./server": {
 			"types": "./dist/react/server/index.d.ts",
 			"import": "./dist/react-server.js"

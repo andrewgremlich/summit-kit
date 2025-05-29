@@ -8,7 +8,7 @@
 
 > **toggleFullScreen**(`elementRef`): `void`
 
-Defined in: [client/Hooks/toggleFullScreen.tsx:4](https://github.com/andrewgremlich/summit-kit/blob/1ec5a7906d21614d7daffeb0dce4c10e19b10d65/src/react/client/Hooks/toggleFullScreen.tsx#L4)
+Defined in: [client/Hooks/toggleFullScreen.tsx:4](https://github.com/andrewgremlich/summit-kit/blob/d3a8005298067da321a6d201141a869090a11e76/src/react/client/Hooks/toggleFullScreen.tsx#L4)
 
 ## Parameters
 
