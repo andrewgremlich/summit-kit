@@ -2,7 +2,7 @@
 
 ***
 
-[summit-kit](../README.md) / Image
+[summit-kit](../modules.md) / Image
 
 # Image
 

@@ -2,7 +2,7 @@
 
 ***
 
-[summit-kit](../../README.md) / Hooks/useAudio
+[summit-kit](../../modules.md) / Hooks/useAudio
 
 # Hooks/useAudio
 

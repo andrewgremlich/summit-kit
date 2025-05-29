@@ -2,7 +2,7 @@
 
 ***
 
-[summit-kit](../README.md) / Icon
+[summit-kit](../modules.md) / Icon
 
 # Icon
 

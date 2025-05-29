@@ -2,7 +2,7 @@
 
 ***
 
-[summit-kit](../../README.md) / Types/general
+[summit-kit](../../modules.md) / Types/general
 
 # Types/general
 

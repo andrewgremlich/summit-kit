@@ -2,7 +2,7 @@
 
 ***
 
-[summit-kit](../../README.md) / Hooks/useKeyPress
+[summit-kit](../../modules.md) / Hooks/useKeyPress
 
 # Hooks/useKeyPress
 

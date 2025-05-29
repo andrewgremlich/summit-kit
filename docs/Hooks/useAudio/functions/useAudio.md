@@ -2,13 +2,13 @@
 
 ***
 
-[summit-kit](../../../README.md) / [Hooks/useAudio](../README.md) / useAudio
+[summit-kit](../../../modules.md) / [Hooks/useAudio](../README.md) / useAudio
 
 # Function: useAudio()
 
 > **useAudio**(`options`): `UseAudioReturn`
 
-Defined in: [Hooks/useAudio.tsx:53](https://github.com/andrewgremlich/summit-kit/blob/0bfa11d7cd78adc4fe850151af656319efb5e059/src/react/Hooks/useAudio.tsx#L53)
+Defined in: [Hooks/useAudio.tsx:53](https://github.com/andrewgremlich/summit-kit/blob/ac4db5932601c6d49fd51bdc996d6ecf52b89f8d/src/react/Hooks/useAudio.tsx#L53)
 
 React hook for managing audio playback using the Howler.js library.
 

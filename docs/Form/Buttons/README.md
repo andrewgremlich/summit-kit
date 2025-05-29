@@ -2,7 +2,7 @@
 
 ***
 
-[summit-kit](../../README.md) / Form/Buttons
+[summit-kit](../../modules.md) / Form/Buttons
 
 # Form/Buttons
 

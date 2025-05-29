@@ -2,13 +2,13 @@
 
 ***
 
-[summit-kit](../../../README.md) / [Text/Body](../README.md) / Quote
+[summit-kit](../../../modules.md) / [Text/Body](../README.md) / Quote
 
 # Function: Quote()
 
 > **Quote**(`props`): `Element`
 
-Defined in: [Text/Body.tsx:13](https://github.com/andrewgremlich/summit-kit/blob/0bfa11d7cd78adc4fe850151af656319efb5e059/src/react/Text/Body.tsx#L13)
+Defined in: [Text/Body.tsx:13](https://github.com/andrewgremlich/summit-kit/blob/ac4db5932601c6d49fd51bdc996d6ecf52b89f8d/src/react/Text/Body.tsx#L13)
 
 Functional component that renders a styled <blockquote> element.
 

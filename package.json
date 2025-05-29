@@ -2,7 +2,6 @@
 	"name": "summit-kit",
 	"version": "2.0.9",
 	"type": "module",
-	"readme": "./docs/README.md",
 	"exports": {
 		"./react": {
 			"types": "./dist/react/index.d.ts",

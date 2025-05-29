@@ -2,13 +2,13 @@
 
 ***
 
-[summit-kit](../../README.md) / [Areas](../README.md) / Flex
+[summit-kit](../../modules.md) / [Areas](../README.md) / Flex
 
 # Function: Flex()
 
 > **Flex**(`props`): `Element`
 
-Defined in: [Areas/index.tsx:50](https://github.com/andrewgremlich/summit-kit/blob/0bfa11d7cd78adc4fe850151af656319efb5e059/src/react/Areas/index.tsx#L50)
+Defined in: [Areas/index.tsx:50](https://github.com/andrewgremlich/summit-kit/blob/ac4db5932601c6d49fd51bdc996d6ecf52b89f8d/src/react/Areas/index.tsx#L50)
 
 A flexible container component that renders a `<div>` with configurable flexbox properties.
 

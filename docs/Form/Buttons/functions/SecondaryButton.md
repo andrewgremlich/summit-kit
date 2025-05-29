@@ -2,13 +2,13 @@
 
 ***
 
-[summit-kit](../../../README.md) / [Form/Buttons](../README.md) / SecondaryButton
+[summit-kit](../../../modules.md) / [Form/Buttons](../README.md) / SecondaryButton
 
 # Function: SecondaryButton()
 
 > **SecondaryButton**(`props`): `Element`
 
-Defined in: [Form/Buttons.tsx:45](https://github.com/andrewgremlich/summit-kit/blob/0bfa11d7cd78adc4fe850151af656319efb5e059/src/react/Form/Buttons.tsx#L45)
+Defined in: [Form/Buttons.tsx:45](https://github.com/andrewgremlich/summit-kit/blob/ac4db5932601c6d49fd51bdc996d6ecf52b89f8d/src/react/Form/Buttons.tsx#L45)
 
 Renders a secondary styled button component.
 

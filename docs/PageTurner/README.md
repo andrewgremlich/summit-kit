@@ -2,7 +2,7 @@
 
 ***
 
-[summit-kit](../README.md) / PageTurner
+[summit-kit](../modules.md) / PageTurner
 
 # PageTurner
 

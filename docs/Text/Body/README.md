@@ -2,7 +2,7 @@
 
 ***
 
-[summit-kit](../../README.md) / Text/Body
+[summit-kit](../../modules.md) / Text/Body
 
 # Text/Body
 

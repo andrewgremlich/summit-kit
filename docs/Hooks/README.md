@@ -2,7 +2,7 @@
 
 ***
 
-[summit-kit](../README.md) / Hooks
+[summit-kit](../modules.md) / Hooks
 
 # Hooks
 

@@ -2,13 +2,13 @@
 
 ***
 
-[summit-kit](../../README.md) / [PageTurner](../README.md) / PageTurner
+[summit-kit](../../modules.md) / [PageTurner](../README.md) / PageTurner
 
 # Function: PageTurner()
 
 > **PageTurner**(`__namedParameters`): `Element`
 
-Defined in: [PageTurner/index.tsx:28](https://github.com/andrewgremlich/summit-kit/blob/0bfa11d7cd78adc4fe850151af656319efb5e059/src/react/PageTurner/index.tsx#L28)
+Defined in: [PageTurner/index.tsx:28](https://github.com/andrewgremlich/summit-kit/blob/ac4db5932601c6d49fd51bdc996d6ecf52b89f8d/src/react/PageTurner/index.tsx#L28)
 
 A React component that provides navigation controls for paging or sliding content.
 

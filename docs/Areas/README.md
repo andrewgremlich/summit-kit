@@ -2,7 +2,7 @@
 
 ***
 
-[summit-kit](../README.md) / Areas
+[summit-kit](../modules.md) / Areas
 
 # Areas
 

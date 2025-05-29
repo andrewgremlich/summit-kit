@@ -2,13 +2,13 @@
 
 ***
 
-[summit-kit](../../README.md) / [Image](../README.md) / Figure
+[summit-kit](../../modules.md) / [Image](../README.md) / Figure
 
 # Function: Figure()
 
 > **Figure**(`props`): `Element`
 
-Defined in: [Image/index.tsx:35](https://github.com/andrewgremlich/summit-kit/blob/0bfa11d7cd78adc4fe850151af656319efb5e059/src/react/Image/index.tsx#L35)
+Defined in: [Image/index.tsx:35](https://github.com/andrewgremlich/summit-kit/blob/ac4db5932601c6d49fd51bdc996d6ecf52b89f8d/src/react/Image/index.tsx#L35)
 
 Renders an image wrapped in a <figure> element with a <figcaption> displaying the image's alt text.
 

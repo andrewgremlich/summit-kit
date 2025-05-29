@@ -2,13 +2,13 @@
 
 ***
 
-[summit-kit](../../README.md) / [Areas](../README.md) / Reading
+[summit-kit](../../modules.md) / [Areas](../README.md) / Reading
 
 # Function: Reading()
 
 > **Reading**(`props`): `Element`
 
-Defined in: [Areas/index.tsx:11](https://github.com/andrewgremlich/summit-kit/blob/0bfa11d7cd78adc4fe850151af656319efb5e059/src/react/Areas/index.tsx#L11)
+Defined in: [Areas/index.tsx:11](https://github.com/andrewgremlich/summit-kit/blob/ac4db5932601c6d49fd51bdc996d6ecf52b89f8d/src/react/Areas/index.tsx#L11)
 
 Renders an article element with the "reading" class.
 

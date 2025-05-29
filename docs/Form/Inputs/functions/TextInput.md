@@ -2,13 +2,13 @@
 
 ***
 
-[summit-kit](../../../README.md) / [Form/Inputs](../README.md) / TextInput
+[summit-kit](../../../modules.md) / [Form/Inputs](../README.md) / TextInput
 
 # Function: TextInput()
 
 > **TextInput**(`props`): `Element`
 
-Defined in: [Form/Inputs.tsx:31](https://github.com/andrewgremlich/summit-kit/blob/0bfa11d7cd78adc4fe850151af656319efb5e059/src/react/Form/Inputs.tsx#L31)
+Defined in: [Form/Inputs.tsx:31](https://github.com/andrewgremlich/summit-kit/blob/ac4db5932601c6d49fd51bdc996d6ecf52b89f8d/src/react/Form/Inputs.tsx#L31)
 
 Renders a styled text input field with an associated label.
 

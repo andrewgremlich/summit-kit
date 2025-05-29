@@ -2,13 +2,13 @@
 
 ***
 
-[summit-kit](../../../README.md) / [Form/Buttons](../README.md) / PrimaryButton
+[summit-kit](../../../modules.md) / [Form/Buttons](../README.md) / PrimaryButton
 
 # Function: PrimaryButton()
 
 > **PrimaryButton**(`props`): `Element`
 
-Defined in: [Form/Buttons.tsx:18](https://github.com/andrewgremlich/summit-kit/blob/0bfa11d7cd78adc4fe850151af656319efb5e059/src/react/Form/Buttons.tsx#L18)
+Defined in: [Form/Buttons.tsx:18](https://github.com/andrewgremlich/summit-kit/blob/ac4db5932601c6d49fd51bdc996d6ecf52b89f8d/src/react/Form/Buttons.tsx#L18)
 
 Renders a primary styled button for form submissions.
 

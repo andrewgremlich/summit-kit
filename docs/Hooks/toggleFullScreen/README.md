@@ -2,7 +2,7 @@
 
 ***
 
-[summit-kit](../../README.md) / Hooks/toggleFullScreen
+[summit-kit](../../modules.md) / Hooks/toggleFullScreen
 
 # Hooks/toggleFullScreen
 
