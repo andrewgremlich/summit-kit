@@ -2,6 +2,7 @@
 	"name": "summit-kit",
 	"version": "2.0.9",
 	"type": "module",
+	"readme": "./docs/README.md",
 	"exports": {
 		"./react": {
 			"types": "./dist/react/index.d.ts",
@@ -22,10 +23,7 @@
 		"react-dom": "^19.1.0"
 	},
 	"scripts": {
-		"docs": "npm run docs:react && npm run docs:concat && npm run showdown && npm run clean",
-		"docs:react": "typedoc --plugin typedoc-plugin-markdown --theme markdown --out temp-docs",
-		"docs:concat": "concat-md --toc --decrease-title-levels --dir-name-as-title temp-docs > README.md",
-		"showdown": "showdown makehtml -i README.md -o README.html",
+		"docs:react": "typedoc src/react/**/*.{ts,tsx,css} --plugin typedoc-plugin-markdown --theme markdown --out docs",
 		"clean": "rimraf dist temp-docs",
 		"build": "tsc --noEmit && vite build",
 		"check": "npx @biomejs/biome check --write ./src"
