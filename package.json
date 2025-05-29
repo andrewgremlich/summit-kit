@@ -23,12 +23,15 @@
 		"pre-commit": "npx lint-staged && npm run build"
 	},
 	"lint-staged": {
-		"src/**/*.{ts,tsx,css,md}": ["npx @biomejs/biome check --write ./src"]
+		"src/**/*.{ts,tsx,css,md}": [
+			"tsc --noEmit",
+			"npx @biomejs/biome check --write ./src"
+		]
 	},
 	"scripts": {
 		"docs:react": "typedoc src/react/**/*.{ts,tsx,css} --plugin typedoc-plugin-markdown --theme markdown --out docs",
 		"clean": "rimraf dist temp-docs",
-		"build": "tsc --noEmit && vite build && npm run docs:react"
+		"build": "vite build && npm run docs:react"
 	},
 	"dependencies": {
 		"howler": "^2.2.4",
