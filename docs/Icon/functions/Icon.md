@@ -8,7 +8,7 @@
 
 > **Icon**(`__namedParameters`): `Element`
 
-Defined in: [Icon/index.tsx:22](https://github.com/andrewgremlich/summit-kit/blob/85054e8b1ab204ae3055aea2f899f6aaa1bf1c3f/src/react/Icon/index.tsx#L22)
+Defined in: [Icon/index.tsx:22](https://github.com/andrewgremlich/summit-kit/blob/879fe038da4060c7d5beebe217d6169be640991f/src/react/Icon/index.tsx#L22)
 
 Renders an icon component based on the provided `name` prop.
 

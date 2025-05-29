@@ -20,7 +20,7 @@
 		"react-dom": "^19.1.0"
 	},
 	"simple-git-hooks": {
-		"pre-commit": "npx lint-staged && npm run build"
+		"pre-commit": "npx lint-staged && npm run build && git add dist && git add docs"
 	},
 	"lint-staged": {
 		"src/**/*.{ts,tsx,css,md}": [
