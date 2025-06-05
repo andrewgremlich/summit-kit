@@ -8,7 +8,7 @@
 
 > **StandardProps** = `object` & [`ClassesProps`](ClassesProps.md)
 
-Defined in: [server/Types/general.ts:5](https://github.com/andrewgremlich/summit-kit/blob/d3a8005298067da321a6d201141a869090a11e76/src/react/server/Types/general.ts#L5)
+Defined in: [server/Types/general.ts:5](https://github.com/andrewgremlich/summit-kit/blob/6510209d1f3a585ae8e4aa4d09fa74fadb5e8a6f/src/react/server/Types/general.ts#L5)
 
 ## Type declaration
 

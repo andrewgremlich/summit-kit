@@ -9,6 +9,7 @@ interface UseAudioOptions {
 	autoplay?: boolean;
 	html5?: boolean;
 	stereo?: number; // -1 (left) to 1 (right), 0 is center
+	fadeInDuration?: number; // Fade in duration in seconds
 }
 
 interface UseAudioReturn {
@@ -34,6 +35,7 @@ interface UseAudioReturn {
  * @param {boolean} [options.autoplay=false] - Whether to autoplay the audio on load.
  * @param {boolean} [options.html5=false] - Whether to force HTML5 Audio.
  * @param {number} [options.stereo=0] - Initial stereo pan (-1.0 left to 1.0 right).
+ * @param {number} [options.fadeInDuration] - Fade in duration in seconds.
  *
  * @returns {UseAudioReturn} An object containing playback controls and state:
  * - `play`: Function to start playback.
@@ -103,7 +105,16 @@ export const useAudio = ({
 
 	const play = useCallback(() => {
 		if (howlRef.current) {
-			howlRef.current.play();
+			const fadeIn = opts.fadeInDuration && opts.fadeInDuration > 0;
+			const targetVolume = opts.volume !== undefined ? opts.volume : 1;
+			if (fadeIn && opts.fadeInDuration) {
+				howlRef.current.volume(0);
+				howlRef.current.play();
+				howlRef.current.fade(0, targetVolume, opts.fadeInDuration * 1000);
+			} else {
+				howlRef.current.volume(targetVolume);
+				howlRef.current.play();
+			}
 		}
 	}, []);
 
