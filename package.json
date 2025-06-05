@@ -1,7 +1,7 @@
 {
 	"name": "summit-kit",
 	"description": "A React component library for building modern web applications with with an earthy and outdoorsy flair.",
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"type": "module",
 	"exports": {
 		".": {
