@@ -8,7 +8,7 @@
 
 > **useAudio**(`options`): `UseAudioReturn`
 
-Defined in: [client/Hooks/useAudio.tsx:53](https://github.com/andrewgremlich/summit-kit/blob/6510209d1f3a585ae8e4aa4d09fa74fadb5e8a6f/src/react/client/Hooks/useAudio.tsx#L53)
+Defined in: [client/Hooks/useAudio.tsx:55](https://github.com/andrewgremlich/summit-kit/blob/565747bf7acb79b39a721d44c9164df64d84a697/src/react/client/Hooks/useAudio.tsx#L55)
 
 React hook for managing audio playback using the Howler.js library.
 
