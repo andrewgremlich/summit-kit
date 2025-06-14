@@ -8,7 +8,7 @@
 
 > **SecondaryButton**(`props`): `Element`
 
-Defined in: [server/Form/Buttons.tsx:45](https://github.com/andrewgremlich/summit-kit/blob/711ddc3f6b3cc4d2424b7b18b345c9b77636227b/src/react/server/Form/Buttons.tsx#L45)
+Defined in: [server/Form/Buttons.tsx:45](https://github.com/andrewgremlich/summit-kit/blob/83ca293511d499b2ad451ed0dabcf376bf6e5f0d/src/react/server/Form/Buttons.tsx#L45)
 
 Renders a secondary styled button component.
 
