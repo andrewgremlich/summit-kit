@@ -25,6 +25,7 @@
 - [H6](functions/H6.md)
 - [Icon](functions/Icon.md)
 - [Image](functions/Image.md)
+- [Input](functions/Input.md)
 - [Li](functions/Li.md)
 - [Link](functions/Link.md)
 - [Ol](functions/Ol.md)
@@ -35,5 +36,4 @@
 - [SecondaryButton](functions/SecondaryButton.md)
 - [Section](functions/Section.md)
 - [Span](functions/Span.md)
-- [TextInput](functions/TextInput.md)
 - [Ul](functions/Ul.md)

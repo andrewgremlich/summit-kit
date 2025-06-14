@@ -3,7 +3,19 @@ import type { ClassesProps } from "../Types/general.ts";
 import classes from "./styles.module.css";
 
 type InputProps = ClassesProps & {
-	type: "text" | "password" | "email";
+	type:
+		| "text"
+		| "password"
+		| "email"
+		| "number"
+		| "tel"
+		| "url"
+		| "search"
+		| "date"
+		| "time"
+		| "datetime-local"
+		| "month"
+		| "week";
 	label: string;
 	id: string;
 	valueMissing?: string;
@@ -28,7 +40,7 @@ type InputProps = ClassesProps & {
  *
  * @returns {JSX.Element} A JSX element representing a labeled text input field.
  */
-export const TextInput = (props: InputProps) => {
+export const Input = (props: InputProps) => {
 	const { disabled = false, required = false } = props;
 
 	return (
