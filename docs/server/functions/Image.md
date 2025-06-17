@@ -8,7 +8,7 @@
 
 > **Image**(`props`): `Element`
 
-Defined in: [server/Image/index.tsx:17](https://github.com/andrewgremlich/summit-kit/blob/e338352e6775d6ff5fd0f151c4c09cd1aa7a8540/src/react/server/Image/index.tsx#L17)
+Defined in: [server/Image/index.tsx:17](https://github.com/andrewgremlich/summit-kit/blob/adffe9c503dd434886950f3b1241a09968b48b42/src/react/server/Image/index.tsx#L17)
 
 Renders an image element with the provided source, alternative text, width, and additional props.
 

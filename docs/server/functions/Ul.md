@@ -8,7 +8,7 @@
 
 > **Ul**(`props`): `Element`
 
-Defined in: [server/Text/Body.tsx:101](https://github.com/andrewgremlich/summit-kit/blob/e338352e6775d6ff5fd0f151c4c09cd1aa7a8540/src/react/server/Text/Body.tsx#L101)
+Defined in: [server/Text/Body.tsx:101](https://github.com/andrewgremlich/summit-kit/blob/adffe9c503dd434886950f3b1241a09968b48b42/src/react/server/Text/Body.tsx#L101)
 
 Functional component that renders a styled <ul> (unordered list) element.
 
