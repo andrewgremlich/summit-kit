@@ -8,7 +8,7 @@
 
 > **SecondaryButton**(`props`): `Element`
 
-Defined in: [server/Form/Buttons.tsx:45](https://github.com/andrewgremlich/summit-kit/blob/83ca293511d499b2ad451ed0dabcf376bf6e5f0d/src/react/server/Form/Buttons.tsx#L45)
+Defined in: [server/Form/Buttons.tsx:47](https://github.com/andrewgremlich/summit-kit/blob/e338352e6775d6ff5fd0f151c4c09cd1aa7a8540/src/react/server/Form/Buttons.tsx#L47)
 
 Renders a secondary styled button component.
 
@@ -16,12 +16,16 @@ Renders a secondary styled button component.
 
 ### props
 
-`ButtonProps` & `object` & [`ClassesProps`](../type-aliases/ClassesProps.md)
+`ButtonProps` & `object` & [`ClassesProps`](../type-aliases/ClassesProps.md) & `object`
 
-The properties for the button, combining `ButtonProps` and `StandardProps`.
+The properties for the button component, including:
+  - `disabled` (optional): Whether the button is disabled.
+  - `onClick` (optional): Click event handler.
+  - `classes` (optional): Additional CSS classes to apply.
+  - `children`: The content to display inside the button.
 
 ## Returns
 
 `Element`
 
-A React element representing a secondary button.
+A React button element with secondary styling.
