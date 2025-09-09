@@ -8,7 +8,7 @@
 
 > **Section**(`props`): `Element`
 
-Defined in: [server/Areas/index.tsx:21](https://github.com/andrewgremlich/summit-kit/blob/6327ae85f596a5240389e6b196cd57e9b0b1fada/src/react/server/Areas/index.tsx#L21)
+Defined in: [server/Areas/index.tsx:21](https://github.com/andrewgremlich/summit-kit/blob/638739b445cfe5033b1c29bd6c92589d092d312a/src/react/server/Areas/index.tsx#L21)
 
 Renders a semantic HTML `<section>` element with a predefined CSS class.
 
