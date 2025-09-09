@@ -8,7 +8,7 @@
 
 > **Li**(`props`): `Element`
 
-Defined in: [server/Text/Body.tsx:123](https://github.com/andrewgremlich/summit-kit/blob/adffe9c503dd434886950f3b1241a09968b48b42/src/react/server/Text/Body.tsx#L123)
+Defined in: [server/Text/Body.tsx:123](https://github.com/andrewgremlich/summit-kit/blob/6327ae85f596a5240389e6b196cd57e9b0b1fada/src/react/server/Text/Body.tsx#L123)
 
 Renders a styled `<li>` (list item) element with optional custom classes and children.
 

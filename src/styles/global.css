@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Molengo&family=Slabo+27px&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Molengo&family=Rakkas&display=swap");
 
 :root {
 	--border-radius: 0.5rem;
@@ -34,7 +34,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Slabo 27px", Georgia, "Courier New", serif;
+	font-family: "Rakkas", Georgia, "Courier New", serif;
 	font-weight: 400;
 	font-style: normal;
 	display: flex;
