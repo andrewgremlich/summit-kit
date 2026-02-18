@@ -8,7 +8,7 @@
 
 > **Figure**(`props`): `Element`
 
-Defined in: [server/Image/index.tsx:35](https://github.com/andrewgremlich/summit-kit/blob/638739b445cfe5033b1c29bd6c92589d092d312a/src/react/server/Image/index.tsx#L35)
+Defined in: [server/Image/index.tsx:34](https://github.com/andrewgremlich/summit-kit/blob/6fab94f0aac9c2ab677be8f25286c3cdd6300d58/src/react/server/Image/index.tsx#L34)
 
 Renders an image wrapped in a <figure> element with a <figcaption> displaying the image's alt text.
 

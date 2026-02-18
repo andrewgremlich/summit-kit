@@ -3,7 +3,7 @@ import screenfull from "screenfull";
 
 export const toggleFullScreen = (elementRef: Ref<HTMLElement>) => {
 	const isSupported = () => {
-		if (typeof screenfull !== "undefined" && screenfull.isEnabled) {
+		if (screenfull?.isEnabled) {
 			return true;
 		}
 		console.warn("Fullscreen mode is not supported in this browser.");

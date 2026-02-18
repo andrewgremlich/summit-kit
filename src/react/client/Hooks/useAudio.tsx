@@ -61,6 +61,7 @@ export const useAudio = ({
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [currentTime, setCurrentTime] = useState(0);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: opts is a stable ref that doesn't change
 	useEffect(() => {
 		if (howlRef.current) {
 			howlRef.current.unload();
@@ -103,6 +104,7 @@ export const useAudio = ({
 		};
 	}, [isPlaying]);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: opts is a stable ref that doesn't change
 	const play = useCallback(() => {
 		if (howlRef.current) {
 			const fadeIn = opts.fadeInDuration && opts.fadeInDuration > 0;
@@ -131,10 +133,12 @@ export const useAudio = ({
 		setCurrentTime(seek);
 	}, []);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: opts is a stable ref that doesn't change
 	const setVolume = useCallback((vol: number) => {
 		opts.volume = vol;
 	}, []);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: opts is a stable ref that doesn't change
 	const setStereo = useCallback((pan: number) => {
 		opts.stereo = pan;
 	}, []);

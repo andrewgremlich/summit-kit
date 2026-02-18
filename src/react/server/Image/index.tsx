@@ -22,7 +22,6 @@ export const Image = (props: ImageProps) => {
 		...rest
 	} = props;
 
-	// biome-ignore lint/a11y/useAltText: This rule seems to be broken here.
 	return <img src={src} alt={alt} width={width} {...rest} />;
 };
 

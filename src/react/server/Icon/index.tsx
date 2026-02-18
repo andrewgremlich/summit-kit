@@ -25,6 +25,7 @@ export const Icon = ({
 	color = "currentColor",
 	...props
 }: IconProps) => {
+	// biome-ignore lint/performance/noDynamicNamespaceImportAccess: Dynamic lookup needed for icon-by-name pattern
 	const IconComponent = Icons[name as keyof typeof Icons] as
 		| IconType
 		| undefined;

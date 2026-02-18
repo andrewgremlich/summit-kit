@@ -6,9 +6,9 @@
 
 # Function: PageTurner()
 
-> **PageTurner**(`__namedParameters`): `Element`
+> **PageTurner**(`children`): `Element`
 
-Defined in: [client/PageTurner/index.tsx:28](https://github.com/andrewgremlich/summit-kit/blob/638739b445cfe5033b1c29bd6c92589d092d312a/src/react/client/PageTurner/index.tsx#L28)
+Defined in: [client/PageTurner/index.tsx:28](https://github.com/andrewgremlich/summit-kit/blob/6fab94f0aac9c2ab677be8f25286c3cdd6300d58/src/react/client/PageTurner/index.tsx#L28)
 
 A React component that provides navigation controls for paging or sliding content.
 
@@ -17,9 +17,11 @@ It also enables keyboard shortcuts for navigation using the `Control+Shift+Arrow
 
 ## Parameters
 
-### \_\_namedParameters
+### children
 
 `PageTurnerProps`
+
+The content to be displayed inside the page slider.
 
 ## Returns
 
