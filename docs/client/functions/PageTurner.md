@@ -8,7 +8,7 @@
 
 > **PageTurner**(`children`): `Element`
 
-Defined in: [client/PageTurner/index.tsx:28](https://github.com/andrewgremlich/summit-kit/blob/6fab94f0aac9c2ab677be8f25286c3cdd6300d58/src/react/client/PageTurner/index.tsx#L28)
+Defined in: react/client/PageTurner/index.tsx:28
 
 A React component that provides navigation controls for paging or sliding content.
 

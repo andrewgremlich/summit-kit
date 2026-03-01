@@ -1,3 +1,4 @@
+import { cx } from "../../../utils/cx.ts";
 import type { StandardProps } from "../Types/general.ts";
 
 import classes from "./styles.module.css";
@@ -59,16 +60,16 @@ export const Flex = (props: StandardProps & FlexProps) => {
 
 	return (
 		<div
-			className={`${classes.flex}${
-				_classes && _classes.length > 0 ? ` ${_classes.join(" ")}` : ""
-			}`}
-			style={{
-				justifyContent: justify,
-				alignItems: align,
-				flexDirection: direction,
-				flexWrap: wrap,
-				...(props.style ? props.style : {}),
-			}}
+			className={cx(classes.flex, _classes)}
+			style={
+				{
+					"--flex-direction": direction,
+					"--flex-justify": justify,
+					"--flex-align": align,
+					"--flex-wrap": wrap,
+					...(props.style ? props.style : {}),
+				} as React.CSSProperties
+			}
 			{...rest}
 		>
 			{props.children}

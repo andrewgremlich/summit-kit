@@ -60,6 +60,8 @@ export const useAudio = ({
 	const howlRef = useRef<Howl | null>(null);
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [currentTime, setCurrentTime] = useState(0);
+	const [volume, setVolumeState] = useState(options.volume);
+	const [, setStereoState] = useState(options.stereo ?? 0);
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: opts is a stable ref that doesn't change
 	useEffect(() => {
@@ -133,15 +135,21 @@ export const useAudio = ({
 		setCurrentTime(seek);
 	}, []);
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: opts is a stable ref that doesn't change
-	const setVolume = useCallback((vol: number) => {
-		opts.volume = vol;
-	}, []);
+	const setVolume = useCallback(
+		(vol: number) => {
+			opts.volume = vol;
+			setVolumeState(vol);
+		},
+		[opts],
+	);
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: opts is a stable ref that doesn't change
-	const setStereo = useCallback((pan: number) => {
-		opts.stereo = pan;
-	}, []);
+	const setStereo = useCallback(
+		(pan: number) => {
+			opts.stereo = pan;
+			setStereoState(pan);
+		},
+		[opts],
+	);
 
 	return {
 		play,
@@ -150,7 +158,7 @@ export const useAudio = ({
 		seek,
 		isPlaying,
 		currentTime,
-		volume: opts.volume,
+		volume,
 		setVolume,
 		setStereo,
 	};

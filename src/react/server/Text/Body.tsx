@@ -1,3 +1,4 @@
+import { cx } from "../../../utils/cx.ts";
 import type { StandardProps } from "../Types/general.tsx";
 
 import classes from "./styles.module.css";
@@ -12,13 +13,7 @@ import classes from "./styles.module.css";
  */
 export const Quote = (props: StandardProps) => {
 	return (
-		<blockquote
-			className={`${classes.blockquote}${
-				props.classes && props.classes.length > 0
-					? ` ${props.classes.join(" ")}`
-					: ""
-			}`}
-		>
+		<blockquote className={cx(classes.blockquote, props.classes)}>
 			{props.children}
 		</blockquote>
 	);
@@ -33,17 +28,7 @@ export const Quote = (props: StandardProps) => {
  * @returns A `<p>` element with combined default and custom classes, and the provided children.
  */
 export const P = (props: StandardProps) => {
-	return (
-		<p
-			className={`${classes.p}${
-				props.classes && props.classes.length > 0
-					? ` ${props.classes.join(" ")}`
-					: ""
-			}`}
-		>
-			{props.children}
-		</p>
-	);
+	return <p className={cx(classes.p, props.classes)}>{props.children}</p>;
 };
 
 /**
@@ -55,17 +40,7 @@ export const P = (props: StandardProps) => {
  * @returns A <span> element with combined default and custom classes, and the provided children.
  */
 export const Span = (props: StandardProps) => {
-	return (
-		<span
-			className={`${
-				props.classes && props.classes.length > 0
-					? ` ${props.classes.join(" ")}`
-					: ""
-			}`}
-		>
-			{props.children}
-		</span>
-	);
+	return <span className={cx(props.classes)}>{props.children}</span>;
 };
 
 /**
@@ -77,17 +52,7 @@ export const Span = (props: StandardProps) => {
  * @returns An <ol> element with combined default and custom classes, and the provided children.
  */
 export const Ol = (props: StandardProps) => {
-	return (
-		<ol
-			className={`${classes.ol}${
-				props.classes && props.classes.length > 0
-					? ` ${props.classes.join(" ")}`
-					: ""
-			}`}
-		>
-			{props.children}
-		</ol>
-	);
+	return <ol className={cx(classes.ol, props.classes)}>{props.children}</ol>;
 };
 
 /**
@@ -99,17 +64,7 @@ export const Ol = (props: StandardProps) => {
  * @returns A <ul> element with combined default and custom classes, and the provided children.
  */
 export const Ul = (props: StandardProps) => {
-	return (
-		<ul
-			className={`${classes.ul}${
-				props.classes && props.classes.length > 0
-					? ` ${props.classes.join(" ")}`
-					: ""
-			}`}
-		>
-			{props.children}
-		</ul>
-	);
+	return <ul className={cx(classes.ul, props.classes)}>{props.children}</ul>;
 };
 
 /**
@@ -121,15 +76,5 @@ export const Ul = (props: StandardProps) => {
  * @returns A React list item element with the specified classes and children.
  */
 export const Li = (props: StandardProps) => {
-	return (
-		<li
-			className={`${
-				props.classes && props.classes.length > 0
-					? ` ${props.classes.join(" ")}`
-					: ""
-			}`}
-		>
-			{props.children}
-		</li>
-	);
+	return <li className={cx(props.classes)}>{props.children}</li>;
 };

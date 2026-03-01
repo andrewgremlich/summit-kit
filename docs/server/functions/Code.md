@@ -8,7 +8,7 @@
 
 > **Code**(`code`): `Element`
 
-Defined in: [server/Text/Code.tsx:18](https://github.com/andrewgremlich/summit-kit/blob/6fab94f0aac9c2ab677be8f25286c3cdd6300d58/src/react/server/Text/Code.tsx#L18)
+Defined in: react/server/Text/Code.tsx:17
 
 Renders a syntax-highlighted code block using the specified language and theme.
 
