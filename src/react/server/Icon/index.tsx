@@ -1,6 +1,6 @@
 import type { IconType } from "react-icons";
 import * as Icons from "react-icons/fi";
-
+import { cx } from "../../../utils/cx.ts";
 import { P } from "../Text/index.tsx";
 import type { ClassesProps } from "../Types/general.ts";
 
@@ -35,14 +35,6 @@ export const Icon = ({
 	}
 
 	return (
-		<IconComponent
-			className={`${
-				props.classes && props.classes.length > 0
-					? ` ${props.classes.join(" ")}`
-					: ""
-			}`}
-			size={size}
-			color={color}
-		/>
+		<IconComponent className={cx(props.classes)} size={size} color={color} />
 	);
 };

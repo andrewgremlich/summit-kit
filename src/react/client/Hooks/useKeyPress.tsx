@@ -78,5 +78,5 @@ export const useKeyPress = (
 		return () => {
 			keyAbortController.abort();
 		};
-	});
+	}, [shortcuts]);
 };

@@ -1,3 +1,4 @@
+import { cx } from "../../../utils/cx.ts";
 import type { StandardProps } from "../Types/general.ts";
 
 import classes from "./styles.module.css";
@@ -25,11 +26,7 @@ export const Link = (props: StandardProps & LinkProps) => {
 
 	return (
 		<a
-			className={`${classes.a}${
-				props.classes && props.classes.length > 0
-					? ` ${props.classes.join(" ")}`
-					: ""
-			}`}
+			className={cx(classes.a, props.classes)}
 			href={props.href}
 			target={target}
 			rel={rel}

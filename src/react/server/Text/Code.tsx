@@ -1,5 +1,4 @@
 import { Highlight, themes } from "prism-react-renderer";
-import { v4 } from "uuid";
 
 import classes from "./styles.module.css";
 
@@ -20,14 +19,14 @@ export const Code = ({ code, language }: CodeProps) => {
 		<div className={classes.code}>
 			<Highlight theme={themes.dracula} code={code} language={language}>
 				{({ className, style, tokens, getLineProps, getTokenProps }) => (
-					<pre
-						className={className}
-						style={{ ...style, padding: "16px", borderRadius: "8px" }}
-					>
+					<pre className={`${className} ${classes.pre}`} style={style}>
 						{tokens.map((line, i) => (
-							<div key={v4()} {...getLineProps({ line, key: i })}>
-								{line.map((token, key) => (
-									<span key={v4()} {...getTokenProps({ token, key })} />
+							<div key={`line-${i}`} {...getLineProps({ line, key: i })}>
+								{line.map((token, j) => (
+									<span
+										key={`token-${i}-${j}`}
+										{...getTokenProps({ token, key: j })}
+									/>
 								))}
 							</div>
 						))}

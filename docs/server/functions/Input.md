@@ -8,7 +8,7 @@
 
 > **Input**(`props`): `Element`
 
-Defined in: [server/Form/Inputs.tsx:43](https://github.com/andrewgremlich/summit-kit/blob/6fab94f0aac9c2ab677be8f25286c3cdd6300d58/src/react/server/Form/Inputs.tsx#L43)
+Defined in: react/server/Form/Inputs.tsx:43
 
 Renders a styled text input field with an associated label.
 
