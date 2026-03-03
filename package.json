@@ -27,7 +27,7 @@
 		"react-dom": "^19.1.0"
 	},
 	"simple-git-hooks": {
-		"pre-commit": "npx tsc --noEmit && npx lint-staged && npm run build && git add docs && npx simple-git-hooks"
+		"pre-commit": "npx simple-git-hooks && npx tsc --noEmit && npx lint-staged"
 	},
 	"lint-staged": {
 		"src/**/*.{ts,tsx,css,md}": [
@@ -36,9 +36,10 @@
 	},
 	"scripts": {
 		"prepare": "npm run build && npx simple-git-hooks",
-		"docs:react": "typedoc src/react/server/index.ts src/react/client/index.ts --plugin typedoc-plugin-markdown --theme markdown --out docs",
-		"clean": "rimraf dist temp-docs",
-		"build": "vite build && npm run docs:react"
+		"clean": "rimraf dist storybook-static",
+		"build": "vite build",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build -o storybook-static"
 	},
 	"dependencies": {
 		"howler": "^2.2.4",
@@ -48,19 +49,19 @@
 		"uuid": "^13.0.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.4.2",
+		"@biomejs/biome": "2.4.5",
+		"@storybook/addon-a11y": "^10.2.14",
+		"@storybook/react": "^10.2.14",
+		"@storybook/react-vite": "^10.2.14",
 		"@types/howler": "^2.2.12",
 		"@types/node": "^22.15.23",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
 		"@vitejs/plugin-react-swc": "^4.2.3",
-		"concat-md": "^0.5.1",
-		"lint-staged": "^16.2.7",
+		"lint-staged": "^16.3.1",
 		"rimraf": "^6.1.3",
-		"showdown": "^2.1.0",
 		"simple-git-hooks": "^2.13.1",
-		"typedoc": "^0.28.17",
-		"typedoc-plugin-markdown": "^4.10.0",
+		"storybook": "^10.2.14",
 		"typescript": "^5.9.3",
 		"vite": "^7.3.1",
 		"vite-plugin-dts": "^4.5.4",

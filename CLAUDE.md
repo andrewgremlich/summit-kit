@@ -14,19 +14,23 @@ Summit Kit is a TypeScript-based component library published as an npm package. 
 - **Framework:** React 19.1.0+
 - **Build tool:** Vite 7 with `@vitejs/plugin-react-swc`
 - **Linter/Formatter:** Biome 2
-- **Docs:** TypeDoc
+- **Docs/Demo:** Storybook 10 (autodocs + interactive component demos)
+- **Deployment:** Vercel (serves the Storybook static build)
 
 ## Common Commands
 
 ```bash
-# Build the library and regenerate API docs
+# Build the library
 npm run build
 
-# Remove dist/ and temp-docs/
+# Remove dist/ and storybook-static/
 npm run clean
 
-# Generate TypeDoc markdown documentation only
-npm run docs:react
+# Run Storybook dev server on port 6006
+npm run storybook
+
+# Build Storybook static site (used by Vercel)
+npm run build-storybook
 ```
 
 There is no standalone `lint` or `test` script. Linting (Biome) and type-checking (`tsc --noEmit`) run automatically via the pre-commit hook.
@@ -60,6 +64,10 @@ npx biome check --write src/
 - `src/react/client/` — Hooks (`useAudio`, `useKeyPress`, `toggleFullScreen`), PageTurner
 - `src/styles/` — `global.css`, `colors.css`
 
+### Storybook
+
+Stories are co-located with components as `*.stories.tsx` files. Storybook config lives in `.storybook/` (main.ts, preview.ts). Global styles are imported in `preview.ts`. All stories use CSF3 format with `autodocs` tags for automatic API documentation.
+
 ### CSS Modules
 
 Components use CSS Modules (`.module.css` files co-located with the component). Global styles and CSS custom properties (colors) live in `src/styles/`.
@@ -70,6 +78,5 @@ Pre-commit hooks (via `simple-git-hooks` + `lint-staged`) run automatically on e
 1. Type-check (`tsc --noEmit`)
 2. Format staged files with Biome
 3. Build the project
-4. Regenerate docs
 
 Do not skip hooks with `--no-verify`.
