@@ -1,9 +1,87 @@
+/* Flex */
+
 .flex {
 	display: flex;
-	flex-direction: var(--flex-direction, row);
-	justify-content: var(--flex-justify, flex-start);
-	align-items: var(--flex-align, flex-start);
-	flex-wrap: var(--flex-wrap, nowrap);
+}
+.inlineFlex {
+	display: inline-flex;
+}
+
+.flexRow {
+	flex-direction: row;
+}
+.flexRowReverse {
+	flex-direction: row-reverse;
+}
+.flexCol {
+	flex-direction: column;
+}
+.flexColReverse {
+	flex-direction: column-reverse;
+}
+
+.justifyStart {
+	justify-content: flex-start;
+}
+.justifyEnd {
+	justify-content: flex-end;
+}
+.justifyCenter {
+	justify-content: center;
+}
+.justifyBetween {
+	justify-content: space-between;
+}
+.justifyAround {
+	justify-content: space-around;
+}
+.justifyEvenly {
+	justify-content: space-evenly;
+}
+
+.itemsStart {
+	align-items: flex-start;
+}
+.itemsEnd {
+	align-items: flex-end;
+}
+.itemsCenter {
+	align-items: center;
+}
+.itemsBaseline {
+	align-items: baseline;
+}
+.itemsStretch {
+	align-items: stretch;
+}
+
+.contentStart {
+	align-content: flex-start;
+}
+.contentEnd {
+	align-content: flex-end;
+}
+.contentCenter {
+	align-content: center;
+}
+.contentBetween {
+	align-content: space-between;
+}
+.contentAround {
+	align-content: space-around;
+}
+.contentEvenly {
+	align-content: space-evenly;
+}
+
+.flexWrap {
+	flex-wrap: wrap;
+}
+.flexWrapReverse {
+	flex-wrap: wrap-reverse;
+}
+.flexNowrap {
+	flex-wrap: nowrap;
 }
 
 .section {
@@ -25,4 +103,110 @@
 	.reading {
 		max-width: 850px;
 	}
+}
+
+/* Grid */
+
+.grid {
+	display: grid;
+}
+
+.inlineGrid {
+	display: inline-grid;
+}
+
+.fullWidth {
+	width: 100%;
+}
+
+.cols1 {
+	grid-template-columns: repeat(1, 1fr);
+}
+.cols2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+.cols3 {
+	grid-template-columns: repeat(3, 1fr);
+}
+.cols4 {
+	grid-template-columns: repeat(4, 1fr);
+}
+.cols5 {
+	grid-template-columns: repeat(5, 1fr);
+}
+.cols6 {
+	grid-template-columns: repeat(6, 1fr);
+}
+.cols7 {
+	grid-template-columns: repeat(7, 1fr);
+}
+.cols8 {
+	grid-template-columns: repeat(8, 1fr);
+}
+.cols9 {
+	grid-template-columns: repeat(9, 1fr);
+}
+.cols10 {
+	grid-template-columns: repeat(10, 1fr);
+}
+.cols11 {
+	grid-template-columns: repeat(11, 1fr);
+}
+.cols12 {
+	grid-template-columns: repeat(12, 1fr);
+}
+
+.rows1 {
+	grid-template-rows: repeat(1, 1fr);
+}
+.rows2 {
+	grid-template-rows: repeat(2, 1fr);
+}
+.rows3 {
+	grid-template-rows: repeat(3, 1fr);
+}
+.rows4 {
+	grid-template-rows: repeat(4, 1fr);
+}
+.rows5 {
+	grid-template-rows: repeat(5, 1fr);
+}
+.rows6 {
+	grid-template-rows: repeat(6, 1fr);
+}
+.rows7 {
+	grid-template-rows: repeat(7, 1fr);
+}
+.rows8 {
+	grid-template-rows: repeat(8, 1fr);
+}
+.rows9 {
+	grid-template-rows: repeat(9, 1fr);
+}
+.rows10 {
+	grid-template-rows: repeat(10, 1fr);
+}
+.rows11 {
+	grid-template-rows: repeat(11, 1fr);
+}
+.rows12 {
+	grid-template-rows: repeat(12, 1fr);
+}
+
+.flowRow {
+	grid-auto-flow: row;
+}
+.flowCol {
+	grid-auto-flow: column;
+}
+.flowRowDense {
+	grid-auto-flow: row dense;
+}
+.flowColDense {
+	grid-auto-flow: column dense;
+}
+
+.headerCell {
+	font-weight: 700;
+	padding: 0.5rem;
 }

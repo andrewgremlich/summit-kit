@@ -1,4 +1,3 @@
-import { cx } from "../../../utils/cx.ts";
 import type { StandardProps } from "../Types/general.ts";
 
 import classes from "./styles.module.css";
@@ -23,56 +22,7 @@ export const Section = (props: StandardProps) => {
 	return <section className={classes.section}>{props.children}</section>;
 };
 
-type FlexProps = {
-	direction?: "row" | "column";
-	justify?:
-		| "center"
-		| "space-between"
-		| "space-around"
-		| "flex-start"
-		| "flex-end";
-	align?: "center" | "flex-start" | "flex-end" | "baseline" | "stretch";
-	wrap?: "wrap" | "nowrap";
-};
-
-/**
- * A flexible container component that renders a `<div>` with configurable flexbox properties.
- *
- * @param props - The properties for the Flex component.
- * @param props.direction - The flex direction (`row`, `column`, etc.). Defaults to `"row"`.
- * @param props.justify - The `justify-content` CSS property. Defaults to `"flex-start"`.
- * @param props.align - The `align-items` CSS property. Defaults to `"flex-start"`.
- * @param props.wrap - The `flex-wrap` CSS property. Defaults to `"nowrap"`.
- * @param props.classes - Additional CSS class names to apply to the container.
- * @param props.style - Additional inline styles to apply to the container.
- * @param props.children - The content to be rendered inside the flex container.
- * @returns A `<div>` element styled as a flex container.
- */
-export const Flex = (props: StandardProps & FlexProps) => {
-	const {
-		direction = "row",
-		justify = "flex-start",
-		align = "flex-start",
-		wrap = "nowrap",
-		classes: _classes,
-		...rest
-	} = props;
-
-	return (
-		<div
-			className={cx(classes.flex, _classes)}
-			style={
-				{
-					"--flex-direction": direction,
-					"--flex-justify": justify,
-					"--flex-align": align,
-					"--flex-wrap": wrap,
-					...(props.style ? props.style : {}),
-				} as React.CSSProperties
-			}
-			{...rest}
-		>
-			{props.children}
-		</div>
-	);
-};
+export type { FlexProps } from "./Flex.tsx";
+export { Flex } from "./Flex.tsx";
+export type { GridProps } from "./Grid.tsx";
+export { Grid, GridHeader, GridRow } from "./Grid.tsx";
