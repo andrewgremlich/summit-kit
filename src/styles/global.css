@@ -75,7 +75,7 @@ figcaption {
 
 button {
 	margin-right: 1rem;
-	border: none;
+	border: 2px solid transparent;
 	padding: 0.5rem 1rem;
 	border-radius: var(--border-radius, 0.5rem);
 	cursor: pointer;
