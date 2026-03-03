@@ -15,12 +15,15 @@ type ButtonProps = {
  * @param props.children - The content to be displayed inside the button.
  * @returns A React element representing a styled submit button.
  */
-export const PrimaryButton = (props: ButtonProps & StandardProps) => {
-	const { disabled = false } = props;
+export const PrimaryButton = (
+	props: ButtonProps & StandardProps & { onClick?: () => void },
+) => {
+	const { disabled = false, onClick } = props;
 
 	return (
 		<button
-			type="submit"
+			type={onClick ? "button" : "submit"}
+			onClick={onClick}
 			disabled={disabled}
 			className={`${classes.submit}${
 				props.classes && props.classes.length > 0
