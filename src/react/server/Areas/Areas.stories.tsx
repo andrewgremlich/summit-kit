@@ -45,7 +45,7 @@ export const SectionDefault: StoryObj<typeof Section> = {
 export const FlexRow: StoryObj<typeof Flex> = {
 	name: "Flex - Row",
 	render: () => (
-		<Flex direction="row" justify="space-between" align="center">
+		<Flex direction="row" justify="between" items="center">
 			<Icon name="FiActivity" size={24} color="white" />
 			<Icon name="FiAirplay" size={24} color="white" />
 			<Icon name="FiCheck" size={24} color="white" />
@@ -56,7 +56,7 @@ export const FlexRow: StoryObj<typeof Flex> = {
 export const FlexColumn: StoryObj<typeof Flex> = {
 	name: "Flex - Column",
 	render: () => (
-		<Flex direction="column" justify="flex-start" align="center">
+		<Flex direction="col" justify="start" items="center">
 			<Icon name="FiActivity" size={24} color="white" />
 			<Icon name="FiAirplay" size={24} color="white" />
 			<Icon name="FiCheck" size={24} color="white" />

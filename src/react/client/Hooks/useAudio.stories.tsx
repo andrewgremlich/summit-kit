@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import { Flex } from "../../server/Areas/Flex.tsx";
+import { PrimaryButton, SecondaryButton } from "../../server/Form/Buttons.tsx";
 import { P } from "../../server/Text/Body.tsx";
 import { Code } from "../../server/Text/Code.tsx";
 import { H2 } from "../../server/Text/Headings.tsx";
@@ -33,16 +35,10 @@ const AudioDemo = () => {
 			<P>Status: {isPlaying ? "Playing" : "Stopped"}</P>
 			<P>Current time: {currentTime.toFixed(2)}s</P>
 			<P>Volume: {volume}</P>
-			<div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-				<button type="button" onClick={play}>
-					Play
-				</button>
-				<button type="button" onClick={pause}>
-					Pause
-				</button>
-				<button type="button" onClick={stop}>
-					Stop
-				</button>
+			<Flex direction="row" gap={8} items="center">
+				<PrimaryButton onClick={play}>Play</PrimaryButton>
+				<SecondaryButton onClick={pause}>Pause</SecondaryButton>
+				<SecondaryButton onClick={stop}>Stop</SecondaryButton>
 				<input
 					type="range"
 					min="0"
@@ -51,7 +47,7 @@ const AudioDemo = () => {
 					value={volume ?? 0.5}
 					onChange={(e) => setVolume(Number(e.target.value))}
 				/>
-			</div>
+			</Flex>
 		</div>
 	);
 };

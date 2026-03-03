@@ -38,7 +38,7 @@ export const Large: StoryObj<typeof Icon> = {
 export const IconGallery: StoryObj = {
 	name: "Gallery",
 	render: () => (
-		<Flex direction="row" justify="flex-start" align="center" wrap="wrap">
+		<Flex direction="row" justify="start" items="center" wrap="wrap">
 			<Icon name="FiActivity" size={32} color="white" />
 			<Icon name="FiAirplay" size={32} color="white" />
 			<Icon name="FiCheck" size={32} color="white" />
