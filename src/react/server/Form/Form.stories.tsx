@@ -7,7 +7,6 @@ import { Input } from "./Inputs.tsx";
 const meta: Meta<typeof Form> = {
 	title: "Server/Form",
 	component: Form,
-	tags: ["autodocs"],
 };
 
 export default meta;

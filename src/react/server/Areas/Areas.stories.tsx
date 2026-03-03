@@ -7,7 +7,6 @@ import { Flex, Reading, Section } from "./index.tsx";
 const ReadingMeta: Meta<typeof Reading> = {
 	title: "Server/Areas/Reading",
 	component: Reading,
-	tags: ["autodocs"],
 };
 
 export default ReadingMeta;
@@ -31,7 +30,6 @@ export const Default: ReadingStory = {
 const SectionMeta: Meta<typeof Section> = {
 	title: "Server/Areas/Section",
 	component: Section,
-	tags: ["autodocs"],
 };
 
 export const SectionDefault: StoryObj<typeof Section> = {

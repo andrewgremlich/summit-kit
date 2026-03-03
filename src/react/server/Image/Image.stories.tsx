@@ -5,7 +5,6 @@ import { Figure, Image } from "./index.tsx";
 const meta: Meta<typeof Image> = {
 	title: "Server/Image",
 	component: Image,
-	tags: ["autodocs"],
 };
 
 export default meta;

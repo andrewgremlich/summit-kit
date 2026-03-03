@@ -5,7 +5,6 @@ import { Code } from "./Code.tsx";
 const meta: Meta<typeof Code> = {
 	title: "Server/Text/Code",
 	component: Code,
-	tags: ["autodocs"],
 };
 
 export default meta;

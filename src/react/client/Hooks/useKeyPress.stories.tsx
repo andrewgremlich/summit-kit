@@ -38,7 +38,6 @@ const KeyPressDemo = () => {
 const meta: Meta = {
 	title: "Client/Hooks/useKeyPress",
 	component: KeyPressDemo,
-	tags: ["autodocs"],
 };
 
 export default meta;

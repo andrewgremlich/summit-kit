@@ -6,7 +6,7 @@ import { PageTurner } from "./index.tsx";
 const meta: Meta<typeof PageTurner> = {
 	title: "Client/PageTurner",
 	component: PageTurner,
-	tags: ["autodocs"],
+
 	parameters: {
 		layout: "fullscreen",
 	},

@@ -4,6 +4,7 @@ import "../src/styles/colors.css";
 import "../src/styles/global.css";
 
 const preview: Preview = {
+	tags: ["autodocs"],
 	parameters: {
 		backgrounds: {
 			values: [

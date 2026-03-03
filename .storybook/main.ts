@@ -4,9 +4,6 @@ const config: StorybookConfig = {
 	stories: ["../src/**/*.stories.@(ts|tsx)"],
 	framework: "@storybook/react-vite",
 	addons: ["@storybook/addon-a11y"],
-	docs: {
-		autodocs: "tag",
-	},
 };
 
 export default config;

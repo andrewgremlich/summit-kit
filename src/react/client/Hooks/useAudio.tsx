@@ -1,4 +1,3 @@
-import { Howl } from "howler";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 interface UseAudioOptions {
@@ -7,7 +6,6 @@ interface UseAudioOptions {
 	loop?: boolean;
 	preload?: boolean;
 	autoplay?: boolean;
-	html5?: boolean;
 	stereo?: number; // -1 (left) to 1 (right), 0 is center
 	fadeInDuration?: number; // Fade in duration in seconds
 }
@@ -19,21 +17,20 @@ interface UseAudioReturn {
 	seek: (seek: number) => void;
 	isPlaying: boolean;
 	currentTime: number;
-	volume?: number; // Current volume level
+	volume?: number;
 	setVolume: (volume: number) => void;
 	setStereo: (pan: number) => void;
 }
 
 /**
- * React hook for managing audio playback using the Howler.js library.
+ * React hook for managing audio playback using the Web Audio API.
  *
  * @param {UseAudioOptions} options - Configuration options for the audio instance.
- * @param {string | string[]} options.src - The source URL(s) of the audio file(s).
+ * @param {string} options.src - The source URL of the audio file.
  * @param {number} [options.volume=1] - Initial volume (0.0 to 1.0).
  * @param {boolean} [options.loop=false] - Whether the audio should loop.
  * @param {boolean} [options.preload=true] - Whether to preload the audio.
  * @param {boolean} [options.autoplay=false] - Whether to autoplay the audio on load.
- * @param {boolean} [options.html5=false] - Whether to force HTML5 Audio.
  * @param {number} [options.stereo=0] - Initial stereo pan (-1.0 left to 1.0 right).
  * @param {number} [options.fadeInDuration] - Fade in duration in seconds.
  *
@@ -57,44 +54,67 @@ export const useAudio = ({
 	...options
 }: UseAudioOptions): UseAudioReturn => {
 	const { current: opts } = useRef(options);
-	const howlRef = useRef<Howl | null>(null);
+	const audioRef = useRef<HTMLAudioElement | null>(null);
+	const ctxRef = useRef<AudioContext | null>(null);
+	const gainRef = useRef<GainNode | null>(null);
+	const panRef = useRef<StereoPannerNode | null>(null);
+	const sourceRef = useRef<MediaElementAudioSourceNode | null>(null);
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [currentTime, setCurrentTime] = useState(0);
 	const [volume, setVolumeState] = useState(options.volume);
-	const [, setStereoState] = useState(options.stereo ?? 0);
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: opts is a stable ref that doesn't change
 	useEffect(() => {
-		if (howlRef.current) {
-			howlRef.current.unload();
-		}
+		const audio = new Audio(src);
+		audio.crossOrigin = "anonymous";
+		audio.loop = opts.loop ?? false;
+		audio.preload = (opts.preload ?? true) ? "auto" : "none";
 
-		howlRef.current = new Howl({
-			src,
-			volume: opts.volume,
-			loop: opts.loop,
-			preload: opts.preload !== undefined ? opts.preload : true,
-			autoplay: opts.autoplay,
-			html5: opts.html5,
-			onplay: () => setIsPlaying(true),
-			onpause: () => setIsPlaying(false),
-			onstop: () => setIsPlaying(false),
-			onend: () => setIsPlaying(false),
-		});
+		const ctx = new AudioContext();
+		const source = ctx.createMediaElementSource(audio);
+		const gain = ctx.createGain();
+		const panner = ctx.createStereoPanner();
 
-		if (howlRef.current && typeof howlRef.current.stereo === "function") {
-			howlRef.current.stereo(opts.stereo ?? 0);
+		gain.gain.value = opts.volume ?? 1;
+		panner.pan.value = opts.stereo ?? 0;
+
+		source.connect(gain).connect(panner).connect(ctx.destination);
+
+		audioRef.current = audio;
+		ctxRef.current = ctx;
+		gainRef.current = gain;
+		panRef.current = panner;
+		sourceRef.current = source;
+
+		const onPlay = () => setIsPlaying(true);
+		const onPause = () => setIsPlaying(false);
+		const onEnded = () => setIsPlaying(false);
+
+		audio.addEventListener("play", onPlay);
+		audio.addEventListener("pause", onPause);
+		audio.addEventListener("ended", onEnded);
+
+		if (opts.autoplay) {
+			audio.play().catch(() => {});
 		}
 
 		return () => {
-			howlRef.current?.unload();
+			audio.removeEventListener("play", onPlay);
+			audio.removeEventListener("pause", onPause);
+			audio.removeEventListener("ended", onEnded);
+			audio.pause();
+			audio.removeAttribute("src");
+			audio.load();
+			source.disconnect();
+			ctx.close();
 		};
 	}, [src]);
 
 	useEffect(() => {
 		let raf: number;
 		const update = () => {
-			if (howlRef.current && isPlaying) {
+			if (audioRef.current && isPlaying) {
+				setCurrentTime(audioRef.current.currentTime);
 				raf = requestAnimationFrame(update);
 			}
 		};
@@ -108,37 +128,59 @@ export const useAudio = ({
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: opts is a stable ref that doesn't change
 	const play = useCallback(() => {
-		if (howlRef.current) {
-			const fadeIn = opts.fadeInDuration && opts.fadeInDuration > 0;
-			const targetVolume = opts.volume !== undefined ? opts.volume : 1;
-			if (fadeIn && opts.fadeInDuration) {
-				howlRef.current.volume(0);
-				howlRef.current.play();
-				howlRef.current.fade(0, targetVolume, opts.fadeInDuration * 1000);
-			} else {
-				howlRef.current.volume(targetVolume);
-				howlRef.current.play();
-			}
+		const audio = audioRef.current;
+		const ctx = ctxRef.current;
+		const gain = gainRef.current;
+		if (!audio || !ctx || !gain) return;
+
+		if (ctx.state === "suspended") {
+			ctx.resume();
 		}
+
+		const fadeIn = opts.fadeInDuration && opts.fadeInDuration > 0;
+		const targetVolume = opts.volume ?? 1;
+
+		if (fadeIn && opts.fadeInDuration) {
+			gain.gain.setValueAtTime(0, ctx.currentTime);
+			gain.gain.linearRampToValueAtTime(
+				targetVolume,
+				ctx.currentTime + opts.fadeInDuration,
+			);
+		} else {
+			gain.gain.value = targetVolume;
+		}
+
+		audio.play().catch(() => {});
 	}, []);
 
 	const pause = useCallback(() => {
-		howlRef.current?.pause();
+		audioRef.current?.pause();
 	}, []);
 
 	const stop = useCallback(() => {
-		howlRef.current?.stop();
+		const audio = audioRef.current;
+		if (audio) {
+			audio.pause();
+			audio.currentTime = 0;
+			setCurrentTime(0);
+		}
 	}, []);
 
-	const seek = useCallback((seek: number) => {
-		howlRef.current?.seek(seek);
-		setCurrentTime(seek);
+	const seek = useCallback((time: number) => {
+		const audio = audioRef.current;
+		if (audio) {
+			audio.currentTime = time;
+			setCurrentTime(time);
+		}
 	}, []);
 
 	const setVolume = useCallback(
 		(vol: number) => {
 			opts.volume = vol;
 			setVolumeState(vol);
+			if (gainRef.current) {
+				gainRef.current.gain.value = vol;
+			}
 		},
 		[opts],
 	);
@@ -146,7 +188,9 @@ export const useAudio = ({
 	const setStereo = useCallback(
 		(pan: number) => {
 			opts.stereo = pan;
-			setStereoState(pan);
+			if (panRef.current) {
+				panRef.current.pan.value = pan;
+			}
 		},
 		[opts],
 	);

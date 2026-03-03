@@ -5,7 +5,6 @@ import { H1, H2, H3, H4, H5, H6 } from "./Headings.tsx";
 const meta: Meta<typeof H1> = {
 	title: "Server/Text/Headings",
 	component: H1,
-	tags: ["autodocs"],
 };
 
 export default meta;

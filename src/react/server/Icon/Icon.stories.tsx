@@ -6,7 +6,7 @@ import { Icon } from "./index.tsx";
 const meta: Meta<typeof Icon> = {
 	title: "Server/Icon",
 	component: Icon,
-	tags: ["autodocs"],
+
 	argTypes: {
 		name: {
 			control: "text",

@@ -5,7 +5,6 @@ import { Li, Ol, P, Quote, Span, Ul } from "./Body.tsx";
 const meta: Meta<typeof P> = {
 	title: "Server/Text/Body",
 	component: P,
-	tags: ["autodocs"],
 };
 
 export default meta;

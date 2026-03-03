@@ -6,7 +6,6 @@ import { Link } from "./Link.tsx";
 const meta: Meta<typeof Link> = {
 	title: "Server/Text/Link",
 	component: Link,
-	tags: ["autodocs"],
 };
 
 export default meta;
