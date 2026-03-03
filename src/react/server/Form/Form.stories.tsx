@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { PrimaryButton, SecondaryButton } from "./Buttons.tsx";
 import { Form } from "./Form.tsx";
 import { Input } from "./Inputs.tsx";
+import { Select } from "./Select.tsx";
 
 const meta: Meta<typeof Form> = {
 	title: "Server/Form",
@@ -66,5 +67,55 @@ export const Secondary: StoryObj = {
 		<SecondaryButton onClick={() => console.log("Clicked")}>
 			Cancel
 		</SecondaryButton>
+	),
+};
+
+export const SelectDefault: StoryObj = {
+	name: "Select",
+	render: () => (
+		<Select
+			label="Favorite Season"
+			options={[
+				{ value: "", label: "Choose a season" },
+				{ value: "spring", label: "Spring" },
+				{ value: "summer", label: "Summer" },
+				{ value: "autumn", label: "Autumn" },
+				{ value: "winter", label: "Winter" },
+			]}
+		/>
+	),
+};
+
+export const SelectWithDisabledOption: StoryObj = {
+	name: "Select - Disabled Option",
+	render: () => (
+		<Select
+			label="Trail Difficulty"
+			options={[
+				{ value: "easy", label: "Easy" },
+				{ value: "moderate", label: "Moderate" },
+				{ value: "hard", label: "Hard" },
+				{ value: "expert", label: "Expert", disabled: true },
+			]}
+		/>
+	),
+};
+
+export const SelectInForm: StoryObj = {
+	name: "Select - In Form",
+	render: () => (
+		<Form onSubmit={() => console.log("Form submitted")}>
+			<Input type="text" label="Name" id="select-form-name" />
+			<Select
+				label="Role"
+				options={[
+					{ value: "", label: "Select a role" },
+					{ value: "hiker", label: "Hiker" },
+					{ value: "climber", label: "Climber" },
+					{ value: "guide", label: "Guide" },
+				]}
+			/>
+			<PrimaryButton>Submit</PrimaryButton>
+		</Form>
 	),
 };
