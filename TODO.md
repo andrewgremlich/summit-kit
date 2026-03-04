@@ -3,8 +3,7 @@
 ## High Value
 
 - [x] Add CHANGELOG.md (consider `changesets` or `conventional-changelog`)
-- [ ] Add component tests with Vitest
-- [ ] Verify published package contents with `npm pack --dry-run`
+- [x] Add component tests with Vitest
 
 ## Nice to Have
 
