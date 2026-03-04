@@ -16,7 +16,7 @@ interface CodeProps {
  */
 export const Code = ({ code, language }: CodeProps) => {
 	return (
-		<div className={classes.code}>
+		<section className={classes.code} aria-label={`${language} code block`}>
 			<Highlight theme={themes.dracula} code={code} language={language}>
 				{({ className, style, tokens, getLineProps, getTokenProps }) => (
 					<pre className={`${className} ${classes.pre}`} style={style}>
@@ -33,6 +33,6 @@ export const Code = ({ code, language }: CodeProps) => {
 					</pre>
 				)}
 			</Highlight>
-		</div>
+		</section>
 	);
 };

@@ -63,6 +63,9 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
 					ref={ref}
 					id={selectId}
 					aria-invalid={invalid || undefined}
+					aria-required={
+						(restProps as Record<string, unknown>).required ? true : undefined
+					}
 					aria-describedby={ariaDescribedBy}
 					className={selectClasses}
 					{...restProps}

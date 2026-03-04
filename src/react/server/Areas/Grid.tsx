@@ -188,7 +188,7 @@ export function GridHeader({
 		>
 			{headers.map((h) => (
 				<div key={h} className={styles.headerCell}>
-					{h}
+					<strong>{h}</strong>
 				</div>
 			))}
 		</Grid>

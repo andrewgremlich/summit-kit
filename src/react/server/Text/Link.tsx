@@ -32,6 +32,9 @@ export const Link = (props: StandardProps & LinkProps) => {
 			rel={rel}
 		>
 			{props.children}
+			{target === "_blank" && (
+				<span className="sr-only"> (opens in new tab)</span>
+			)}
 		</a>
 	);
 };

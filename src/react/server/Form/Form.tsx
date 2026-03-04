@@ -6,6 +6,8 @@ type FormProps = {
 	onSubmit?: FormEventHandler;
 	method?: string;
 	action?: string;
+	"aria-label"?: string;
+	"aria-labelledby"?: string;
 } & StandardProps;
 
 /**
@@ -24,6 +26,8 @@ export const Form = (props: FormProps) => {
 	return (
 		<form
 			className={`${props.classes && props.classes.length > 0 ? props.classes?.join(" ") : ""}`}
+			aria-label={props["aria-label"]}
+			aria-labelledby={props["aria-labelledby"]}
 			{...(props.onSubmit && {
 				onSubmit: (evt) => {
 					if (!props.onSubmit) return;

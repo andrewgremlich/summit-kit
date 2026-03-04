@@ -53,53 +53,69 @@ export const PageTurner = ({
 
 	return (
 		<>
-			<div className={classes["page-slider"]}>{children || "Slider"}</div>
+			<div className={classes["page-slider"]}>{children}</div>
 			{onNext && (
 				<button
 					className={classes["right-arrow"]}
 					onClick={onNext}
-					onKeyDown={(e) => e.key === "Enter" && onNext()}
-					tabIndex={0}
 					type="button"
 					aria-label="Go to next page"
+					aria-keyshortcuts="Control+Shift+ArrowRight"
 				>
-					<Icon name="FiArrowRightCircle" size={48} color="white" />
+					<Icon
+						name="FiArrowRightCircle"
+						size={48}
+						color="white"
+						aria-hidden="true"
+					/>
 				</button>
 			)}
 			{onPrev && (
 				<button
 					className={classes["left-arrow"]}
 					onClick={onPrev}
-					onKeyDown={(e) => e.key === "Enter" && onPrev()}
-					tabIndex={0}
 					type="button"
 					aria-label="Go to previous page"
+					aria-keyshortcuts="Control+Shift+ArrowLeft"
 				>
-					<Icon name="FiArrowLeftCircle" size={48} color="white" />
+					<Icon
+						name="FiArrowLeftCircle"
+						size={48}
+						color="white"
+						aria-hidden="true"
+					/>
 				</button>
 			)}
 			{onUp && (
 				<button
 					className={classes["up-arrow"]}
 					onClick={onUp}
-					onKeyDown={(e) => e.key === "Enter" && onUp()}
-					tabIndex={0}
 					type="button"
 					aria-label="Go up"
+					aria-keyshortcuts="Control+Shift+ArrowUp"
 				>
-					<Icon name="FiArrowUpCircle" size={48} color="white" />
+					<Icon
+						name="FiArrowUpCircle"
+						size={48}
+						color="white"
+						aria-hidden="true"
+					/>
 				</button>
 			)}
 			{onDown && (
 				<button
 					className={classes["down-arrow"]}
 					onClick={onDown}
-					onKeyDown={(e) => e.key === "Enter" && onDown()}
-					tabIndex={0}
 					type="button"
 					aria-label="Go down"
+					aria-keyshortcuts="Control+Shift+ArrowDown"
 				>
-					<Icon name="FiArrowDownCircle" size={48} color="white" />
+					<Icon
+						name="FiArrowDownCircle"
+						size={48}
+						color="white"
+						aria-hidden="true"
+					/>
 				</button>
 			)}
 		</>

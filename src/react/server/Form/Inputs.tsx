@@ -42,6 +42,8 @@ type InputProps = ClassesProps & {
  */
 export const Input = (props: InputProps) => {
 	const { disabled = false, required = false } = props;
+	const errorMessage = props.valueMissing || props.typeMismatch;
+	const errorId = errorMessage ? `${props.id}-error` : undefined;
 
 	return (
 		<div
@@ -59,7 +61,15 @@ export const Input = (props: InputProps) => {
 				type={props.type}
 				required={required}
 				disabled={disabled}
+				aria-required={required || undefined}
+				aria-invalid={errorMessage ? true : undefined}
+				aria-describedby={errorId}
 			/>
+			{errorId && (
+				<span id={errorId} role="alert">
+					{errorMessage}
+				</span>
+			)}
 		</div>
 	);
 };

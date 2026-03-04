@@ -8,6 +8,8 @@ type IconProps = {
 	name: string;
 	size?: number;
 	color?: string;
+	"aria-label"?: string;
+	"aria-hidden"?: boolean | "true" | "false";
 } & ClassesProps;
 
 /**
@@ -35,6 +37,12 @@ export const Icon = ({
 	}
 
 	return (
-		<IconComponent className={cx(props.classes)} size={size} color={color} />
+		<IconComponent
+			className={cx(props.classes)}
+			size={size}
+			color={color}
+			aria-label={props["aria-label"]}
+			aria-hidden={props["aria-hidden"] ?? !props["aria-label"]}
+		/>
 	);
 };
