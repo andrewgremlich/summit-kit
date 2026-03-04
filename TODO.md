@@ -12,5 +12,5 @@
 
 ## Component Improvements
 
-- [ ] Run accessibility audit on all components using Storybook a11y addon
+- [x] Run accessibility audit on all components using Storybook a11y addon
 - [ ] Add dark mode / theme support using existing CSS custom properties
