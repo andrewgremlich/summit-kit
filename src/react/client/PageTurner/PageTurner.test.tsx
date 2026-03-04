@@ -8,9 +8,11 @@ describe("PageTurner", () => {
 		expect(screen.getByText("Page content")).toBeInTheDocument();
 	});
 
-	it("renders fallback text when no children", () => {
-		render(<PageTurner>{undefined}</PageTurner>);
-		expect(screen.getByText("Slider")).toBeInTheDocument();
+	it("renders empty slider when no children", () => {
+		const { container } = render(<PageTurner>{undefined}</PageTurner>);
+		const slider = container.querySelector("div");
+		expect(slider).toBeInTheDocument();
+		expect(slider?.textContent).toBe("");
 	});
 
 	it("shows next button when onNext is provided", () => {
