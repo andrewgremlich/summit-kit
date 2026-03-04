@@ -41,6 +41,7 @@
 		"changelog": "conventional-changelog -p conventionalcommits -o CHANGELOG.md",
 		"version": "conventional-changelog -p conventionalcommits -o CHANGELOG.md && git add CHANGELOG.md",
 		"storybook": "storybook dev -p 6006",
+		"test": "vitest",
 		"build-storybook": "storybook build -o storybook-static"
 	},
 	"dependencies": {
@@ -54,12 +55,15 @@
 		"@storybook/addon-a11y": "^10.2.14",
 		"@storybook/react": "^10.2.14",
 		"@storybook/react-vite": "^10.2.14",
+		"@testing-library/jest-dom": "^6.9.1",
+		"@testing-library/react": "^16.3.2",
 		"@types/node": "^22.15.23",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
 		"@vitejs/plugin-react-swc": "^4.2.3",
 		"conventional-changelog": "^7.2.0",
 		"conventional-changelog-conventionalcommits": "^9.2.0",
+		"jsdom": "^28.1.0",
 		"lint-staged": "^16.3.1",
 		"rimraf": "^6.1.3",
 		"simple-git-hooks": "^2.13.1",
