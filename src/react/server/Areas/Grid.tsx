@@ -1,6 +1,10 @@
 import type { HTMLAttributes, JSX, ReactNode } from "react";
 
-import styles from "./styles.module.css";
+import { cx } from "../../../utils/cx.ts";
+import { themed } from "../../../utils/headless.ts";
+import rawStyles from "./styles.module.css";
+
+const styles = themed(rawStyles);
 
 type ColCount = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
@@ -94,16 +98,14 @@ export function Grid({
 		"col-dense": styles.flowColDense,
 	};
 
-	const classes = [
+	const classes = cx(
 		inline ? styles.inlineGrid : styles.grid,
 		cols ? colsClassMap[cols] : null,
 		rows ? rowsClassMap[rows] : null,
 		flow ? flowClassMap[flow] : null,
 		fullWidth ? styles.fullWidth : null,
 		className,
-	]
-		.filter(Boolean)
-		.join(" ");
+	);
 
 	const { style, ...restProps } = rest as HTMLAttributes<HTMLElement>;
 	const mergedStyle = {

@@ -1,6 +1,10 @@
 import { Highlight, themes } from "prism-react-renderer";
 
-import classes from "./styles.module.css";
+import { cx } from "../../../utils/cx.ts";
+import { themed } from "../../../utils/headless.ts";
+import rawClasses from "./styles.module.css";
+
+const classes = themed(rawClasses);
 
 interface CodeProps {
 	code: string;
@@ -19,7 +23,7 @@ export const Code = ({ code, language }: CodeProps) => {
 		<section className={classes.code} aria-label={`${language} code block`}>
 			<Highlight theme={themes.dracula} code={code} language={language}>
 				{({ className, style, tokens, getLineProps, getTokenProps }) => (
-					<pre className={`${className} ${classes.pre}`} style={style}>
+					<pre className={cx(className, classes.pre)} style={style}>
 						{tokens.map((line, i) => (
 							<div key={`line-${i}`} {...getLineProps({ line, key: i })}>
 								{line.map((token, j) => (

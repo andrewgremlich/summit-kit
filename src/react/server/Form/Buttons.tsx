@@ -1,7 +1,10 @@
 import type { ButtonHTMLAttributes } from "react";
+import { cx } from "../../../utils/cx.ts";
+import { themed } from "../../../utils/headless.ts";
 import type { ClassesProps } from "../Types/general.ts";
+import rawClasses from "./styles.module.css";
 
-import classes from "./styles.module.css";
+const classes = themed(rawClasses);
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & ClassesProps;
 
@@ -26,11 +29,7 @@ export const PrimaryButton = ({
 			type={onClick ? "button" : "submit"}
 			onClick={onClick}
 			disabled={disabled}
-			className={`${classes.submit}${
-				extraClasses && extraClasses.length > 0
-					? ` ${extraClasses.join(" ")}`
-					: ""
-			}`}
+			className={cx(classes.submit, extraClasses)}
 			{...rest}
 		>
 			{children}
@@ -61,11 +60,7 @@ export const SecondaryButton = ({
 			onClick={onClick}
 			type="button"
 			disabled={disabled}
-			className={`${classes.secondary}${
-				extraClasses && extraClasses.length > 0
-					? ` ${extraClasses.join(" ")}`
-					: ""
-			}`}
+			className={cx(classes.secondary, extraClasses)}
 			{...rest}
 		>
 			{children}

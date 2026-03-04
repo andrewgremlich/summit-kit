@@ -1,5 +1,6 @@
 import type { FormEventHandler } from "react";
 
+import { cx } from "../../../utils/cx.ts";
 import type { StandardProps } from "../Types/general.ts";
 
 type FormProps = {
@@ -25,7 +26,7 @@ type FormProps = {
 export const Form = (props: FormProps) => {
 	return (
 		<form
-			className={`${props.classes && props.classes.length > 0 ? props.classes?.join(" ") : ""}`}
+			className={cx(props.classes) || undefined}
 			aria-label={props["aria-label"]}
 			aria-labelledby={props["aria-labelledby"]}
 			{...(props.onSubmit && {

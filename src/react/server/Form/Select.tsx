@@ -1,9 +1,12 @@
 import type { ReactNode, SelectHTMLAttributes } from "react";
 import { forwardRef, useId } from "react";
 
+import { cx } from "../../../utils/cx.ts";
+import { themed } from "../../../utils/headless.ts";
 import { Flex } from "../Areas/Flex.tsx";
+import rawStyles from "./styles.module.css";
 
-import styles from "./styles.module.css";
+const styles = themed(rawStyles);
 
 export type SelectOption = {
 	value: string | number;
@@ -39,9 +42,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
 		},
 		ref,
 	) => {
-		const selectClasses = className
-			? `${styles.select} ${className}`
-			: styles.select;
+		const selectClasses = cx(styles.select, className);
 		const generatedId = useId();
 		const selectId = id ?? generatedId;
 

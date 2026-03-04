@@ -1,6 +1,9 @@
+import { cx } from "../../../utils/cx.ts";
+import { themed } from "../../../utils/headless.ts";
 import type { ClassesProps } from "../Types/general.ts";
+import rawClasses from "./styles.module.css";
 
-import classes from "./styles.module.css";
+const classes = themed(rawClasses);
 
 type InputProps = ClassesProps & {
 	type:
@@ -46,18 +49,16 @@ export const Input = (props: InputProps) => {
 	const errorId = errorMessage ? `${props.id}-error` : undefined;
 
 	return (
-		<div
-			className={`${classes["form-field"]}${props.classes && props.classes?.length > 0 ? ` ${props.classes.join(" ")}` : ""}`}
-		>
+		<div className={cx(classes["form-field"], props.classes)}>
 			<div className={classes["label-container"]}>
-				<label className={`${classes.label}`} htmlFor={props.id}>
+				<label className={classes.label} htmlFor={props.id}>
 					{props.label}
 				</label>
 			</div>
 			<input
 				id={props.id}
 				name={props.id}
-				className={`${classes["text-input"]}`}
+				className={classes["text-input"]}
 				type={props.type}
 				required={required}
 				disabled={disabled}
