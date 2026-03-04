@@ -64,3 +64,109 @@
 	--secondary-color-light: #e5b0a8;
 	--tertiary-color-light: #e5b0a8;
 }
+
+/* Semantic theme variables — light theme defaults */
+:root {
+	--bg-gradient-start: var(--green-200);
+	--bg-gradient-end: var(--green-50);
+
+	--text-color: var(--grey-800);
+
+	--link-color: var(--blue-900);
+	--link-decoration-color: var(--green-600);
+	--link-hover-color: var(--red-600);
+	--link-hover-decoration-color: var(--green-800);
+
+	--input-border-color: var(--red-800);
+	--input-border-focus-color: var(--red-700);
+
+	--btn-primary-bg: var(--red-200);
+	--btn-primary-color: var(--black);
+	--btn-primary-hover-bg: var(--red-300);
+	--btn-primary-disabled-bg: var(--red-100);
+
+	--btn-secondary-bg: var(--green-100);
+	--btn-secondary-color: var(--grey-800);
+	--btn-secondary-hover-bg: var(--green-200);
+	--btn-secondary-disabled-bg: var(--green-50);
+}
+
+/* OS dark mode preference (when no explicit data-theme is set) */
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme]) {
+		--bg-gradient-start: var(--green-900);
+		--bg-gradient-end: var(--green-700);
+
+		--text-color: var(--grey-50);
+
+		--link-color: var(--blue-100);
+		--link-decoration-color: var(--green-400);
+		--link-hover-color: var(--red-200);
+		--link-hover-decoration-color: var(--green-500);
+
+		--input-border-color: var(--red-600);
+		--input-border-focus-color: var(--red-700);
+
+		--btn-primary-bg: var(--red-800);
+		--btn-primary-color: var(--white);
+		--btn-primary-hover-bg: var(--red-700);
+		--btn-primary-disabled-bg: var(--red-600);
+
+		--btn-secondary-bg: var(--green-900);
+		--btn-secondary-color: var(--grey-50);
+		--btn-secondary-hover-bg: var(--green-850);
+		--btn-secondary-disabled-bg: var(--green-600);
+	}
+}
+
+/* Explicit dark theme override */
+[data-theme="dark"] {
+	--bg-gradient-start: var(--green-900);
+	--bg-gradient-end: var(--green-700);
+
+	--text-color: var(--grey-50);
+
+	--link-color: var(--blue-100);
+	--link-decoration-color: var(--green-400);
+	--link-hover-color: var(--red-200);
+	--link-hover-decoration-color: var(--green-500);
+
+	--input-border-color: var(--red-600);
+	--input-border-focus-color: var(--red-700);
+
+	--btn-primary-bg: var(--red-800);
+	--btn-primary-color: var(--white);
+	--btn-primary-hover-bg: var(--red-700);
+	--btn-primary-disabled-bg: var(--red-600);
+
+	--btn-secondary-bg: var(--green-900);
+	--btn-secondary-color: var(--grey-50);
+	--btn-secondary-hover-bg: var(--green-850);
+	--btn-secondary-disabled-bg: var(--green-600);
+}
+
+/* Explicit light theme override */
+[data-theme="light"] {
+	--bg-gradient-start: var(--green-200);
+	--bg-gradient-end: var(--green-50);
+
+	--text-color: var(--grey-800);
+
+	--link-color: var(--blue-900);
+	--link-decoration-color: var(--green-600);
+	--link-hover-color: var(--red-600);
+	--link-hover-decoration-color: var(--green-800);
+
+	--input-border-color: var(--red-800);
+	--input-border-focus-color: var(--red-700);
+
+	--btn-primary-bg: var(--red-200);
+	--btn-primary-color: var(--black);
+	--btn-primary-hover-bg: var(--red-300);
+	--btn-primary-disabled-bg: var(--red-100);
+
+	--btn-secondary-bg: var(--green-100);
+	--btn-secondary-color: var(--grey-800);
+	--btn-secondary-hover-bg: var(--green-200);
+	--btn-secondary-disabled-bg: var(--green-50);
+}

@@ -15,6 +15,7 @@
 	padding: 0.5rem;
 	border-width: 3px;
 	border-style: solid;
+	border-color: var(--input-border-color);
 	border-radius: var(--border-radius, 0.5rem);
 	font-size: 1rem;
 	line-height: 1.2;
@@ -27,81 +28,34 @@
 		outline: 2px solid transparent;
 		margin: 0px;
 	}
-}
 
-@media (prefers-color-scheme: dark) {
-	.text-input,
-	.select {
-		border-color: var(--red-600);
-
-		&:focus {
-			border-color: var(--red-700);
-		}
+	&:focus {
+		border-color: var(--input-border-focus-color);
 	}
 }
 
-@media (prefers-color-scheme: light) {
-	.text-input,
-	.select {
-		border-color: var(--red-800);
+.submit {
+	background-color: var(--btn-primary-bg);
+	color: var(--btn-primary-color);
 
-		&:focus {
-			border-color: var(--red-700);
-		}
+	&:hover {
+		background-color: var(--btn-primary-hover-bg);
+	}
+
+	&:disabled {
+		background-color: var(--btn-primary-disabled-bg);
 	}
 }
 
-@media (prefers-color-scheme: dark) {
-	.submit {
-		background-color: var(--red-800);
-		color: var(--white);
+.secondary {
+	background-color: var(--btn-secondary-bg);
+	color: var(--btn-secondary-color);
 
-		&:hover {
-			background-color: var(--red-700);
-		}
-
-		&:disabled {
-			background-color: var(--red-600);
-		}
-	}
-	.secondary {
-		background-color: var(--green-900);
-		color: var(--grey-50);
-
-		&:hover {
-			background-color: var(--green-850);
-		}
-
-		&:disabled {
-			background-color: var(--green-600);
-		}
-	}
-}
-
-@media (prefers-color-scheme: light) {
-	.submit {
-		background-color: var(--red-200);
-		color: var(--black);
-
-		&:hover {
-			background-color: var(--red-300);
-		}
-
-		&:disabled {
-			background-color: var(--red-100);
-		}
+	&:hover {
+		background-color: var(--btn-secondary-hover-bg);
 	}
 
-	.secondary {
-		background-color: var(--green-100);
-		color: var(--grey-800);
-
-		&:hover {
-			background-color: var(--green-200);
-		}
-
-		&:disabled {
-			background-color: var(--green-50);
-		}
+	&:disabled {
+		background-color: var(--btn-secondary-disabled-bg);
 	}
 }

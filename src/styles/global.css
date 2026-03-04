@@ -18,7 +18,12 @@ body {
 body {
 	font-size: 16px;
 	line-height: 1.6;
-	color: var(--grey-800);
+	color: var(--text-color);
+	background: linear-gradient(
+		to bottom,
+		var(--bg-gradient-start),
+		var(--bg-gradient-end)
+	);
 	padding: 5px;
 }
 
@@ -102,19 +107,5 @@ button {
 
 	&:disabled {
 		cursor: not-allowed;
-	}
-}
-
-@media (prefers-color-scheme: dark) {
-	body {
-		background: linear-gradient(to bottom, var(--green-900), var(--green-700));
-		color: var(--grey-50);
-	}
-}
-
-@media (prefers-color-scheme: light) {
-	body {
-		background: linear-gradient(to bottom, var(--green-200), var(--green-50));
-		color: var(--grey-800);
 	}
 }
