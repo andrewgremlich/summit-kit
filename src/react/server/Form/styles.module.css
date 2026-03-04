@@ -22,9 +22,9 @@
 	width: 100%;
 	background-color: var(--white, #ececec);
 
-	&:focus {
+	&:focus-visible {
 		border-width: 5px;
-		outline: none;
+		outline: 2px solid transparent;
 		margin: 0px;
 	}
 }

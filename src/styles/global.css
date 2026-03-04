@@ -18,7 +18,7 @@ body {
 body {
 	font-size: 16px;
 	line-height: 1.6;
-	color: var(--grey-50);
+	color: var(--grey-800);
 	padding: 5px;
 }
 
@@ -26,6 +26,18 @@ body {
 	body {
 		padding: 15px;
 	}
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
 }
 
 h1,
@@ -83,9 +95,9 @@ button {
 	line-height: 1.2;
 	letter-spacing: 0.05rem;
 
-	&:focus {
-		outline: none;
-		border: 2px dashed var(--blue-400);
+	&:focus-visible {
+		outline: 2px dashed var(--blue-400);
+		outline-offset: 2px;
 	}
 
 	&:disabled {

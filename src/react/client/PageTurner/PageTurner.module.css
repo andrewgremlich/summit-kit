@@ -50,7 +50,15 @@
 	padding: 0;
 	margin: 0;
 	border: none;
-	outline: none;
 	cursor: pointer;
 	transition: all 0.1s ease-in-out;
+}
+
+.right-arrow:focus-visible,
+.down-arrow:focus-visible,
+.up-arrow:focus-visible,
+.left-arrow:focus-visible {
+	outline: 2px solid var(--blue-400);
+	outline-offset: 2px;
+	border-radius: 50%;
 }
