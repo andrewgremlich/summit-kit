@@ -1,7 +1,10 @@
 import { cx } from "../../../utils/cx.ts";
+import { themed } from "../../../utils/headless.ts";
 import type { StandardProps } from "../Types/general.tsx";
 
-import classes from "./styles.module.css";
+import rawClasses from "./styles.module.css";
+
+const classes = themed(rawClasses);
 
 /**
  * Functional component that renders a styled <blockquote> element.

@@ -2,8 +2,11 @@ import type { HTMLAttributes, JSX } from "react";
 import { forwardRef } from "react";
 
 import { cx } from "../../../utils/cx.ts";
+import { themed } from "../../../utils/headless.ts";
 
-import styles from "./styles.module.css";
+import rawStyles from "./styles.module.css";
+
+const styles = themed(rawStyles);
 
 type Direction = "row" | "row-reverse" | "col" | "col-reverse" | "column";
 type Justify =

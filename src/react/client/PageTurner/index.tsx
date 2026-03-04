@@ -1,7 +1,9 @@
+import { themed } from "../../../utils/headless.ts";
 import { Icon } from "../../server/Icon/index.tsx";
 import { useKeyPress } from "../Hooks/useKeyPress.tsx";
+import rawClasses from "./PageTurner.module.css";
 
-import classes from "./PageTurner.module.css";
+const classes = themed(rawClasses);
 
 type PageTurnerProps = {
 	children: React.ReactNode;
