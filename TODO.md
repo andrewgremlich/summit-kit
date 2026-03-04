@@ -8,9 +8,10 @@
 ## Nice to Have
 
 - [ ] Add CONTRIBUTING.md
-- [ ] Automate npm publishing via GitHub Actions on tagged releases
+- [x] Conditional class merging so the user only sees active classes.
+- [ ] Use TS Paths
 
 ## Component Improvements
 
 - [x] Run accessibility audit on all components using Storybook a11y addon
-- [ ] Add dark mode / theme support using existing CSS custom properties
+- [x] Add dark mode / theme support using existing CSS custom properties

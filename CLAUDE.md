@@ -59,10 +59,32 @@ npx biome check --write src/
 - **Types:** StandardProps, general types
 
 **Client Components** (`src/react/client/`):
-- **Hooks:** useAudio, useKeyPress, toggleFullScreen
+- **Hooks:** useAudio, useKeyPress, toggleFullScreen, setTheme/getTheme/toggleTheme
 - **Components:** PageTurner
 
+**Utilities** (`src/utils/`):
+- `cx.ts` — Class name merging utility (handles strings, arrays, falsy values)
+- `headless.ts` — Headless mode support (`setHeadless`, `isHeadless`, `themed`)
+
 **Styles** (`src/styles/`): global.css, colors.css
+
+### Dark Mode / Theming
+
+Theme support uses semantic CSS custom properties (e.g., `--text-color`, `--bg-gradient-start`, `--btn-primary-bg`) defined in `colors.css`. These variables change based on:
+- `:root` — light theme defaults
+- `@media (prefers-color-scheme: dark) { :root:not([data-theme]) }` — OS dark mode preference
+- `[data-theme="dark"]` / `[data-theme="light"]` — explicit overrides via `data-theme` attribute
+
+Consumers toggle themes programmatically via `setTheme("dark" | "light" | "system")` from `summit-kit/client`.
+
+### Headless Mode
+
+Components are opinionated by default (styled via CSS Modules). For headless usage:
+1. Skip importing `summit-kit/styles`
+2. Call `setHeadless(true)` from `summit-kit` or `summit-kit/client` to suppress CSS module class names
+3. Pass custom classes via the `classes` prop
+
+All CSS module imports are wrapped with `themed()` from `src/utils/headless.ts`, which returns empty strings for class names when headless mode is active.
 
 ### Storybook
 
@@ -70,7 +92,7 @@ Stories are co-located as `*.stories.tsx` files. Config in `.storybook/` (main.t
 
 ### CSS Modules
 
-Components use CSS Modules (`.module.css`) co-located with components. Global styles and CSS custom properties in `src/styles/`.
+Components use CSS Modules (`.module.css`) co-located with components. Global styles and CSS custom properties in `src/styles/`. All components use the `cx()` utility from `src/utils/cx.ts` for consistent class merging.
 
 ## Git Workflow
 
