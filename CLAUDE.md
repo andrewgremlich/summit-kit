@@ -15,7 +15,7 @@ Summit Kit is a TypeScript-based component library published as an npm package (
 - **Build tool:** Vite 7.3+ with `@vitejs/plugin-react-swc`
 - **Linter/Formatter:** Biome 2.4+
 - **Docs/Demo:** Storybook 10.2+ (autodocs + interactive demos)
-- **Dependencies:** react-icons, prism-react-renderer, screenfull, uuid
+- **Dependencies:** lucide-react, prism-react-renderer, screenfull, uuid
 
 ## Common Commands
 
