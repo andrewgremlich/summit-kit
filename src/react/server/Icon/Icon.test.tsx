@@ -4,7 +4,7 @@ import { Icon } from "./index.tsx";
 
 describe("Icon", () => {
 	it("renders an SVG for a valid icon name", () => {
-		const { container } = render(<Icon name="FiCheck" />);
+		const { container } = render(<Icon name="Check" />);
 		expect(container.querySelector("svg")).toBeInTheDocument();
 	});
 
@@ -14,15 +14,15 @@ describe("Icon", () => {
 	});
 
 	it("applies custom size", () => {
-		const { container } = render(<Icon name="FiCheck" size={32} />);
+		const { container } = render(<Icon name="Check" size={32} />);
 		const svg = container.querySelector("svg");
 		expect(svg).toHaveAttribute("width", "32");
 		expect(svg).toHaveAttribute("height", "32");
 	});
 
 	it("applies custom color", () => {
-		const { container } = render(<Icon name="FiCheck" color="red" />);
+		const { container } = render(<Icon name="Check" color="red" />);
 		const svg = container.querySelector("svg");
-		expect(svg).toHaveAttribute("color", "red");
+		expect(svg).toHaveAttribute("stroke", "red");
 	});
 });
