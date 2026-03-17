@@ -32,6 +32,9 @@
 	"lint-staged": {
 		"src/**/*.{ts,tsx,css,md}": [
 			"npx @biomejs/biome check --write ./src"
+		],
+		"src/**/*.{ts,tsx}": [
+			"npx vitest related --run"
 		]
 	},
 	"scripts": {
