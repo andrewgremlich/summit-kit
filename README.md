@@ -20,6 +20,12 @@ npm install react react-dom
 
 ## Quick Start
 
+Add the required Google Fonts to your HTML `<head>`:
+
+```html
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Molengo&family=Rakkas&display=swap" />
+```
+
 Import the global styles in your app entry point:
 
 ```tsx

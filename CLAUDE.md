@@ -4,15 +4,16 @@ A React component library for building modern web applications with an earthy an
 
 ## Project Overview
 
-Summit Kit is a TypeScript-based component library published as an npm package (version 3.2.2). It provides React components split into two categories:
+Summit Kit is a TypeScript-based component library published as an npm package (version 3.4.2). It provides React components split into two categories:
 - **Server components** (`src/react/server/`) — SSR-compatible components for layout, text, forms, and media
 - **Client components** (`src/react/client/`) — Browser-only components and hooks
 
 ## Tech Stack
 
-- **Language:** TypeScript 5.9+ (strict mode)
+- **Language:** TypeScript 6.0+ (strict mode)
 - **Framework:** React 19.1.0+
-- **Build tool:** Vite 7.3+ with `@vitejs/plugin-react-swc`
+- **Build tool:** Vite 8.0+ with `@vitejs/plugin-react` and Lightning CSS
+- **CSS processing:** Lightning CSS (transpiles modern CSS for Chrome 100+, Firefox 100+, Safari 14+, Edge 100+)
 - **Linter/Formatter:** Biome 2.4+
 - **Docs/Demo:** Storybook 10.2+ (autodocs + interactive demos)
 - **Dependencies:** lucide-react, prism-react-renderer, screenfull, uuid
@@ -67,6 +68,14 @@ npx biome check --write src/
 - `headless.ts` — Headless mode support (`setHeadless`, `isHeadless`, `themed`)
 
 **Styles** (`src/styles/`): global.css, colors.css
+
+### Fonts
+
+Summit Kit uses the **Molengo** and **Rakkas** Google Fonts. These are not bundled — consumers must load them via a `<link>` tag in their HTML:
+
+```html
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Molengo&family=Rakkas&display=swap" />
+```
 
 ### Dark Mode / Theming
 
