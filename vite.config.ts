@@ -1,31 +1,60 @@
-import react from "@vitejs/plugin-react-swc";
-import { defineConfig } from "vite";
+import { writeFileSync } from "node:fs";
+import { resolve } from "node:path";
+import react from "@vitejs/plugin-react";
+import { type Plugin, defineConfig } from "vite";
 import dts from "vite-plugin-dts";
-import tsconfigPaths from "vite-tsconfig-paths";
+
+const cssTargets = {
+	chrome: 100 << 16,
+	firefox: 100 << 16,
+	safari: 14 << 16,
+	edge: 100 << 16,
+};
+
+function standaloneCSS(): Plugin {
+	return {
+		name: "standalone-css",
+		async closeBundle() {
+			// @ts-expect-error -- lightningcss is available via vite
+			const { bundle } = await import("lightningcss");
+			const files = ["colors.css", "global.css"];
+			for (const file of files) {
+				const input = resolve(__dirname, "src/styles", file);
+				const { code } = bundle({
+					filename: input,
+					minify: true,
+					targets: cssTargets,
+				});
+				writeFileSync(resolve(__dirname, "dist", file), code);
+			}
+		},
+	};
+}
 
 export default defineConfig(() => ({
 	plugins: [
-		tsconfigPaths(),
 		react(),
 		dts({
 			entryRoot: "src",
 		}),
+		standaloneCSS(),
 	],
-	// See: https://vitejs.dev/guide/build.html#library-mode
-	// css: {
-	// 	transformer: "lightningcss" as const,
-	// 	lightningcss: {
-	// 		targets: {
-	// 			chrome: 100,
-	// 			firefox: 100,
-	// 			safari: 14,
-	// 			edge: 100,
-	// 		},
-	// 	},
-	// },
+	resolve: {
+		tsconfigPaths: true,
+	},
+	css: {
+		transformer: "lightningcss" as const,
+		lightningcss: {
+			targets: {
+				chrome: 100 << 16,
+				firefox: 100 << 16,
+				safari: 14 << 16,
+				edge: 100 << 16,
+			},
+		},
+	},
 	build: {
-		// cssTarget: ["chrome100", "firefox100", "safari14", "edge100"],
-		// cssMinify: true,
+		cssMinify: "lightningcss" as const,
 		minify: true,
 		target: "es2022",
 		outDir: "./dist/",
@@ -41,8 +70,6 @@ export default defineConfig(() => ({
 				"react-client": "src/react/client/index.ts",
 			},
 			name: "summit-kit",
-			// Change this to the formats you want to support.
-			// Don't forget to update your package.json as weqll.
 			formats: ["es" as const],
 		},
 		rollupOptions: {
