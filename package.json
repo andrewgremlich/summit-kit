@@ -48,13 +48,13 @@
 		"build-storybook": "storybook build -o storybook-static"
 	},
 	"dependencies": {
-		"lucide-react": "^1.6.0",
+		"lucide-react": "^1.7.0",
 		"prism-react-renderer": "^2.4.1",
 		"screenfull": "^6.0.2",
 		"uuid": "^13.0.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.4.9",
+		"@biomejs/biome": "2.4.10",
 		"@storybook/addon-a11y": "^10.3.3",
 		"@storybook/react": "^10.3.3",
 		"@storybook/react-vite": "^10.3.3",
@@ -70,9 +70,9 @@
 		"simple-git-hooks": "^2.13.1",
 		"storybook": "^10.3.3",
 		"typescript": "^6.0.2",
-		"vite": "^8.0.2",
+		"vite": "^8.0.3",
 		"vite-plugin-dts": "^4.5.4",
-		"vitest": "^4.1.1"
+		"vitest": "^4.1.2"
 	},
 	"keywords": [
 		"react",
