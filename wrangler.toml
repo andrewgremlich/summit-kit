@@ -1,0 +1,5 @@
+name = "summit-kit"
+pages_build_output_dir = "storybook-static"
+
+[env.production]
+name = "summit-kit"

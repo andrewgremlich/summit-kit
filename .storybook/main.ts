@@ -4,6 +4,7 @@ const config: StorybookConfig = {
 	stories: ["../src/**/*.stories.@(ts|tsx)"],
 	framework: "@storybook/react-vite",
 	addons: ["@storybook/addon-a11y"],
+	staticDirs: ["../public"],
 };
 
 export default config;

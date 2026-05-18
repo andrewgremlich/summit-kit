@@ -1,6 +1,6 @@
 import { cx } from "../../../utils/cx.ts";
 import { themed } from "../../../utils/headless.ts";
-import type { StandardProps } from "../Types/general.tsx";
+import type { StandardProps } from "../Types/general.ts";
 
 import rawClasses from "./styles.module.css";
 

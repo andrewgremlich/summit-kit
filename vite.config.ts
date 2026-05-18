@@ -1,7 +1,7 @@
 import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import react from "@vitejs/plugin-react";
-import { type Plugin, defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import dts from "vite-plugin-dts";
 
 const cssTargets = {
@@ -15,7 +15,6 @@ function standaloneCSS(): Plugin {
 	return {
 		name: "standalone-css",
 		async closeBundle() {
-			// @ts-expect-error -- lightningcss is available via vite
 			const { bundle } = await import("lightningcss");
 			const files = ["colors.css", "global.css"];
 			for (const file of files) {
@@ -32,6 +31,9 @@ function standaloneCSS(): Plugin {
 }
 
 export default defineConfig(() => ({
+	resolve: {
+		tsconfigPaths: true,
+	},
 	plugins: [
 		react(),
 		dts({
@@ -39,9 +41,6 @@ export default defineConfig(() => ({
 		}),
 		standaloneCSS(),
 	],
-	resolve: {
-		tsconfigPaths: true,
-	},
 	css: {
 		transformer: "lightningcss" as const,
 		lightningcss: {
