@@ -13,9 +13,13 @@ describe("Code", () => {
 		const { container } = render(
 			<Code code={"const x = 1;"} language="javascript" />,
 		);
-		await waitFor(() => {
-			expect(container.querySelector("pre.shiki")).toBeInTheDocument();
-		});
+		// Shiki lazy-imports the language grammar on first use, so allow extra time.
+		await waitFor(
+			() => {
+				expect(container.querySelector("pre.shiki")).toBeInTheDocument();
+			},
+			{ timeout: 5000 },
+		);
 	});
 
 	it("wraps the code in a section with the code CSS class", () => {

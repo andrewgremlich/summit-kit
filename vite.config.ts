@@ -78,15 +78,21 @@ export default defineConfig(() => ({
 			formats: ["es" as const],
 		},
 		rollupOptions: {
-			// External packages that should not be bundled into your library.
-			external: [
-				"react",
-				"react-dom",
-				"react/jsx-runtime",
-				"shiki",
-				"lucide-react",
-				"screenfull",
-			],
+			// External packages that should not be bundled into your library. Shiki is kept
+			// external as bare specifiers (incl. its `shiki/core`, `shiki/engine/*` and the
+			// lazily-imported `shiki/langs/*` / `shiki/themes/*` subpaths) so grammars load on
+			// demand from the consumer's install rather than being bundled/inlined.
+			external: (id) =>
+				[
+					"react",
+					"react-dom",
+					"react/jsx-runtime",
+					"lucide-react",
+					"screenfull",
+				].includes(id) ||
+				id === "shiki" ||
+				id.startsWith("shiki/") ||
+				id.startsWith("@shikijs/"),
 			output: {
 				// Preserve per-file module structure so each component keeps its own
 				// "use client" banner and stays independently tree-shakeable. Shared code

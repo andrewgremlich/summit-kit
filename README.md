@@ -21,6 +21,13 @@ npm install react react-dom
 npm install svelte
 ```
 
+The `Code` component uses [Shiki](https://shiki.style) for syntax highlighting — it's an
+**optional** peer dependency, so install it only if you use `Code`:
+
+```bash
+npm install shiki
+```
+
 ## Quick Start
 
 Optionally load the Molengo & Rakkas Google Fonts in your HTML `<head>` for the full look:
@@ -96,7 +103,9 @@ light + dark values, so nothing breaks if you never import a stylesheet.
 
 **Layout:** Section, Reading, Flex, Grid, GridHeader, GridRow
 
-**Text:** Heading (`level={1..6}`), P, Span, Quote, Ol, Ul, Li, Link, Code (Shiki-highlighted)
+**Text:** Heading (`level={1..6}`), P, Span, Quote, Ol, Ul, Li, Link, Code (Shiki-highlighted —
+requires the optional `shiki` peer; bundles a curated language set: ts/tsx/js/jsx, json, html,
+css, bash, markdown, yaml, python, rust, java, svelte; other languages render as plain text)
 
 **Form:** Form, Input, Select, PrimaryButton, SecondaryButton
 

@@ -24,7 +24,12 @@ entry path); Svelte components are universal, so there is no such split on that 
 - **Build tool:** Vite 8.0+ (`@vitejs/plugin-react`, `@sveltejs/vite-plugin-svelte`, Lightning CSS)
   plus `@sveltejs/package` for Svelte `.d.ts` and `rollup-preserve-directives` for `"use client"`.
 - **CSS processing:** Lightning CSS (Chrome 100+, Firefox 100+, Safari 14+, Edge 100+)
-- **Syntax highlighting:** Shiki (shared by both frameworks' `Code` component)
+- **Syntax highlighting:** Shiki (shared by both frameworks' `Code` component). Shiki is an
+  **optional peer dependency** — `src/shared/highlight.ts` uses its fine-grained core
+  (`shiki/core` + JS engine) and statically imports a curated language set + the dracula theme,
+  so only those grammars ship (not shiki's full ~800kB bundle). Unlisted languages fall back to
+  plain text; add an import + `SUPPORTED` entry in `highlight.ts` to extend. Shiki subpaths are
+  externalized in `vite.config.ts` so they resolve from the consumer's install.
 - **Linter/Formatter:** Biome 2.4+ for `.ts/.tsx/.css`; Prettier + `prettier-plugin-svelte` for `.svelte`
 - **Type checking:** `tsc --noEmit` (React + shared) and `svelte-check` (Svelte)
 - **Docs/Demo:** Static Vite demo apps per framework (`demo/`), deployed to Vercel
