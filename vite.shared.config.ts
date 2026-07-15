@@ -45,11 +45,12 @@ export default defineConfig({
 				fullscreen: "src/shared/fullscreen.ts",
 				keypress: "src/shared/keypress.ts",
 				audio: "src/shared/audio.ts",
+				highlight: "src/shared/highlight.ts",
 			},
 			formats: ["es"],
 		},
 		rollupOptions: {
-			external: ["screenfull"],
+			external: ["screenfull", "shiki"],
 			output: {
 				preserveModules: true,
 				preserveModulesRoot: "src/shared",

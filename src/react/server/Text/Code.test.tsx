@@ -1,14 +1,24 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { Code } from "./Code.tsx";
 
 describe("Code", () => {
-	it("renders a pre element with the code content", () => {
+	it("renders the raw code synchronously before highlighting resolves", () => {
 		render(<Code code={"const x = 1;"} language="javascript" />);
-		expect(screen.getByText("const")).toBeInTheDocument();
+		// Shiki highlights asynchronously; the fallback <pre> shows the raw code first.
+		expect(screen.getByText("const x = 1;")).toBeInTheDocument();
 	});
 
-	it("wraps the code in a div with the code CSS class", () => {
+	it("swaps in Shiki-highlighted markup once highlighting resolves", async () => {
+		const { container } = render(
+			<Code code={"const x = 1;"} language="javascript" />,
+		);
+		await waitFor(() => {
+			expect(container.querySelector("pre.shiki")).toBeInTheDocument();
+		});
+	});
+
+	it("wraps the code in a section with the code CSS class", () => {
 		const { container } = render(<Code code="hello" language="text" />);
 		const wrapper = container.firstElementChild;
 		expect(wrapper?.className).toContain("code");

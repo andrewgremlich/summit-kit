@@ -4,8 +4,11 @@
 		"types": ["svelte"],
 		"module": "preserve",
 		"moduleResolution": "bundler",
-		"allowImportingTsExtensions": true,
-		"verbatimModuleSyntax": false
+		"allowImportingTsExtensions": false,
+		"verbatimModuleSyntax": false,
+		"noEmit": false,
+		"declaration": true,
+		"emitDeclarationOnly": true
 	},
 	"include": ["src/svelte/**/*", "src/shared/**/*", "src/types/**/*"]
 }

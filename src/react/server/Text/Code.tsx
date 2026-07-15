@@ -1,6 +1,6 @@
-import { Highlight, themes } from "prism-react-renderer";
+import { useEffect, useState } from "react";
+import { highlightCode } from "../../../shared/highlight.ts";
 import rawClasses from "../../../shared/styles/components/text.module.css";
-import { cx } from "../../../utils/cx.ts";
 import { themed } from "../../../utils/headless.ts";
 
 const classes = themed(rawClasses);
@@ -11,31 +11,40 @@ interface CodeProps {
 }
 
 /**
- * Renders a syntax-highlighted code block using the specified language and theme.
+ * Renders a syntax-highlighted code block using Shiki.
  *
  * @param code - The code string to display and highlight.
  * @param language - The programming language to use for syntax highlighting.
  * @returns A React component that displays the highlighted code in a styled block.
  */
 export const Code = ({ code, language }: CodeProps) => {
+	const [html, setHtml] = useState<string>("");
+
+	useEffect(() => {
+		let active = true;
+		highlightCode(code, language)
+			.then((result) => {
+				if (active) setHtml(result);
+			})
+			.catch(() => {
+				if (active) setHtml("");
+			});
+		return () => {
+			active = false;
+		};
+	}, [code, language]);
+
 	return (
 		<section className={classes.code} aria-label={`${language} code block`}>
-			<Highlight theme={themes.dracula} code={code} language={language}>
-				{({ className, style, tokens, getLineProps, getTokenProps }) => (
-					<pre className={cx(className, classes.pre)} style={style}>
-						{tokens.map((line, i) => (
-							<div key={`line-${i}`} {...getLineProps({ line, key: i })}>
-								{line.map((token, j) => (
-									<span
-										key={`token-${i}-${j}`}
-										{...getTokenProps({ token, key: j })}
-									/>
-								))}
-							</div>
-						))}
-					</pre>
-				)}
-			</Highlight>
+			{html ? (
+				<div
+					className={classes.pre}
+					// biome-ignore lint/security/noDangerouslySetInnerHtml: Shiki output is trusted, generated from the provided code string
+					dangerouslySetInnerHTML={{ __html: html }}
+				/>
+			) : (
+				<pre className={classes.pre}>{code}</pre>
+			)}
 		</section>
 	);
 };

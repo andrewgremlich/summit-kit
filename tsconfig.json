@@ -11,8 +11,7 @@
     "out",
     "lib",
     "temp",
-    "tmp",
-    "src/svelte"
+    "tmp"
   ],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
