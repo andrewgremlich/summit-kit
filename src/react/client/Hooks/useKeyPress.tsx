@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { runShortcuts } from "../../../shared/keypress.ts";
 
 /**
  * Custom React hook that listens for specified keyboard shortcuts and triggers associated actions.
@@ -10,14 +11,13 @@ import { useEffect } from "react";
  * @remarks
  * - Supports combination shortcuts using "Shift", "Control", "Meta", and "Alt" modifiers.
  * - The hook attaches a `keydown` event listener to the window and cleans up on unmount.
- * - Only combination shortcuts (with "+") are currently handled.
  *
  * @example
  * ```tsx
  * useKeyPress([
  *   { shortcutKey: "Control+S", action: handleSave },
  *   { shortcutKey: "Shift+Alt+X", action: handleSpecialAction }
- * ]);<|cursor|>
+ * ]);
  * ```
  */
 export const useKeyPress = (
@@ -32,43 +32,7 @@ export const useKeyPress = (
 		window.addEventListener(
 			"keydown",
 			(event: KeyboardEvent) => {
-				for (const shortcut of shortcuts) {
-					const isComboShortcut = shortcut.shortcutKey.includes("+");
-					const keys = shortcut.shortcutKey.split("+");
-
-					if (isComboShortcut) {
-						const isShiftKey = keys.includes("Shift");
-						const isCtrlKey = keys.includes("Control");
-						const isMetaKey = keys.includes("Meta");
-						const isAltKey = keys.includes("Alt");
-						const isKey = keys.find(
-							(key) =>
-								key !== "Shift" &&
-								key !== "Control" &&
-								key !== "Meta" &&
-								key !== "Alt",
-						);
-						const isKeyPressed = event.key === isKey;
-						const isShiftPressed = event.shiftKey === isShiftKey;
-						const isCtrlPressed = event.ctrlKey === isCtrlKey;
-						const isMetaPressed = event.metaKey === isMetaKey;
-						const isAltPressed = event.altKey === isAltKey;
-						const isKeyComboPressed =
-							isKeyPressed &&
-							isShiftPressed &&
-							isCtrlPressed &&
-							isMetaPressed &&
-							isAltPressed;
-						if (isKeyComboPressed && shortcut.action) {
-							shortcut.action();
-						}
-					} else {
-						// Handle single key shortcuts
-						if (event.key === shortcut.shortcutKey && shortcut.action) {
-							shortcut.action();
-						}
-					}
-				}
+				runShortcuts(event, shortcuts);
 			},
 			{
 				signal: keyAbortController.signal,

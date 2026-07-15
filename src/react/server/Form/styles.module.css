@@ -11,17 +11,18 @@
 
 .text-input,
 .select {
+	composes: tokens from "../../../shared/styles/tokens.module.css";
 	margin: 2px 0px;
 	padding: 0.5rem;
 	border-width: 3px;
 	border-style: solid;
-	border-color: var(--input-border-color);
-	border-radius: var(--border-radius, 0.5rem);
+	border-color: var(--sk-input-border-color);
+	border-radius: var(--sk-border-radius, 0.5rem);
 	font-size: 1rem;
 	line-height: 1.2;
 	letter-spacing: 0.05rem;
 	width: 100%;
-	background-color: var(--white, #ececec);
+	background-color: var(--sk-white, #ececec);
 
 	&:focus-visible {
 		border-width: 5px;
@@ -30,32 +31,34 @@
 	}
 
 	&:focus {
-		border-color: var(--input-border-focus-color);
+		border-color: var(--sk-input-border-focus-color);
 	}
 }
 
 .submit {
-	background-color: var(--btn-primary-bg);
-	color: var(--btn-primary-color);
+	composes: tokens from "../../../shared/styles/tokens.module.css";
+	background-color: var(--sk-btn-primary-bg);
+	color: var(--sk-btn-primary-color);
 
 	&:hover {
-		background-color: var(--btn-primary-hover-bg);
+		background-color: var(--sk-btn-primary-hover-bg);
 	}
 
 	&:disabled {
-		background-color: var(--btn-primary-disabled-bg);
+		background-color: var(--sk-btn-primary-disabled-bg);
 	}
 }
 
 .secondary {
-	background-color: var(--btn-secondary-bg);
-	color: var(--btn-secondary-color);
+	composes: tokens from "../../../shared/styles/tokens.module.css";
+	background-color: var(--sk-btn-secondary-bg);
+	color: var(--sk-btn-secondary-color);
 
 	&:hover {
-		background-color: var(--btn-secondary-hover-bg);
+		background-color: var(--sk-btn-secondary-hover-bg);
 	}
 
 	&:disabled {
-		background-color: var(--btn-secondary-disabled-bg);
+		background-color: var(--sk-btn-secondary-disabled-bg);
 	}
 }

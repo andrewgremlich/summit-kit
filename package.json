@@ -42,6 +42,7 @@
 	"scripts": {
 		"prepare": "npm run build && npx simple-git-hooks",
 		"clean": "rimraf dist storybook-static",
+		"gen-tokens": "node --experimental-strip-types scripts/gen-tokens.ts",
 		"build": "vite build",
 		"storybook": "storybook dev -p 6006",
 		"test": "vitest",

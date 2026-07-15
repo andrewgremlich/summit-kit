@@ -1,5 +1,5 @@
-import "../../styles/colors.css";
-import "../../styles/global.css";
+import "../../shared/styles/colors.css";
+import "../../shared/styles/global.css";
 
 export { isHeadless, setHeadless } from "../../utils/headless.ts";
 export * from "./Areas/index.tsx";

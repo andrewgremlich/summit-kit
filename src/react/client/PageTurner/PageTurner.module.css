@@ -54,11 +54,18 @@
 	transition: all 0.1s ease-in-out;
 }
 
+.right-arrow,
+.down-arrow,
+.up-arrow,
+.left-arrow {
+	composes: tokens from "../../../shared/styles/tokens.module.css";
+}
+
 .right-arrow:focus-visible,
 .down-arrow:focus-visible,
 .up-arrow:focus-visible,
 .left-arrow:focus-visible {
-	outline: 2px solid var(--blue-400);
+	outline: 2px solid var(--sk-blue-400);
 	outline-offset: 2px;
 	border-radius: 50%;
 }

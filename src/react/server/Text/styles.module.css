@@ -29,8 +29,9 @@
 }
 
 .blockquote {
+	composes: tokens from "../../../shared/styles/tokens.module.css";
 	margin-bottom: 2rem;
-	border-left: 0.5rem solid var(--red-500);
+	border-left: 0.5rem solid var(--sk-red-500, #a36666);
 	padding-left: 1rem;
 	font-style: italic;
 }
@@ -41,31 +42,33 @@
 }
 
 .a {
+	composes: tokens from "../../../shared/styles/tokens.module.css";
 	text-underline-offset: 0.2rem;
 	text-decoration: underline;
 	text-decoration-thickness: 0.1rem;
 	text-decoration-style: dashed;
-	color: var(--link-color);
-	text-decoration-color: var(--link-decoration-color);
+	color: var(--sk-link-color);
+	text-decoration-color: var(--sk-link-decoration-color);
 
 	& > * {
 		vertical-align: middle;
 	}
 
 	&:hover {
-		color: var(--link-hover-color);
-		text-decoration-color: var(--link-hover-decoration-color);
+		color: var(--sk-link-hover-color);
+		text-decoration-color: var(--sk-link-hover-decoration-color);
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--blue-400);
+		outline: 2px solid var(--sk-blue-400);
 		outline-offset: 2px;
 		border-radius: 2px;
 	}
 }
 
 .pre {
-	border-radius: var(--border-radius, 0.5rem);
+	composes: tokens from "../../../shared/styles/tokens.module.css";
+	border-radius: var(--sk-border-radius, 0.5rem);
 	font-size: 0.9rem;
 	padding: 1rem;
 }

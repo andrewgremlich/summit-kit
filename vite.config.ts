@@ -18,7 +18,7 @@ function standaloneCSS(): Plugin {
 			const { bundle } = await import("lightningcss");
 			const files = ["colors.css", "global.css"];
 			for (const file of files) {
-				const input = resolve(__dirname, "src/styles", file);
+				const input = resolve(__dirname, "src/shared/styles", file);
 				const { code } = bundle({
 					filename: input,
 					minify: true,

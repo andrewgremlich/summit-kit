@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/react";
 
-import "../src/styles/colors.css";
-import "../src/styles/global.css";
+import "../src/shared/styles/colors.css";
+import "../src/shared/styles/global.css";
 
 const preview: Preview = {
 	tags: ["autodocs"],
