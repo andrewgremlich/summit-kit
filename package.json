@@ -1,6 +1,6 @@
 {
 	"name": "summit-kit",
-	"description": "A React component library for building modern web applications with an earthy and outdoorsy flair.",
+	"description": "A React and Svelte component library for building modern web applications with an earthy and outdoorsy flair.",
 	"version": "3.5.3",
 	"type": "module",
 	"exports": {
@@ -120,6 +120,7 @@
 	},
 	"keywords": [
 		"react",
+		"svelte",
 		"kit",
 		"components",
 		"ui",

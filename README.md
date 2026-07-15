@@ -1,6 +1,7 @@
 # Summit Kit
 
-A React component library for building modern web applications with an earthy and outdoorsy flair.
+A component library for building modern web applications with an earthy and outdoorsy
+flair — available for both **React** and **Svelte** from one package.
 
 [Live Demo & Documentation](https://summit-kit.gremlich.dev)
 
@@ -10,37 +11,35 @@ A React component library for building modern web applications with an earthy an
 npm install summit-kit
 ```
 
-### Peer Dependencies
-
-Summit Kit requires React 19.1.0+:
+Then install the peer dependency for the framework you use (only one is required):
 
 ```bash
+# React
 npm install react react-dom
+
+# Svelte
+npm install svelte
 ```
 
 ## Quick Start
 
-Add the required Google Fonts to your HTML `<head>`:
+Optionally load the Molengo & Rakkas Google Fonts in your HTML `<head>` for the full look:
 
 ```html
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Molengo&family=Rakkas&display=swap" />
 ```
 
-Import the global styles in your app entry point:
+Components are **themed out of the box** (light + dark) — no stylesheet import is required.
+
+### React
 
 ```tsx
-import "summit-kit/styles";
-```
-
-Use server components for SSR-compatible layouts, text, and forms:
-
-```tsx
-import { Section, H1, P, PrimaryButton } from "summit-kit";
+import { Section, Heading, P, PrimaryButton, PageTurner } from "summit-kit/react";
 
 function App() {
   return (
     <Section>
-      <H1>Welcome</H1>
+      <Heading level={1}>Welcome</Heading>
       <P>Build something great with Summit Kit.</P>
       <PrimaryButton>Get Started</PrimaryButton>
     </Section>
@@ -48,45 +47,75 @@ function App() {
 }
 ```
 
-Use client components for browser-only interactivity:
+`summit-kit` is an alias for `summit-kit/react`. Client-only components (`PageTurner`,
+the hooks) carry a `"use client"` directive, so they work in React Server Components /
+Next.js without a separate import path — server components in the same entry stay
+server-renderable.
 
-```tsx
-import { PageTurner } from "summit-kit/client";
+### Svelte
+
+```svelte
+<script>
+  import { Section, Heading, P, PrimaryButton } from "summit-kit/svelte";
+</script>
+
+<Section>
+  <Heading level={1}>Welcome</Heading>
+  <P>Build something great with Summit Kit.</P>
+  <PrimaryButton>Get Started</PrimaryButton>
+</Section>
 ```
+
+## Theming
+
+Every component is themed by default via a self-contained token layer with baked-in
+light + dark values, so nothing breaks if you never import a stylesheet.
+
+- **Switch themes** with `setTheme("dark" | "light" | "system")` (exported from both entries).
+  It toggles a `data-theme` attribute; components and the optional global styles both respond.
+- **Override the palette** by setting the `--sk-*` CSS custom properties on `:root` (or any
+  ancestor), or by importing the global stylesheet:
+
+  ```ts
+  import "summit-kit/styles"; // optional: global reset + branded typography + palette
+  ```
+
+- **Go headless** with `setHeadless(true)` to strip the built-in class names and style
+  components entirely yourself (pass your own classes via the component's `class`/`classes` prop).
 
 ## Exports
 
-Summit Kit provides three entry points:
-
 | Import path | Description |
 |---|---|
-| `summit-kit` or `summit-kit/server` | Server/SSR-compatible components |
-| `summit-kit/client` | Client-only components and hooks |
-| `summit-kit/styles` | Global stylesheet and CSS custom properties |
+| `summit-kit` / `summit-kit/react` | React components (server-safe + client, one entry) |
+| `summit-kit/svelte` | Svelte components (single universal entry) |
+| `summit-kit/styles` | Optional global reset, typography, and palette |
+| `summit-kit/styles/colors` · `summit-kit/styles/global` | The two global sheets individually |
 
-### Server Components
+## Components
 
 **Layout:** Section, Reading, Flex, Grid, GridHeader, GridRow
 
-**Text:** H1 -- H6, P, Span, Quote, Ol, Ul, Li, Link, Code
+**Text:** Heading (`level={1..6}`), P, Span, Quote, Ol, Ul, Li, Link, Code (Shiki-highlighted)
 
 **Form:** Form, Input, Select, PrimaryButton, SecondaryButton
 
-**Media:** Image, Icon, Figure
+**Media:** Image, Figure, Icon
 
-### Client Components & Hooks
-
-**Components:** PageTurner
-
-**Hooks:** useAudio, useKeyPress, toggleFullScreen
+**Interactions:** PageTurner, plus keyboard/audio helpers
+— React: `useKeyPress`, `useAudio`; Svelte: the `keypress` action and `createAudio` rune.
 
 ## Development
 
 ```bash
-npm run storybook          # Run Storybook dev server on port 6006
-npm run build              # Build the library
-npm run build-storybook    # Build Storybook static site
+npm run build        # Build the library (React + shared + Svelte)
+npm test             # Run React + Svelte test suites
+npm run check        # Type-check both frameworks (tsc + svelte-check)
+npm run format       # Format with Biome (.ts/.tsx/.css) + Prettier (.svelte)
 ```
+
+> Storybook (`npm run storybook` / `storybook:svelte`) is configured but currently does not
+> build under Vite 8 / Rolldown + Storybook 10; see the project notes.
 
 ## License
 

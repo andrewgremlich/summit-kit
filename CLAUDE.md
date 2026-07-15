@@ -1,33 +1,55 @@
 # Summit Kit
 
-A React component library for building modern web applications with an earthy and outdoorsy flair.
+A **dual-framework** (React + Svelte) component library for building modern web applications
+with an earthy and outdoorsy flair.
 
 ## Project Overview
 
-Summit Kit is a TypeScript-based component library published as an npm package (version 3.4.2). It provides React components split into two categories:
-- **Server components** (`src/react/server/`) — SSR-compatible components for layout, text, forms, and media
-- **Client components** (`src/react/client/`) — Browser-only components and hooks
+Summit Kit is a TypeScript-based component library published as an npm package. As of v4 it
+ships components for **both React and Svelte** from one package, over a shared,
+framework-neutral core. The source is organized as:
+- **`src/shared/`** — framework-neutral core: `cx`, `headless`/`themed`, `theme`, `fullscreen`,
+  extracted `keypress`/`audio` logic, `highlight` (Shiki), and the styling/token system.
+- **`src/react/`** — React components (flat category folders: Areas, Form, Text, Icon, Image,
+  Types, Hooks, PageTurner). Client-only modules carry a `"use client"` directive.
+- **`src/svelte/`** — Svelte 5 components (same flat category folders + `actions/`).
+
+The React server/client boundary is encoded by per-file `"use client"` directives (not by
+entry path); Svelte components are universal, so there is no such split on that side.
 
 ## Tech Stack
 
 - **Language:** TypeScript 6.0+ (strict mode)
-- **Framework:** React 19.1.0+
-- **Build tool:** Vite 8.0+ with `@vitejs/plugin-react` and Lightning CSS
-- **CSS processing:** Lightning CSS (transpiles modern CSS for Chrome 100+, Firefox 100+, Safari 14+, Edge 100+)
-- **Linter/Formatter:** Biome 2.4+
-- **Docs/Demo:** Storybook 10.2+ (autodocs + interactive demos)
-- **Dependencies:** lucide-react, prism-react-renderer, screenfull, uuid
+- **Frameworks:** React 19.1.0+ and Svelte 5 (both optional peer deps — install only what you use)
+- **Build tool:** Vite 8.0+ (`@vitejs/plugin-react`, `@sveltejs/vite-plugin-svelte`, Lightning CSS)
+  plus `@sveltejs/package` for Svelte `.d.ts` and `rollup-preserve-directives` for `"use client"`.
+- **CSS processing:** Lightning CSS (Chrome 100+, Firefox 100+, Safari 14+, Edge 100+)
+- **Syntax highlighting:** Shiki (shared by both frameworks' `Code` component)
+- **Linter/Formatter:** Biome 2.4+ for `.ts/.tsx/.css`; Prettier + `prettier-plugin-svelte` for `.svelte`
+- **Type checking:** `tsc --noEmit` (React + shared) and `svelte-check` (Svelte)
+- **Docs/Demo:** Storybook 10 (dual config; see build note below)
+- **Dependencies:** lucide-react, @lucide/svelte, shiki, screenfull
 
 ## Common Commands
 
 ```bash
-npm run build              # Build the library
+npm run build              # Build everything: React (Vite) + shared CSS copy + Svelte (svelte-package)
+npm run build:react        # React + shared JS only
+npm run build:svelte       # Svelte package only (svelte-package)
+npm run gen-tokens         # Regenerate colors.css + tokens.module.css from src/shared/styles/tokens.ts
+npm test                   # React + Svelte test suites
+npm run check              # tsc --noEmit + svelte-check
+npm run format             # Biome (.ts/.tsx/.css) + Prettier (.svelte)
 npm run clean              # Remove dist/ and storybook-static/
-npm run storybook          # Run Storybook dev server on port 6006
-npm run build-storybook    # Build Storybook static site
 ```
 
-Linting (Biome) and type-checking (`tsc --noEmit`) run automatically via pre-commit hook. Run Biome manually:
+> **Storybook** (`npm run storybook` / `storybook:svelte`) is configured but currently does
+> not build under Vite 8 / Rolldown + Storybook 10 (a pre-existing toolchain incompatibility
+> affecting both frameworks). The configs are correct and left in place for when a
+> Rolldown-compatible Storybook ships.
+
+Type-checking (`tsc --noEmit` + `svelte-check`), Biome, and Prettier (`.svelte`) run
+automatically via the pre-commit hook. Run Biome manually:
 
 ```bash
 npx biome check --write src/
@@ -35,79 +57,111 @@ npx biome check --write src/
 
 ## Code Style
 
-- **Indentation:** Tabs (enforced by Biome)
+- **Indentation:** Tabs (enforced by Biome / Prettier)
 - **Quotes:** Double quotes
 - **Module system:** ES Modules (`"type": "module"`)
 - **JSX transform:** `react-jsx` (no React import needed)
+- **Svelte:** Svelte 5 runes (`$props`, `$derived`, `$state`); components use `svelte:element`
+  for polymorphic `as`, and `Snippet` for children.
 
 ## Architecture
 
 ### Package Exports
 
-| Export path       | Entry point                        | Description              |
-|-------------------|------------------------------------|--------------------------|
-| `"."` / `"./server"` | `dist/react-server.js`          | Server/SSR components    |
-| `"./client"`      | `dist/react-client.js`             | Client-only components   |
-| `"./styles"`      | `dist/summit-kit.css`              | Global styles            |
+| Export path | Entry point | Description |
+|---|---|---|
+| `"."` / `"./react"` | `dist/react/index.js` | React components (server-safe + client, one entry) |
+| `"./svelte"` | `dist/svelte/index.js` | Svelte components (single universal entry; `svelte` export condition) |
+| `"./styles"` | `dist/summit-kit.css` | Optional global reset + typography + palette |
+| `"./styles/colors"` · `"./styles/global"` | `dist/colors.css` · `dist/global.css` | The two global sheets individually |
 
-### Component Structure
+There is **no** `./server` or `./client` export (removed in v4). React's server/client boundary
+is the per-file `"use client"` directive, preserved via `rollup-preserve-directives` +
+Rollup `preserveModules`. Framework peers (`react`, `react-dom`, `svelte`) are all marked
+optional — consumers install only the framework they use.
 
-**Server Components** (`src/react/server/`):
-- **Areas:** Reading, Section, Flex, Grid (GridHeader, GridRow)
-- **Form:** Buttons, Form, Inputs, Select
-- **Text:** Body, Code, Headings, Link
-- **Media:** Icon, Image
-- **Types:** StandardProps, general types
+### Component Structure (mirrored across frameworks)
 
-**Client Components** (`src/react/client/`):
-- **Hooks:** useAudio, useKeyPress, toggleFullScreen, setTheme/getTheme/toggleTheme
-- **Components:** PageTurner
+Both `src/react/` and `src/svelte/` share the same flat category layout:
+- **Areas:** Flex, Grid, GridHeader, GridRow, Reading, Section
+- **Form:** Form, PrimaryButton, SecondaryButton, Input, Select
+- **Text:** Heading (`level` prop; React also exports H1–H6), P, Span, Quote, Ol, Ul, Li, Link, Code
+- **Media:** Icon (lucide), Image, Figure
+- **Interactions:** PageTurner; React hooks `useAudio`/`useKeyPress`; Svelte `keypress` action +
+  `createAudio` rune (both wrap the shared `audio`/`keypress` logic).
 
-**Utilities** (`src/utils/`):
-- `cx.ts` — Class name merging utility (handles strings, arrays, falsy values)
-- `headless.ts` — Headless mode support (`setHeadless`, `isHeadless`, `themed`)
+**Shared core** (`src/shared/`) — framework-neutral, consumed by both:
+- `cx.ts` — class-name merge; `headless.ts` — `setHeadless`/`isHeadless`/`themed`
+- `theme.ts` — `setTheme`/`getTheme`/`toggleTheme`; `fullscreen.ts` — `toggleFullScreen`
+- `keypress.ts`, `audio.ts` — extracted logic; `highlight.ts` — Shiki wrapper
+- `styles/` — `tokens.ts` (source of truth), generated `colors.css` + `tokens.module.css`,
+  `global.css`, and the component `*.module.css` files (imported by both frameworks).
 
-**Styles** (`src/styles/`): global.css, colors.css
+> `src/utils/cx.ts`, `headless.ts`, `toggleFullScreen.ts` remain as thin re-export shims to
+> `src/shared/*` for backward compatibility within the React tree.
 
 ### Fonts
 
-Summit Kit uses the **Molengo** and **Rakkas** Google Fonts. These are not bundled — consumers must load them via a `<link>` tag in their HTML:
+Summit Kit uses the **Molengo** and **Rakkas** Google Fonts. These are not bundled — consumers
+optionally load them via a `<link>` tag for the full branded look:
 
 ```html
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Molengo&family=Rakkas&display=swap" />
 ```
 
-### Dark Mode / Theming
+### Dark Mode / Theming (no required CSS import)
 
-Theme support uses semantic CSS custom properties (e.g., `--text-color`, `--bg-gradient-start`, `--btn-primary-bg`) defined in `colors.css`. These variables change based on:
-- `:root` — light theme defaults
-- `@media (prefers-color-scheme: dark) { :root:not([data-theme]) }` — OS dark mode preference
-- `[data-theme="dark"]` / `[data-theme="light"]` — explicit overrides via `data-theme` attribute
-
-Consumers toggle themes programmatically via `setTheme("dark" | "light" | "system")` from `summit-kit/client`.
+Components are themed **out of the box** in light and dark — importing a stylesheet is
+optional. This works via a **self-contained token layer**:
+- `src/shared/styles/tokens.ts` is the single source of truth for every `--sk-*` token
+  (primitives + semantic tokens with resolved `light`/`dark` values).
+- `scripts/gen-tokens.ts` (`npm run gen-tokens`) generates two files from it — never hand-edit them:
+  - `colors.css` — the **optional** global override (`:root`, `[data-theme]`, `prefers-color-scheme`).
+  - `tokens.module.css` — a `.tokens` layer that component CSS `composes`, baking in the
+    light/dark `--sk-*` values so a component is themed with no global stylesheet.
+- **Switch themes** with `setTheme("dark" | "light" | "system")` (toggles `data-theme`).
+- **Override the palette** by setting `--sk-*` vars on `:root`/an ancestor, or `import "summit-kit/styles"`.
 
 ### Headless Mode
 
-Components are opinionated by default (styled via CSS Modules). For headless usage:
-1. Skip importing `summit-kit/styles`
-2. Call `setHeadless(true)` from `summit-kit` or `summit-kit/client` to suppress CSS module class names
-3. Pass custom classes via the `classes` prop
+Components are styled by default (CSS Modules + composed token layer). For headless usage:
+1. Call `setHeadless(true)` from either entry to suppress CSS-module class names.
+2. Pass custom classes via the component's `class` (Svelte) / `classes` (React) prop.
 
-All CSS module imports are wrapped with `themed()` from `src/utils/headless.ts`, which returns empty strings for class names when headless mode is active.
+All CSS-module imports are wrapped with `themed()` from `src/shared/headless.ts`, which returns
+empty strings for class names when headless mode is active.
 
-### Storybook
+### Contribution rule — keep the core shared
 
-Stories are co-located as `*.stories.tsx` files. Config in `.storybook/` (main.ts, preview.ts). All stories use CSF3 format with `autodocs` tags.
+New components should keep **styling and logic in `src/shared/`** (CSS modules, token layer,
+extracted behavior) and keep the per-framework `.tsx`/`.svelte` files as thin shells over it.
+This is what makes a component cheap to offer in both frameworks. Svelte has **no** server/client
+folder split (components are universal); new Svelte components go directly in the flat `src/svelte/`
+tree, and new React client-only modules must start with the `"use client"` directive.
+
+### Storybook (dual)
+
+Two configs: `.storybook/` (React, `@storybook/react-vite`, glob `src/**/*.stories.@(ts|tsx)`)
+and `.storybook-svelte/` (Svelte, `@storybook/svelte-vite`, glob `src/svelte/**/*.stories.@(ts|svelte)`).
+CSF3 format with `autodocs`. **Note:** neither currently builds under Vite 8 / Rolldown +
+Storybook 10 (pre-existing incompatibility); configs are kept for when that is resolved.
 
 ### CSS Modules
 
-Components use CSS Modules (`.module.css`) co-located with components. Global styles and CSS custom properties in `src/styles/`. All components use the `cx()` utility from `src/utils/cx.ts` for consistent class merging.
+Components use CSS Modules (`.module.css`) that live in `src/shared/styles/components/` so
+**both frameworks import the same source**. Global styles and CSS custom properties are in
+`src/shared/styles/`. Component CSS references `--sk-*` tokens and `composes` the `.tokens`
+layer for self-contained theming. All components use `cx()` from `src/shared/cx.ts`.
+
+At build time these `*.module.css` files are consumed two ways: React (Vite) compiles them to
+class-map JS; the Svelte package ships them raw for the consumer's bundler. Both formats coexist
+under `dist/shared/styles/components/`.
 
 ## Git Workflow
 
 Pre-commit hooks (via `simple-git-hooks` + `lint-staged`) run on every commit:
-1. Type-check (`tsc --noEmit`)
-2. Format staged files with Biome
-3. Build the project
+1. Type-check both frameworks (`tsc --noEmit` + `svelte-check`)
+2. Format staged files — Biome (`.ts/.tsx/.css`) and Prettier (`.svelte`)
+3. Run related tests (`vitest related`)
 
 Do not skip hooks with `--no-verify`.
