@@ -109,6 +109,9 @@ export default defineConfig(() => ({
 		environment: "jsdom",
 		setupFiles: ["./src/test-setup.ts"],
 		include: ["{src,tests}/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+		// Svelte component tests run under vitest.svelte.config.ts (which loads the Svelte
+		// plugin); exclude them here so the React config doesn't try to compile .svelte imports.
+		exclude: ["src/svelte/**", "node_modules/**"],
 		reporters: ["default"],
 		coverage: {
 			reportsDirectory: "./test-output/vitest/coverage",

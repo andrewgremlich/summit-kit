@@ -49,11 +49,14 @@
 		}
 	},
 	"simple-git-hooks": {
-		"pre-commit": "npx simple-git-hooks && npx tsc --noEmit && npx lint-staged"
+		"pre-commit": "npx simple-git-hooks && npx tsc --noEmit && npx svelte-check --tsconfig ./tsconfig.svelte.json && npx lint-staged"
 	},
 	"lint-staged": {
 		"src/**/*.{ts,tsx,css,md}": [
 			"npx @biomejs/biome check --write ./src"
+		],
+		"src/**/*.svelte": [
+			"npx prettier --write"
 		],
 		"src/**/*.{ts,tsx}": [
 			"npx vitest related --run"
@@ -67,9 +70,15 @@
 		"build:shared-css": "node --experimental-strip-types scripts/copy-shared-css.ts",
 		"build:svelte": "svelte-package --input src/svelte --output dist/svelte --tsconfig tsconfig.svelte.json",
 		"build": "npm run build:react && npm run build:shared-css && npm run build:svelte",
+		"format": "npx @biomejs/biome check --write ./src && npx prettier --write \"src/**/*.svelte\"",
+		"check": "npx tsc --noEmit && npx svelte-check --tsconfig ./tsconfig.svelte.json",
 		"storybook": "storybook dev -p 6006",
-		"test": "vitest",
-		"build-storybook": "storybook build -o storybook-static"
+		"storybook:svelte": "storybook dev -p 6007 --config-dir .storybook-svelte",
+		"build-storybook": "storybook build -o storybook-static",
+		"build-storybook:svelte": "storybook build -o storybook-static-svelte --config-dir .storybook-svelte",
+		"test": "vitest run && vitest run --config vitest.svelte.config.ts",
+		"test:react": "vitest",
+		"test:svelte": "vitest run --config vitest.svelte.config.ts"
 	},
 	"dependencies": {
 		"lucide-react": "^1.24.0",
@@ -82,10 +91,13 @@
 		"@storybook/addon-a11y": "^10.5.0",
 		"@storybook/react": "^10.5.0",
 		"@storybook/react-vite": "^10.5.0",
+		"@storybook/svelte": "^10.5.0",
+		"@storybook/svelte-vite": "^10.5.0",
 		"@sveltejs/package": "^2.5.8",
 		"@sveltejs/vite-plugin-svelte": "^7.2.0",
 		"@testing-library/jest-dom": "^6.9.1",
 		"@testing-library/react": "^16.3.2",
+		"@testing-library/svelte": "^5.4.2",
 		"@types/node": "^26.1.1",
 		"@types/react": "^19.2.17",
 		"@types/react-dom": "^19.2.3",
@@ -93,6 +105,8 @@
 		"conventional-changelog": "^8.1.0",
 		"jsdom": "^29.1.1",
 		"lint-staged": "^17.0.8",
+		"prettier": "^3.9.5",
+		"prettier-plugin-svelte": "^4.1.1",
 		"rimraf": "^6.1.3",
 		"rollup-preserve-directives": "^1.1.3",
 		"simple-git-hooks": "^2.13.1",

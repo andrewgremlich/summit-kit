@@ -1,7 +1,7 @@
 {
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
-		"types": ["svelte"],
+		"types": ["svelte", "@testing-library/jest-dom"],
 		"module": "preserve",
 		"moduleResolution": "bundler",
 		"allowImportingTsExtensions": false,
@@ -10,5 +10,6 @@
 		"declaration": true,
 		"emitDeclarationOnly": true
 	},
-	"include": ["src/svelte/**/*", "src/shared/**/*", "src/types/**/*"]
+	"include": ["src/svelte/**/*", "src/shared/**/*", "src/types/**/*"],
+	"exclude": ["src/svelte/**/*.stories.*"]
 }

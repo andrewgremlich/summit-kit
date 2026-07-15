@@ -1,0 +1,6 @@
+# Prettier only formats .svelte files; Biome owns everything else.
+# (lint-staged / the format script target *.svelte explicitly, but this keeps a
+#  stray `prettier .` from touching Biome-owned files.)
+*
+!*.svelte
+!**/*.svelte
