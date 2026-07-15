@@ -1,3 +1,5 @@
+"use client";
+
 import rawClasses from "../../../shared/styles/components/page-turner.module.css";
 import { themed } from "../../../utils/headless.ts";
 import { Icon } from "../../server/Icon/index.tsx";

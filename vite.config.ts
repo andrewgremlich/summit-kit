@@ -1,6 +1,7 @@
 import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import react from "@vitejs/plugin-react";
+import preserveDirectives from "rollup-preserve-directives";
 import { defineConfig, type Plugin } from "vite";
 import dts from "vite-plugin-dts";
 
@@ -36,6 +37,7 @@ export default defineConfig(() => ({
 	},
 	plugins: [
 		react(),
+		preserveDirectives(),
 		dts({
 			entryRoot: "src",
 		}),
@@ -65,15 +67,29 @@ export default defineConfig(() => ({
 		},
 		lib: {
 			entry: {
-				"react-server": "src/react/server/index.ts",
-				"react-client": "src/react/client/index.ts",
+				"react/index": "src/react/index.ts",
 			},
 			name: "summit-kit",
 			formats: ["es" as const],
 		},
 		rollupOptions: {
 			// External packages that should not be bundled into your library.
-			external: ["react", "react-dom", "react/jsx-runtime"],
+			external: [
+				"react",
+				"react-dom",
+				"react/jsx-runtime",
+				"shiki",
+				"lucide-react",
+			],
+			output: {
+				// Preserve per-file module structure so each component keeps its own
+				// "use client" banner and stays independently tree-shakeable. Shared code
+				// (imported from ../shared and the ../utils shims) is emitted alongside under
+				// dist/shared + dist/utils; the Svelte package reuses those same files.
+				preserveModules: true,
+				preserveModulesRoot: "src",
+				entryFileNames: "[name].js",
+			},
 		},
 	},
 	test: {
