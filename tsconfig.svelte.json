@@ -1,0 +1,11 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"types": ["svelte"],
+		"module": "preserve",
+		"moduleResolution": "bundler",
+		"allowImportingTsExtensions": true,
+		"verbatimModuleSyntax": false
+	},
+	"include": ["src/svelte/**/*", "src/shared/**/*", "src/types/**/*"]
+}

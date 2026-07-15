@@ -53,3 +53,4 @@ out
 _site
 .cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
+.svelte-kit/

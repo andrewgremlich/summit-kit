@@ -1,8 +1,7 @@
+import rawClasses from "../../../shared/styles/components/text.module.css";
 import { cx } from "../../../utils/cx.ts";
 import { themed } from "../../../utils/headless.ts";
 import type { StandardProps } from "../Types/general.ts";
-
-import rawClasses from "./styles.module.css";
 
 const classes = themed(rawClasses);
 

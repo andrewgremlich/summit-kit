@@ -29,7 +29,7 @@
 }
 
 .blockquote {
-	composes: tokens from "../../../shared/styles/tokens.module.css";
+	composes: tokens from "../tokens.module.css";
 	margin-bottom: 2rem;
 	border-left: 0.5rem solid var(--sk-red-500, #a36666);
 	padding-left: 1rem;
@@ -42,7 +42,7 @@
 }
 
 .a {
-	composes: tokens from "../../../shared/styles/tokens.module.css";
+	composes: tokens from "../tokens.module.css";
 	text-underline-offset: 0.2rem;
 	text-decoration: underline;
 	text-decoration-thickness: 0.1rem;
@@ -67,7 +67,7 @@
 }
 
 .pre {
-	composes: tokens from "../../../shared/styles/tokens.module.css";
+	composes: tokens from "../tokens.module.css";
 	border-radius: var(--sk-border-radius, 0.5rem);
 	font-size: 0.9rem;
 	padding: 1rem;

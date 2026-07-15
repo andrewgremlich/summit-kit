@@ -1,10 +1,9 @@
 import type { ReactNode, SelectHTMLAttributes } from "react";
 import { forwardRef, useId } from "react";
-
+import rawStyles from "../../../shared/styles/components/form.module.css";
 import { cx } from "../../../utils/cx.ts";
 import { themed } from "../../../utils/headless.ts";
 import { Flex } from "../Areas/Flex.tsx";
-import rawStyles from "./styles.module.css";
 
 const styles = themed(rawStyles);
 

@@ -58,7 +58,7 @@
 .down-arrow,
 .up-arrow,
 .left-arrow {
-	composes: tokens from "../../../shared/styles/tokens.module.css";
+	composes: tokens from "../tokens.module.css";
 }
 
 .right-arrow:focus-visible,

@@ -11,7 +11,7 @@
 
 .text-input,
 .select {
-	composes: tokens from "../../../shared/styles/tokens.module.css";
+	composes: tokens from "../tokens.module.css";
 	margin: 2px 0px;
 	padding: 0.5rem;
 	border-width: 3px;
@@ -36,7 +36,7 @@
 }
 
 .submit {
-	composes: tokens from "../../../shared/styles/tokens.module.css";
+	composes: tokens from "../tokens.module.css";
 	background-color: var(--sk-btn-primary-bg);
 	color: var(--sk-btn-primary-color);
 
@@ -50,7 +50,7 @@
 }
 
 .secondary {
-	composes: tokens from "../../../shared/styles/tokens.module.css";
+	composes: tokens from "../tokens.module.css";
 	background-color: var(--sk-btn-secondary-bg);
 	color: var(--sk-btn-secondary-color);
 

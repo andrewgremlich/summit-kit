@@ -1,7 +1,7 @@
+import rawClasses from "../../../shared/styles/components/page-turner.module.css";
 import { themed } from "../../../utils/headless.ts";
 import { Icon } from "../../server/Icon/index.tsx";
 import { useKeyPress } from "../Hooks/useKeyPress.tsx";
-import rawClasses from "./PageTurner.module.css";
 
 const classes = themed(rawClasses);
 

@@ -1,6 +1,5 @@
+import classes from "../../../shared/styles/components/areas.module.css";
 import type { StandardProps } from "../Types/general.ts";
-
-import classes from "./styles.module.css";
 
 /**
  * Renders an article element with the "reading" class.
