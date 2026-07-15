@@ -81,12 +81,12 @@
 	},
 	"dependencies": {
 		"lucide-react": "^1.24.0",
+		"@lucide/svelte": "^1.24.0",
 		"screenfull": "^6.0.2",
 		"shiki": "^4.3.1"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.5.4",
-		"@lucide/svelte": "^1.24.0",
 		"@sveltejs/package": "^2.5.8",
 		"@sveltejs/vite-plugin-svelte": "^7.2.0",
 		"@testing-library/jest-dom": "^6.9.1",
