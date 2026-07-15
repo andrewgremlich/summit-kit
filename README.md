@@ -112,10 +112,17 @@ npm run build        # Build the library (React + shared + Svelte)
 npm test             # Run React + Svelte test suites
 npm run check        # Type-check both frameworks (tsc + svelte-check)
 npm run format       # Format with Biome (.ts/.tsx/.css) + Prettier (.svelte)
+npm run demo:react   # Live component gallery for React (Vite dev server)
+npm run demo:svelte  # Live component gallery for Svelte
+npm run build:demo   # Build the static demo site to demo-static/
 ```
 
-> Storybook (`npm run storybook` / `storybook:svelte`) is configured but currently does not
-> build under Vite 8 / Rolldown + Storybook 10; see the project notes.
+The interactive component galleries live in [`demo/`](demo/) — a small Vite app per framework
+that renders every component from source. `npm run build:demo` produces the deployable static
+site (this is what the live docs deploy from).
+
+> Storybook configs (`.storybook/`, `.storybook-svelte/`) are present but do not currently build
+> under Vite 8 / Rolldown + Storybook 10. The demo apps are the interim (and simpler) alternative.
 
 ## License
 

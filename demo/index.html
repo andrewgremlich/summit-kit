@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Summit Kit — Demos</title>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Molengo&family=Rakkas&display=swap"
+		/>
+		<style>
+			body {
+				font-family: "Molengo", system-ui, sans-serif;
+				max-width: 40rem;
+				margin: 4rem auto;
+				padding: 0 1.5rem;
+				line-height: 1.6;
+				background: linear-gradient(to bottom, #a4f4cf, #ecfdf5);
+				min-height: 100vh;
+			}
+			h1 {
+				font-family: "Rakkas", Georgia, serif;
+				font-size: 2.5rem;
+				letter-spacing: 0.05em;
+			}
+			.cards {
+				display: grid;
+				gap: 1rem;
+				margin-top: 2rem;
+			}
+			a.card {
+				display: block;
+				padding: 1.5rem;
+				border-radius: 0.75rem;
+				background: rgba(255, 255, 255, 0.6);
+				border: 1px solid #67867a;
+				text-decoration: none;
+				color: #1a1a1a;
+			}
+			a.card:hover {
+				background: rgba(255, 255, 255, 0.9);
+			}
+			a.card strong {
+				font-size: 1.25rem;
+			}
+			@media (prefers-color-scheme: dark) {
+				body {
+					background: linear-gradient(to bottom, #004f3b, #007a55);
+					color: #e5e5e5;
+				}
+				a.card {
+					background: rgba(0, 0, 0, 0.3);
+					color: #e5e5e5;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Summit Kit</h1>
+		<p>
+			A React and Svelte component library with an earthy, outdoorsy flair.
+			Explore the same components in each framework:
+		</p>
+		<div class="cards">
+			<a class="card" href="./react/">
+				<strong>React demo →</strong>
+				<div>Components from <code>summit-kit/react</code></div>
+			</a>
+			<a class="card" href="./svelte/">
+				<strong>Svelte demo →</strong>
+				<div>Components from <code>summit-kit/svelte</code></div>
+			</a>
+		</div>
+	</body>
+</html>

@@ -139,12 +139,20 @@ This is what makes a component cheap to offer in both frameworks. Svelte has **n
 folder split (components are universal); new Svelte components go directly in the flat `src/svelte/`
 tree, and new React client-only modules must start with the `"use client"` directive.
 
-### Storybook (dual)
+### Demos & Storybook
 
-Two configs: `.storybook/` (React, `@storybook/react-vite`, glob `src/**/*.stories.@(ts|tsx)`)
-and `.storybook-svelte/` (Svelte, `@storybook/svelte-vite`, glob `src/svelte/**/*.stories.@(ts|svelte)`).
-CSF3 format with `autodocs`. **Note:** neither currently builds under Vite 8 / Rolldown +
-Storybook 10 (pre-existing incompatibility); configs are kept for when that is resolved.
+**Demos (`demo/`)** are the working component galleries and the deploy target: a small Vite app
+per framework (`demo/react/`, `demo/svelte/`) that imports components straight from `src/` and
+renders a gallery, plus a landing page (`demo/index.html`). `npm run build:demo`
+(`scripts/build-demo.ts`) builds all three into `demo-static/`; `vercel.json` deploys that.
+Dev servers: `npm run demo:react` / `demo:svelte`. Because each demo is a real Vite build against
+the source, it also serves as an end-to-end smoke test of both entries.
+
+**Storybook** has two configs — `.storybook/` (React, `@storybook/react-vite`) and
+`.storybook-svelte/` (Svelte, `@storybook/svelte-vite`), CSF3 + `autodocs`. **Neither currently
+builds** under Vite 8 / Rolldown + Storybook 10 (a pre-existing incompatibility — both framework
+Vite plugins require Vite 8, and Storybook's builder isn't Rolldown-compatible yet). The configs
+are kept for when Storybook ships Rolldown support; the demos are the interim alternative.
 
 ### CSS Modules
 

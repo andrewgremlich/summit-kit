@@ -76,3 +76,25 @@ export const H5 = (props: StandardProps) => {
 export const H6 = (props: StandardProps) => {
 	return <h6 className={cx(classes.h6, props.classes)}>{props.children}</h6>;
 };
+
+type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
+
+/**
+ * Renders a heading at the given `level` (1–6). Mirrors the Svelte `Heading` component so
+ * both frameworks share one polymorphic API; the `H1`–`H6` components remain as shortcuts.
+ *
+ * @param props.level - Heading level 1–6 (defaults to 1).
+ * @param props.classes - Optional additional CSS class names.
+ * @param props.children - Heading content.
+ */
+export const Heading = ({
+	level = 1,
+	...props
+}: StandardProps & { level?: HeadingLevel }) => {
+	const Tag = `h${level}` as const;
+	return (
+		<Tag className={cx(classes[`h${level}`], props.classes)}>
+			{props.children}
+		</Tag>
+	);
+};

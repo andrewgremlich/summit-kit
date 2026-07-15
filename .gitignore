@@ -46,6 +46,7 @@ vitest.config.*.timestamp*
 test-output
 .vercel
 storybook-static
+demo-static
 
 # Next.js
 .next

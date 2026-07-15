@@ -1,0 +1,65 @@
+/* Shared demo-page chrome (not part of the library). Both framework demos import this. */
+:root {
+	color-scheme: light dark;
+}
+
+.demo-header {
+	display: flex;
+	align-items: baseline;
+	gap: 1rem;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--sk-grey-200, #b3b3b3);
+}
+
+.demo-header h1 {
+	font-size: 1.75rem;
+}
+
+.demo-header .demo-badge {
+	font-size: 0.8rem;
+	padding: 0.15rem 0.6rem;
+	border-radius: 999px;
+	background: var(--sk-green-200, #a4f4cf);
+	color: var(--sk-grey-800, #1a1a1a);
+}
+
+.demo-header a {
+	margin-left: auto;
+	font-size: 0.9rem;
+}
+
+.demo-toolbar {
+	display: flex;
+	gap: 0.5rem;
+	margin-bottom: 2rem;
+	flex-wrap: wrap;
+}
+
+.demo-section {
+	margin-bottom: 2.5rem;
+}
+
+.demo-section > h2 {
+	font-size: 1.25rem;
+	margin-bottom: 0.75rem;
+	padding-bottom: 0.35rem;
+	border-bottom: 1px dashed var(--sk-grey-100, #cccccc);
+}
+
+.demo-example {
+	padding: 1rem;
+	border: 1px solid var(--sk-grey-100, #cccccc);
+	border-radius: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.demo-example > .demo-label {
+	display: block;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	opacity: 0.6;
+	margin-bottom: 0.5rem;
+}

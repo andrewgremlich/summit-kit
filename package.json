@@ -64,7 +64,7 @@
 	},
 	"scripts": {
 		"prepare": "npm run build && npx simple-git-hooks",
-		"clean": "rimraf dist storybook-static",
+		"clean": "rimraf dist storybook-static storybook-static-svelte demo-static",
 		"gen-tokens": "node --experimental-strip-types scripts/gen-tokens.ts",
 		"build:react": "vite build",
 		"build:shared-css": "node --experimental-strip-types scripts/copy-shared-css.ts",
@@ -72,6 +72,9 @@
 		"build": "npm run build:react && npm run build:shared-css && npm run build:svelte",
 		"format": "npx @biomejs/biome check --write ./src && npx prettier --write \"src/**/*.svelte\"",
 		"check": "npx tsc --noEmit && npx svelte-check --tsconfig ./tsconfig.svelte.json",
+		"demo:react": "vite --config demo/react/vite.config.ts",
+		"demo:svelte": "vite --config demo/svelte/vite.config.ts",
+		"build:demo": "node --experimental-strip-types scripts/build-demo.ts",
 		"storybook": "storybook dev -p 6006",
 		"storybook:svelte": "storybook dev -p 6007 --config-dir .storybook-svelte",
 		"build-storybook": "storybook build -o storybook-static",
