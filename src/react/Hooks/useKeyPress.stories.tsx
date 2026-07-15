@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 
-import { P } from "../../server/Text/Body.tsx";
-import { Code } from "../../server/Text/Code.tsx";
-import { H2 } from "../../server/Text/Headings.tsx";
+import { P } from "../Text/Body.tsx";
+import { Code } from "../Text/Code.tsx";
+import { H2 } from "../Text/Headings.tsx";
 import { useKeyPress } from "./useKeyPress.tsx";
 
 const KeyPressDemo = () => {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { highlightCode } from "../../../shared/highlight.ts";
-import rawClasses from "../../../shared/styles/components/text.module.css";
-import { themed } from "../../../utils/headless.ts";
+import { highlightCode } from "../../shared/highlight.ts";
+import rawClasses from "../../shared/styles/components/text.module.css";
+import { themed } from "../../utils/headless.ts";
 
 const classes = themed(rawClasses);
 

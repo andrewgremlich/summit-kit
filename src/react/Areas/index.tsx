@@ -1,4 +1,4 @@
-import classes from "../../../shared/styles/components/areas.module.css";
+import classes from "../../shared/styles/components/areas.module.css";
 import type { StandardProps } from "../Types/general.ts";
 
 /**

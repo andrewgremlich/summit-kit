@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { P } from "../../server/Text/Body.tsx";
-import { H2 } from "../../server/Text/Headings.tsx";
+import { P } from "../Text/Body.tsx";
+import { H2 } from "../Text/Headings.tsx";
 import { PageTurner } from "./index.tsx";
 
 const meta: Meta<typeof PageTurner> = {

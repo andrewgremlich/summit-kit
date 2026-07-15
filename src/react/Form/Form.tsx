@@ -1,6 +1,6 @@
 import type { FormEventHandler } from "react";
 
-import { cx } from "../../../utils/cx.ts";
+import { cx } from "../../utils/cx.ts";
 import type { StandardProps } from "../Types/general.ts";
 
 type FormProps = {

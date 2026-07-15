@@ -1,8 +1,8 @@
 import type { HTMLAttributes, JSX } from "react";
 import { forwardRef } from "react";
-import rawStyles from "../../../shared/styles/components/areas.module.css";
-import { cx } from "../../../utils/cx.ts";
-import { themed } from "../../../utils/headless.ts";
+import rawStyles from "../../shared/styles/components/areas.module.css";
+import { cx } from "../../utils/cx.ts";
+import { themed } from "../../utils/headless.ts";
 
 const styles = themed(rawStyles);
 

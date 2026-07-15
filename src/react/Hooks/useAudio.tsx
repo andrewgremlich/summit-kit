@@ -5,7 +5,7 @@ import {
 	type AudioController,
 	type AudioOptions,
 	createAudioController,
-} from "../../../shared/audio.ts";
+} from "../../shared/audio.ts";
 
 interface UseAudioReturn {
 	play: () => void;

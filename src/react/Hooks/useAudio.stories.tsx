@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Flex } from "../../server/Areas/Flex.tsx";
-import { PrimaryButton, SecondaryButton } from "../../server/Form/Buttons.tsx";
-import { P } from "../../server/Text/Body.tsx";
-import { Code } from "../../server/Text/Code.tsx";
-import { H2 } from "../../server/Text/Headings.tsx";
+import { Flex } from "../Areas/Flex.tsx";
+import { PrimaryButton, SecondaryButton } from "../Form/Buttons.tsx";
+import { P } from "../Text/Body.tsx";
+import { Code } from "../Text/Code.tsx";
+import { H2 } from "../Text/Headings.tsx";
 import { useAudio } from "./useAudio.tsx";
 
 const AudioDemo = () => {

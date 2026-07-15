@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes } from "react";
-import rawClasses from "../../../shared/styles/components/form.module.css";
-import { cx } from "../../../utils/cx.ts";
-import { themed } from "../../../utils/headless.ts";
+import rawClasses from "../../shared/styles/components/form.module.css";
+import { cx } from "../../utils/cx.ts";
+import { themed } from "../../utils/headless.ts";
 import type { ClassesProps } from "../Types/general.ts";
 
 const classes = themed(rawClasses);

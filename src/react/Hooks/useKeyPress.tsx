@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { runShortcuts } from "../../../shared/keypress.ts";
+import { runShortcuts } from "../../shared/keypress.ts";
 
 /**
  * Custom React hook that listens for specified keyboard shortcuts and triggers associated actions.

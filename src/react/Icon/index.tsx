@@ -1,6 +1,6 @@
 import { icons, type LucideIcon } from "lucide-react";
 
-import { cx } from "../../../utils/cx.ts";
+import { cx } from "../../utils/cx.ts";
 import { P } from "../Text/index.tsx";
 import type { ClassesProps } from "../Types/general.ts";
 
