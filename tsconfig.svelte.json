@@ -10,6 +10,5 @@
 		"declaration": true,
 		"emitDeclarationOnly": true
 	},
-	"include": ["src/svelte/**/*", "src/shared/**/*", "src/types/**/*"],
-	"exclude": ["src/svelte/**/*.stories.*"]
+	"include": ["src/svelte/**/*", "src/shared/**/*", "src/types/**/*"]
 }

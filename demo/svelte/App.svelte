@@ -26,6 +26,7 @@
 		toggleTheme,
 		Ul,
 	} from "../../src/svelte/index.ts";
+	import Example from "./Example.svelte";
 </script>
 
 <Reading>
@@ -35,6 +36,11 @@
 		<a href="../">← All demos</a>
 	</header>
 
+	<P>
+		Import from <code>summit-kit/svelte</code>. Components are themed out of the
+		box — no stylesheet import required.
+	</P>
+
 	<div class="demo-toolbar">
 		<PrimaryButton onclick={() => toggleTheme()}>Toggle theme</PrimaryButton>
 		<SecondaryButton onclick={() => setTheme("system")}>System</SecondaryButton>
@@ -42,51 +48,84 @@
 
 	<Section>
 		<Heading level={2}>Text</Heading>
-		<div class="demo-example">
-			<span class="demo-label">Headings</span>
+		<Example
+			label="Headings"
+			code={`<Heading level={1}>Heading 1</Heading>
+<Heading level={2}>Heading 2</Heading>
+<Heading level={3}>Heading 3</Heading>`}
+		>
 			<Heading level={1}>Heading 1</Heading>
 			<Heading level={2}>Heading 2</Heading>
 			<Heading level={3}>Heading 3</Heading>
-		</div>
-		<div class="demo-example">
-			<span class="demo-label">Body</span>
+		</Example>
+		<Example
+			label="Body"
+			code={`<P>A paragraph with a <Link href="#">link</Link> and a <Span>span</Span>.</P>
+<Quote>A blockquote for emphasis.</Quote>
+<Ol><Li>First</Li><Li>Second</Li></Ol>
+<Ul><Li>Bullet</Li></Ul>`}
+		>
 			<P>
 				A paragraph with a <Link href="#">link</Link> and a <Span>span</Span>.
 			</P>
 			<Quote>A blockquote for emphasis.</Quote>
 			<Ol><Li>First</Li><Li>Second</Li></Ol>
 			<Ul><Li>Bullet</Li></Ul>
-		</div>
-		<div class="demo-example">
-			<span class="demo-label">Code (Shiki)</span>
+		</Example>
+		<Example
+			label="Code (Shiki)"
+			code={`<Code language="ts" code={'const greet = () => "hi";'} />`}
+		>
 			<Code language="ts" code={'const greet = () => "hi";'} />
-		</div>
+		</Example>
 	</Section>
 
 	<Section>
 		<Heading level={2}>Layout</Heading>
-		<div class="demo-example">
-			<span class="demo-label">Flex</span>
+		<Example
+			label="Flex"
+			code={`<Flex gap={12} items="center">
+  <PrimaryButton>One</PrimaryButton>
+  <SecondaryButton>Two</SecondaryButton>
+</Flex>`}
+		>
 			<Flex gap={12} items="center">
 				<PrimaryButton>One</PrimaryButton>
 				<SecondaryButton>Two</SecondaryButton>
 			</Flex>
-		</div>
-		<div class="demo-example">
-			<span class="demo-label">Grid</span>
+		</Example>
+		<Example
+			label="Grid"
+			code={`<Grid cols={3} gap={8}>
+  <GridHeader headers={["A", "B", "C"]} />
+  <GridRow><span>1</span><span>2</span><span>3</span></GridRow>
+</Grid>`}
+		>
 			<Grid cols={3} gap={8}>
 				<GridHeader headers={["A", "B", "C"]} />
 				<GridRow>
 					<span>1</span><span>2</span><span>3</span>
 				</GridRow>
 			</Grid>
-		</div>
+		</Example>
 	</Section>
 
 	<Section>
 		<Heading level={2}>Form</Heading>
-		<div class="demo-example">
-			<span class="demo-label">Inputs</span>
+		<Example
+			label="Inputs"
+			code={`<Form>
+  <Input id="name" type="text" label="Name" />
+  <Select label="Pick one" options={[
+    { value: "a", label: "Alpha" },
+    { value: "b", label: "Beta" },
+  ]} />
+  <Flex gap={8}>
+    <PrimaryButton>Submit</PrimaryButton>
+    <SecondaryButton>Cancel</SecondaryButton>
+  </Flex>
+</Form>`}
+		>
 			<Form>
 				<Input id="name" type="text" label="Name" />
 				<Select
@@ -101,37 +140,47 @@
 					<SecondaryButton>Cancel</SecondaryButton>
 				</Flex>
 			</Form>
-		</div>
+		</Example>
 	</Section>
 
 	<Section>
 		<Heading level={2}>Media</Heading>
-		<div class="demo-example">
-			<span class="demo-label">Icon</span>
+		<Example
+			label="Icon"
+			code={`<Icon name="Mountain" aria-label="mountain" />
+<Icon name="Tent" aria-label="tent" />
+<Icon name="TreePine" aria-label="tree" />`}
+		>
 			<Flex gap={12}>
 				<Icon name="Mountain" aria-label="mountain" />
 				<Icon name="Tent" aria-label="tent" />
 				<Icon name="TreePine" aria-label="tree" />
 			</Flex>
-		</div>
-		<div class="demo-example">
-			<span class="demo-label">Image / Figure</span>
+		</Example>
+		<Example
+			label="Image / Figure"
+			code={`<Figure src="/img.png" alt="placeholder" width={240} caption="A captioned figure" />`}
+		>
 			<Figure
 				src="https://placehold.co/240x120"
 				alt="placeholder"
 				width={240}
 				caption="A captioned figure"
 			/>
-		</div>
+		</Example>
 	</Section>
 
 	<Section>
 		<Heading level={2}>Interactions</Heading>
-		<div class="demo-example">
-			<span class="demo-label">PageTurner (Ctrl+Shift+Arrows)</span>
+		<Example
+			label="PageTurner (Ctrl+Shift+Arrows)"
+			code={`<PageTurner onNext={next} onPrev={prev}>
+  <P>Page content with navigation arrows.</P>
+</PageTurner>`}
+		>
 			<PageTurner onNext={() => {}} onPrev={() => {}}>
 				<P>Page content with navigation arrows.</P>
 			</PageTurner>
-		</div>
+		</Example>
 	</Section>
 </Reading>

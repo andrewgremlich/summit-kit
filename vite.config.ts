@@ -40,14 +40,9 @@ export default defineConfig(() => ({
 		preserveDirectives(),
 		dts({
 			entryRoot: "src",
-			// Only emit declarations for shippable source, not tests, stories, or the
-			// Svelte tree (svelte-package owns those types).
-			exclude: [
-				"**/*.test.*",
-				"**/*.stories.*",
-				"src/test-setup.ts",
-				"src/svelte/**",
-			],
+			// Only emit declarations for shippable source, not tests or the Svelte tree
+			// (svelte-package owns those types).
+			exclude: ["**/*.test.*", "src/test-setup.ts", "src/svelte/**"],
 		}),
 		standaloneCSS(),
 	],

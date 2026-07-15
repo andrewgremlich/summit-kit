@@ -25,8 +25,7 @@
 		"dist",
 		"!**/*.tsbuildinfo",
 		"!**/*.map",
-		"!**/*.test.*",
-		"!**/*.stories.*"
+		"!**/*.test.*"
 	],
 	"sideEffects": [
 		"**/*.css",
@@ -64,7 +63,7 @@
 	},
 	"scripts": {
 		"prepare": "npm run build && npx simple-git-hooks",
-		"clean": "rimraf dist storybook-static storybook-static-svelte demo-static",
+		"clean": "rimraf dist demo-static",
 		"gen-tokens": "node --experimental-strip-types scripts/gen-tokens.ts",
 		"build:react": "vite build",
 		"build:shared-css": "node --experimental-strip-types scripts/copy-shared-css.ts",
@@ -75,10 +74,7 @@
 		"demo:react": "vite --config demo/react/vite.config.ts",
 		"demo:svelte": "vite --config demo/svelte/vite.config.ts",
 		"build:demo": "node --experimental-strip-types scripts/build-demo.ts",
-		"storybook": "storybook dev -p 6006",
-		"storybook:svelte": "storybook dev -p 6007 --config-dir .storybook-svelte",
-		"build-storybook": "storybook build -o storybook-static",
-		"build-storybook:svelte": "storybook build -o storybook-static-svelte --config-dir .storybook-svelte",
+		"demo": "npm run build:demo && node --experimental-strip-types scripts/serve-demo.ts",
 		"test": "vitest run && vitest run --config vitest.svelte.config.ts",
 		"test:react": "vitest",
 		"test:svelte": "vitest run --config vitest.svelte.config.ts"
@@ -91,11 +87,6 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.5.4",
 		"@lucide/svelte": "^1.24.0",
-		"@storybook/addon-a11y": "^10.5.0",
-		"@storybook/react": "^10.5.0",
-		"@storybook/react-vite": "^10.5.0",
-		"@storybook/svelte": "^10.5.0",
-		"@storybook/svelte-vite": "^10.5.0",
 		"@sveltejs/package": "^2.5.8",
 		"@sveltejs/vite-plugin-svelte": "^7.2.0",
 		"@testing-library/jest-dom": "^6.9.1",
@@ -113,7 +104,6 @@
 		"rimraf": "^6.1.3",
 		"rollup-preserve-directives": "^1.1.3",
 		"simple-git-hooks": "^2.13.1",
-		"storybook": "^10.5.0",
 		"svelte": "^5.56.5",
 		"svelte-check": "^4.7.3",
 		"typescript": "^6.0.3",

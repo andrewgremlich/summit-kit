@@ -118,11 +118,8 @@ npm run build:demo   # Build the static demo site to demo-static/
 ```
 
 The interactive component galleries live in [`demo/`](demo/) — a small Vite app per framework
-that renders every component from source. `npm run build:demo` produces the deployable static
-site (this is what the live docs deploy from).
-
-> Storybook configs (`.storybook/`, `.storybook-svelte/`) are present but do not currently build
-> under Vite 8 / Rolldown + Storybook 10. The demo apps are the interim (and simpler) alternative.
+that renders every component from source alongside its usage snippet. `npm run build:demo`
+produces the deployable static site (this is what the live docs deploy from).
 
 ## License
 

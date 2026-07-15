@@ -27,7 +27,7 @@ entry path); Svelte components are universal, so there is no such split on that 
 - **Syntax highlighting:** Shiki (shared by both frameworks' `Code` component)
 - **Linter/Formatter:** Biome 2.4+ for `.ts/.tsx/.css`; Prettier + `prettier-plugin-svelte` for `.svelte`
 - **Type checking:** `tsc --noEmit` (React + shared) and `svelte-check` (Svelte)
-- **Docs/Demo:** Storybook 10 (dual config; see build note below)
+- **Docs/Demo:** Static Vite demo apps per framework (`demo/`), deployed to Vercel
 - **Dependencies:** lucide-react, @lucide/svelte, shiki, screenfull
 
 ## Common Commands
@@ -40,13 +40,11 @@ npm run gen-tokens         # Regenerate colors.css + tokens.module.css from src/
 npm test                   # React + Svelte test suites
 npm run check              # tsc --noEmit + svelte-check
 npm run format             # Biome (.ts/.tsx/.css) + Prettier (.svelte)
-npm run clean              # Remove dist/ and storybook-static/
+npm run demo:react         # Serve the React component gallery (Vite dev server)
+npm run demo:svelte        # Serve the Svelte component gallery
+npm run build:demo         # Build the static demo site to demo-static/
+npm run clean              # Remove dist/ and demo-static/
 ```
-
-> **Storybook** (`npm run storybook` / `storybook:svelte`) is configured but currently does
-> not build under Vite 8 / Rolldown + Storybook 10 (a pre-existing toolchain incompatibility
-> affecting both frameworks). The configs are correct and left in place for when a
-> Rolldown-compatible Storybook ships.
 
 Type-checking (`tsc --noEmit` + `svelte-check`), Biome, and Prettier (`.svelte`) run
 automatically via the pre-commit hook. Run Biome manually:
@@ -139,20 +137,20 @@ This is what makes a component cheap to offer in both frameworks. Svelte has **n
 folder split (components are universal); new Svelte components go directly in the flat `src/svelte/`
 tree, and new React client-only modules must start with the `"use client"` directive.
 
-### Demos & Storybook
+### Demos
 
-**Demos (`demo/`)** are the working component galleries and the deploy target: a small Vite app
-per framework (`demo/react/`, `demo/svelte/`) that imports components straight from `src/` and
-renders a gallery, plus a landing page (`demo/index.html`). `npm run build:demo`
-(`scripts/build-demo.ts`) builds all three into `demo-static/`; `vercel.json` deploys that.
-Dev servers: `npm run demo:react` / `demo:svelte`. Because each demo is a real Vite build against
-the source, it also serves as an end-to-end smoke test of both entries.
+The **demos (`demo/`)** are the component galleries and the docs/deploy target — Summit Kit
+does not use Storybook. There is one small Vite app per framework (`demo/react/`,
+`demo/svelte/`) that imports components straight from `src/`, renders each one alongside its
+**usage snippet**, plus a landing page (`demo/index.html`) linking both.
 
-**Storybook** has two configs — `.storybook/` (React, `@storybook/react-vite`) and
-`.storybook-svelte/` (Svelte, `@storybook/svelte-vite`), CSF3 + `autodocs`. **Neither currently
-builds** under Vite 8 / Rolldown + Storybook 10 (a pre-existing incompatibility — both framework
-Vite plugins require Vite 8, and Storybook's builder isn't Rolldown-compatible yet). The configs
-are kept for when Storybook ships Rolldown support; the demos are the interim alternative.
+- Dev servers: `npm run demo:react` / `npm run demo:svelte`.
+- `npm run build:demo` (`scripts/build-demo.ts`) builds all three into `demo-static/`;
+  `vercel.json` deploys that.
+- Because each demo is a real Vite build against the source, it doubles as an end-to-end smoke
+  test of both entries.
+
+When adding a component, add it to the matching demo app (render + usage snippet).
 
 ### CSS Modules
 
