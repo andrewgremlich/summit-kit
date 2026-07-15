@@ -40,6 +40,14 @@ export default defineConfig(() => ({
 		preserveDirectives(),
 		dts({
 			entryRoot: "src",
+			// Only emit declarations for shippable source, not tests, stories, or the
+			// Svelte tree (svelte-package owns those types).
+			exclude: [
+				"**/*.test.*",
+				"**/*.stories.*",
+				"src/test-setup.ts",
+				"src/svelte/**",
+			],
 		}),
 		standaloneCSS(),
 	],
@@ -60,7 +68,9 @@ export default defineConfig(() => ({
 		target: "es2022",
 		outDir: "./dist/",
 		emptyOutDir: true,
-		sourcemap: true,
+		// Maps are not shipped (see package.json "files"); disable to avoid dangling
+		// sourceMappingURL references in the published output.
+		sourcemap: false,
 		reportCompressedSize: true,
 		commonjsOptions: {
 			transformMixedEsModules: true,
@@ -80,6 +90,7 @@ export default defineConfig(() => ({
 				"react/jsx-runtime",
 				"shiki",
 				"lucide-react",
+				"screenfull",
 			],
 			output: {
 				// Preserve per-file module structure so each component keeps its own

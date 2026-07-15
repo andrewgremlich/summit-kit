@@ -23,7 +23,10 @@
 	},
 	"files": [
 		"dist",
-		"!**/*.tsbuildinfo"
+		"!**/*.tsbuildinfo",
+		"!**/*.map",
+		"!**/*.test.*",
+		"!**/*.stories.*"
 	],
 	"sideEffects": [
 		"**/*.css",
